@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Rewatchables</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>The Rewatchables</h1>
+  <p>Find where to watch every movie from the podcast.</p>
+
+  <div id="top-bar">
+    <button id="sort-btn" onclick="toggleSort()">Oldest First ↑</button>
+    <button id="export-btn" onclick="exportJSON()">Export JSON</button>
+  </div>
+
+  <div id="search-bar">
+    <div class="search-field">
+      <label class="search-label">Title</label>
+      <input type="text" id="search-title" placeholder="e.g. Heat">
+    </div>
+    <div class="search-field">
+      <label class="search-label">Director</label>
+      <input type="text" id="search-director" placeholder="e.g. Scorsese">
+    </div>
+    <div class="search-field">
+      <label class="search-label">Cast</label>
+      <input type="text" id="search-cast" placeholder="e.g. Al Pacino">
+    </div>
+    <div class="search-field">
+      <label class="search-label">Host</label>
+      <input type="text" id="search-host" placeholder="e.g. Van Lathan">
+    </div>
+    <button id="clear-btn" onclick="clearSearch()">Clear</button>
+  </div>
+
+  <div id="result-count"></div>
+  <div id="movie-list"></div>
+
+  <!-- Edit Panel -->
+  <div id="edit-overlay" onclick="closePanel()"></div>
+  <div id="edit-panel">
+    <div id="edit-panel-header">
+      <div id="edit-panel-title"></div>
+      <button id="close-btn" onclick="closePanel()">✕</button>
+    </div>
+    <div id="edit-panel-body">
+      <input type="hidden" id="edit-id">
+      <div class="edit-field">
+        <label>Episode Date</label>
+        <input type="date" id="edit-episode-date">
+      </div>
+      <div class="edit-field">
+        <label>Episode Label</label>
+        <input type="text" id="edit-episode-label" placeholder="e.g. Live from Boston">
+      </div>
+      <div class="edit-field">
+        <label>Regulars</label>
+        <div class="host-checkboxes">
+          <label class="host-check"><input type="checkbox" value="Bill Simmons"> Bill Simmons</label>
+          <label class="host-check"><input type="checkbox" value="Chris Ryan"> Chris Ryan</label>
+          <label class="host-check"><input type="checkbox" value="Sean Fennessey"> Sean Fennessey</label>
+          <label class="host-check"><input type="checkbox" value="Van Lathan"> Van Lathan</label>
+          <label class="host-check"><input type="checkbox" value="Mallory Rubin"> Mallory Rubin</label>
+          <label class="host-check"><input type="checkbox" value="Juliet Litman"> Juliet Litman</label>
+          <label class="host-check"><input type="checkbox" value="Amanda Dobbins"> Amanda Dobbins</label>
+          <label class="host-check"><input type="checkbox" value="Jason Concepcion"> Jason Concepcion</label>
+          <label class="host-check"><input type="checkbox" value="Craig Horlbeck"> Craig Horlbeck</label>
+          <label class="host-check"><input type="checkbox" value="Ryen Russillo"> Ryen Russillo</label>
+          <label class="host-check"><input type="checkbox" value="Kyle Brandt"> Kyle Brandt</label>
+        </div>
+      </div>
+      <div class="edit-field">
+        <label>Guests</label>
+        <input type="text" id="edit-guests" placeholder="e.g. Matt Damon, Wesley Morris">
+        <div class="field-hint">Separate multiple guests with commas</div>
+      </div>
+      <button id="save-btn" onclick="saveEdit()">Save Changes</button>
+      <div id="save-confirmation"></div>
+    </div>
+  </div>
+
+  <script src="streaming.js"></script>
+  <script>
+    let allMovies = [];
+    let sortAsc = true;
+
+    function sortMovies(movies) {
+      return [...movies].sort((a, b) =>
+        sortAsc
+          ? a.episode_date.localeCompare(b.episode_date)
+          : b.episode_date.localeCompare(a.episode_date)
+      );
+    }
+
+    function toggleSort() {
+      sortAsc = !sortAsc;
+      document.getElementById('sort-btn').textContent = sortAsc ? 'Oldest First ↑' : 'Newest First ↓';
+      filterMovies();
+    }
+
+    fetch('rewatchables.json')
+      .then(response => response.json())
+      .then(movies => {
+        allMovies = movies;
+        displayMovies(sortMovies(allMovies));
+      });
+
+    function formatDate(dateStr) {
+      const date = new Date(dateStr + 'T00:00:00');
+      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function displayMovies(movies) {
+      const container = document.getElementById('movie-list');
+      container.innerHTML = '';
+
+      const countEl = document.getElementById('result-count');
+      countEl.textContent = movies.length === allMovies.length
+        ? `${allMovies.length} episodes`
+        : `${movies.length} of ${allMovies.length} episodes`;
+
+      if (movies.length === 0) {
+        container.innerHTML = '<p class="no-results">No movies found.</p>';
+        return;
+      }
+
+      movies.forEach(movie => {
+        const card = document.createElement('div');
+        card.className = 'movie-card';
+        card.id = `card-${movie.id}`;
+
+        const genres = (movie.genre || []).map(g =>
+          `<span class="genre-tag">${g}</span>`
+        ).join('');
+
+        const rewatchBadge = movie.is_rewatch
+          ? `<span class="rewatch-badge">${movie.episode_label || 'Re-watch'}</span>`
+          : (movie.episode_label ? `<span class="rewatch-badge">${movie.episode_label}</span>` : '');
+
+        const ratings = [];
+        if (movie.imdb_rating) ratings.push(`<span class="rating imdb">IMDb ${movie.imdb_rating}</span>`);
+        if (movie.rt_audience_score) ratings.push(`<span class="rating rt">RT ${movie.rt_audience_score}</span>`);
+
+        const castList = (movie.cast || []).length > 0
+          ? `<div class="movie-cast">${movie.cast.join(' · ')}</div>`
+          : '';
+
+        card.innerHTML = `
+          <div class="card-top-row">
+            <div class="movie-title">${movie.movie_title}${rewatchBadge}</div>
+            <button class="edit-btn" onclick="openPanel(${movie.id})">Edit</button>
+          </div>
+          <div class="movie-year">${movie.movie_year} · ${movie.director}${movie.runtime ? ' · ' + movie.runtime : ''}</div>
+          ${genres ? `<div class="genre-row">${genres}</div>` : ''}
+          ${ratings.length ? `<div class="ratings-row">${ratings.join('')}</div>` : ''}
+          ${castList}
+          <div class="movie-meta">
+            ${movie.episode_date ? `<span>${formatDate(movie.episode_date)}</span>` : ''}
+          </div>
+          ${movie.hosts && movie.hosts.length > 0 ? `<div class="movie-hosts">Hosts: ${movie.hosts.join(', ')}</div>` : ''}
+          <div class="streaming-info" id="stream-${movie.id}">
+            <button class="find-btn" onclick="loadStreaming(${movie.id}, '${movie.movie_title.replace(/'/g, "\\'")}', ${movie.movie_year})">
+              Find where to watch
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterMovies() {
+      const title    = document.getElementById('search-title').value.toLowerCase().trim();
+      const director = document.getElementById('search-director').value.toLowerCase().trim();
+      const cast     = document.getElementById('search-cast').value.toLowerCase().trim();
+      const host     = document.getElementById('search-host').value.toLowerCase().trim();
+
+      const filtered = allMovies.filter(movie => {
+        if (title    && !movie.movie_title.toLowerCase().includes(title))                              return false;
+        if (director && !movie.director.toLowerCase().includes(director))                              return false;
+        if (cast     && !(movie.cast || []).some(c => c.toLowerCase().includes(cast)))                 return false;
+        if (host     && !(movie.hosts || []).some(h => h.toLowerCase().includes(host)))                return false;
+        return true;
+      });
+
+      displayMovies(sortMovies(filtered));
+    }
+
+    function clearSearch() {
+      document.getElementById('search-title').value    = '';
+      document.getElementById('search-director').value = '';
+      document.getElementById('search-cast').value     = '';
+      document.getElementById('search-host').value     = '';
+      displayMovies(sortMovies(allMovies));
+    }
+
+    ['search-title', 'search-director', 'search-cast', 'search-host'].forEach(id => {
+      document.getElementById(id).addEventListener('input', filterMovies);
+    });
+
+    function openPanel(id) {
+      const movie = allMovies.find(m => m.id === id);
+      if (!movie) return;
+
+      document.getElementById('edit-panel-title').textContent = movie.movie_title;
+      document.getElementById('edit-id').value = id;
+      document.getElementById('edit-episode-date').value  = movie.episode_date || '';
+      document.getElementById('edit-episode-label').value = movie.episode_label || '';
+      document.getElementById('save-confirmation').textContent = '';
+
+      document.querySelectorAll('.host-checkboxes input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+      });
+
+      const regularNames = Array.from(document.querySelectorAll('.host-checkboxes input[type="checkbox"]')).map(cb => cb.value);
+      const savedHosts   = movie.hosts || [];
+      const savedGuests  = [];
+
+      savedHosts.forEach(host => {
+        if (regularNames.includes(host)) {
+          const cb = document.querySelector(`.host-checkboxes input[value="${host}"]`);
+          if (cb) cb.checked = true;
+        } else {
+          savedGuests.push(host);
+        }
+      });
+
+      document.getElementById('edit-guests').value = savedGuests.join(', ');
+      document.getElementById('edit-overlay').classList.add('active');
+      document.getElementById('edit-panel').classList.add('active');
+    }
+
+    function closePanel() {
+      document.getElementById('edit-overlay').classList.remove('active');
+      document.getElementById('edit-panel').classList.remove('active');
+    }
+
+    function saveEdit() {
+      const id    = parseInt(document.getElementById('edit-id').value);
+      const movie = allMovies.find(m => m.id === id);
+      if (!movie) return;
+
+      movie.episode_date  = document.getElementById('edit-episode-date').value  || movie.episode_date;
+      movie.episode_label = document.getElementById('edit-episode-label').value;
+
+      const checkedRegulars = Array.from(document.querySelectorAll('.host-checkboxes input[type="checkbox"]:checked')).map(cb => cb.value);
+      const guestsRaw = document.getElementById('edit-guests').value;
+      const guests    = guestsRaw ? guestsRaw.split(',').map(h => h.trim()).filter(h => h) : [];
+      movie.hosts     = [...checkedRegulars, ...guests];
+
+      const card = document.getElementById(`card-${id}`);
+      const meta = card.querySelector('.movie-meta');
+      meta.innerHTML = movie.episode_date ? `<span>${formatDate(movie.episode_date)}</span>` : '';
+
+      const existingHosts = card.querySelector('.movie-hosts');
+      if (existingHosts) existingHosts.remove();
+      if (movie.hosts.length > 0) {
+        const hostsDiv = document.createElement('div');
+        hostsDiv.className = 'movie-hosts';
+        hostsDiv.textContent = `Hosts: ${movie.hosts.join(', ')}`;
+        meta.after(hostsDiv);
+      }
+
+      document.getElementById('save-confirmation').textContent = '✓ Saved!';
+    }
+
+    async function loadStreaming(id, title, year) {
+      const container = document.getElementById(`stream-${id}`);
+      container.innerHTML = '<p class="loading">Looking up streaming options...</p>';
+      const sources = await getStreamingInfo(title, year);
+      container.innerHTML = formatSources(sources);
+    }
+
+    function exportJSON() {
+      const data = JSON.stringify(allMovies, null, 2);
+      const blob = new Blob([data], { type: 'application/json' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href     = url;
+      a.download = 'rewatchables.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+
+</body>
+</html>
