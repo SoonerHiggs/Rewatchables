@@ -485,3 +485,72 @@ p {
   margin-top: 6px;
   line-height: 1.5;
 }
+
+/* ── Service filter bar ─────────────────────────────────────────────────── */
+
+#service-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1200px;
+  margin-bottom: 16px;
+}
+
+.service-label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  margin-right: 4px;
+}
+
+.service-btn {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.service-btn:hover {
+  border-color: #e8c96d;
+  color: #e8c96d;
+}
+
+.service-btn.active {
+  background: #e8c96d;
+  border-color: #e8c96d;
+  color: #111;
+  font-weight: bold;
+}
+
+.free-btn.active {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+}
+
+/* ── Attribution footer ─────────────────────────────────────────────────── */
+#attribution {
+  max-width: 1200px;
+  margin-top: 48px;
+  padding: 16px 0;
+  border-top: 1px solid #222;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+#attribution a {
+  color: #666;
+  text-decoration: underline;
+}
+
+#attribution a:hover {
+  color: #e8c96d;
+}

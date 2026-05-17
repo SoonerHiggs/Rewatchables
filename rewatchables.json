@@ -13021,5 +13021,29 @@
       "Danny McBride"
     ],
     "id": 450
+  },
+  {
+    "movie_title": "Borat",
+    "movie_year": 2006,
+    "director": "Larry Charles",
+    "episode_date": "2026-05-18",
+    "hosts": [],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 24m",
+    "imdb_rating": 7.3,
+    "rt_audience_score": "89%",
+    "genre": [
+      "Comedy"
+    ],
+    "cast": [
+      "Sacha Baron Cohen",
+      "Ken Davitian",
+      "Luenell",
+      "Chester",
+      "Pamela Anderson",
+      "Bob Barr"
+    ],
+    "id": 451
   }
 ]

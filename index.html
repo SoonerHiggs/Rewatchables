@@ -35,56 +35,39 @@
     <button id="clear-btn" onclick="clearSearch()">Clear</button>
   </div>
 
+  <div id="service-bar">
+    <span class="service-label">Stream on:</span>
+    <button class="service-btn" onclick="filterByService('Netflix')">Netflix</button>
+    <button class="service-btn" onclick="filterByService('Max')">Max</button>
+    <button class="service-btn" onclick="filterByService('Hulu')">Hulu</button>
+    <button class="service-btn" onclick="filterByService('Prime Video')">Prime Video</button>
+    <button class="service-btn" onclick="filterByService('Peacock')">Peacock</button>
+    <button class="service-btn" onclick="filterByService('Apple TV+')">Apple TV+</button>
+    <button class="service-btn" onclick="filterByService('Disney+')">Disney+</button>
+    <button class="service-btn" onclick="filterByService('Tubi')">Tubi</button>
+    <button class="service-btn" onclick="filterByService('Pluto TV')">Pluto TV</button>
+    <button class="service-btn free-btn" onclick="filterByService('free')">Free</button>
+  </div>
+
   <div id="result-count"></div>
   <div id="movie-list"></div>
-
-  <!-- Edit Panel -->
-  <div id="edit-overlay" onclick="closePanel()"></div>
-  <div id="edit-panel">
-    <div id="edit-panel-header">
-      <div id="edit-panel-title"></div>
-      <button id="close-btn" onclick="closePanel()">✕</button>
-    </div>
-    <div id="edit-panel-body">
-      <input type="hidden" id="edit-id">
-      <div class="edit-field">
-        <label>Episode Date</label>
-        <input type="date" id="edit-episode-date">
-      </div>
-      <div class="edit-field">
-        <label>Episode Label</label>
-        <input type="text" id="edit-episode-label" placeholder="e.g. Live from Boston">
-      </div>
-      <div class="edit-field">
-        <label>Regulars</label>
-        <div class="host-checkboxes">
-          <label class="host-check"><input type="checkbox" value="Bill Simmons"> Bill Simmons</label>
-          <label class="host-check"><input type="checkbox" value="Chris Ryan"> Chris Ryan</label>
-          <label class="host-check"><input type="checkbox" value="Sean Fennessey"> Sean Fennessey</label>
-          <label class="host-check"><input type="checkbox" value="Van Lathan"> Van Lathan</label>
-          <label class="host-check"><input type="checkbox" value="Mallory Rubin"> Mallory Rubin</label>
-          <label class="host-check"><input type="checkbox" value="Juliet Litman"> Juliet Litman</label>
-          <label class="host-check"><input type="checkbox" value="Amanda Dobbins"> Amanda Dobbins</label>
-          <label class="host-check"><input type="checkbox" value="Jason Concepcion"> Jason Concepcion</label>
-          <label class="host-check"><input type="checkbox" value="Craig Horlbeck"> Craig Horlbeck</label>
-          <label class="host-check"><input type="checkbox" value="Ryen Russillo"> Ryen Russillo</label>
-          <label class="host-check"><input type="checkbox" value="Kyle Brandt"> Kyle Brandt</label>
-        </div>
-      </div>
-      <div class="edit-field">
-        <label>Guests</label>
-        <input type="text" id="edit-guests" placeholder="e.g. Matt Damon, Wesley Morris">
-        <div class="field-hint">Separate multiple guests with commas</div>
-      </div>
-      <button id="save-btn" onclick="saveEdit()">Save Changes</button>
-      <div id="save-confirmation"></div>
-    </div>
-  </div>
 
   <script src="streaming.js"></script>
   <script>
     let allMovies = [];
+    let streamingData = {};
     let sortAsc = true;
+    let activeService = null;
+
+    // Load both data files
+    Promise.all([
+      fetch('rewatchables.json').then(r => r.json()),
+      fetch('streaming_data.json').then(r => r.json()).catch(() => ({ movies: {} }))
+    ]).then(([movies, streaming]) => {
+      allMovies = movies;
+      streamingData = streaming.movies || {};
+      displayMovies(sortMovies(allMovies));
+    });
 
     function sortMovies(movies) {
       return [...movies].sort((a, b) =>
@@ -100,16 +83,62 @@
       filterMovies();
     }
 
-    fetch('rewatchables.json')
-      .then(response => response.json())
-      .then(movies => {
-        allMovies = movies;
-        displayMovies(sortMovies(allMovies));
-      });
+    function getStreamingKey(movie) {
+      return `${movie.movie_title}_${movie.movie_year}`;
+    }
+
+    function getMovieSources(movie) {
+      return (streamingData[getStreamingKey(movie)] || {}).sources || [];
+    }
+
+    function filterByService(service) {
+      // Toggle off if already active
+      if (activeService === service) {
+        activeService = null;
+        document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
+      } else {
+        activeService = service;
+        document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+      }
+      filterMovies();
+    }
+
+    function movieMatchesService(movie) {
+      if (!activeService) return true;
+      const sources = getMovieSources(movie);
+      if (activeService === 'free') {
+        return sources.some(s => s.type === 'free');
+      }
+      return sources.some(s => s.service.toLowerCase() === activeService.toLowerCase());
+    }
 
     function formatDate(dateStr) {
       const date = new Date(dateStr + 'T00:00:00');
       return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function formatSources(sources) {
+      if (!sources || sources.length === 0) {
+        return '<p class="no-sources">Not currently streaming.</p>';
+      }
+      const labels = {
+        'free':         { text: 'Free',         color: '#4caf50' },
+        'sub':          { text: 'Subscription', color: '#2196f3' },
+        'subscription': { text: 'Subscription', color: '#2196f3' },
+        'rent':         { text: 'Rent',         color: '#ff9800' },
+        'buy':          { text: 'Buy',          color: '#9e9e9e' }
+      };
+      return sources.slice(0, 8).map(source => {
+        const label = labels[source.type] || { text: source.type, color: '#888' };
+        const price = source.price ? ` · $${source.price}` : '';
+        const link = source.url ? `href="${source.url}" target="_blank"` : '';
+        return `
+          <div class="source-item">
+            <span class="source-type" style="color: ${label.color}">${label.text}${price}</span>
+            <a class="source-name" ${link}>${source.service}</a>
+          </div>`;
+      }).join('');
     }
 
     function displayMovies(movies) {
@@ -147,6 +176,12 @@
           ? `<div class="movie-cast">${movie.cast.join(' · ')}</div>`
           : '';
 
+        // Streaming — show inline from pre-loaded data
+        const sources = getMovieSources(movie);
+        const streamingHtml = sources.length > 0
+          ? `<div class="streaming-info">${formatSources(sources)}</div>`
+          : `<div class="streaming-info"><p class="no-sources">Not currently streaming.</p></div>`;
+
         card.innerHTML = `
           <div class="card-top-row">
             <div class="movie-title">${movie.movie_title}${rewatchBadge}</div>
@@ -159,11 +194,7 @@
             ${movie.episode_date ? `<span>${formatDate(movie.episode_date)}</span>` : ''}
           </div>
           ${movie.hosts && movie.hosts.length > 0 ? `<div class="movie-hosts">Hosts: ${movie.hosts.join(', ')}</div>` : ''}
-          <div class="streaming-info" id="stream-${movie.id}">
-            <button class="find-btn" onclick="loadStreaming(${movie.id}, '${movie.movie_title.replace(/'/g, "\\'")}', ${movie.movie_year})">
-              Find where to watch
-            </button>
-          </div>
+          ${streamingHtml}
         `;
         container.appendChild(card);
       });
@@ -176,10 +207,11 @@
       const host     = document.getElementById('search-host').value.toLowerCase().trim();
 
       const filtered = allMovies.filter(movie => {
-        if (title    && !movie.movie_title.toLowerCase().includes(title))                              return false;
-        if (director && !movie.director.toLowerCase().includes(director))                              return false;
-        if (cast     && !(movie.cast || []).some(c => c.toLowerCase().includes(cast)))                 return false;
-        if (host     && !(movie.hosts || []).some(h => h.toLowerCase().includes(host)))                return false;
+        if (title    && !movie.movie_title.toLowerCase().includes(title))                  return false;
+        if (director && !movie.director.toLowerCase().includes(director))                  return false;
+        if (cast     && !(movie.cast || []).some(c => c.toLowerCase().includes(cast)))     return false;
+        if (host     && !(movie.hosts || []).some(h => h.toLowerCase().includes(host)))    return false;
+        if (!movieMatchesService(movie))                                                   return false;
         return true;
       });
 
@@ -191,97 +223,19 @@
       document.getElementById('search-director').value = '';
       document.getElementById('search-cast').value     = '';
       document.getElementById('search-host').value     = '';
+      activeService = null;
+      document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
       displayMovies(sortMovies(allMovies));
     }
 
     ['search-title', 'search-director', 'search-cast', 'search-host'].forEach(id => {
       document.getElementById(id).addEventListener('input', filterMovies);
     });
-
-    function openPanel(id) {
-      const movie = allMovies.find(m => m.id === id);
-      if (!movie) return;
-
-      document.getElementById('edit-panel-title').textContent = movie.movie_title;
-      document.getElementById('edit-id').value = id;
-      document.getElementById('edit-episode-date').value  = movie.episode_date || '';
-      document.getElementById('edit-episode-label').value = movie.episode_label || '';
-      document.getElementById('save-confirmation').textContent = '';
-
-      document.querySelectorAll('.host-checkboxes input[type="checkbox"]').forEach(cb => {
-        cb.checked = false;
-      });
-
-      const regularNames = Array.from(document.querySelectorAll('.host-checkboxes input[type="checkbox"]')).map(cb => cb.value);
-      const savedHosts   = movie.hosts || [];
-      const savedGuests  = [];
-
-      savedHosts.forEach(host => {
-        if (regularNames.includes(host)) {
-          const cb = document.querySelector(`.host-checkboxes input[value="${host}"]`);
-          if (cb) cb.checked = true;
-        } else {
-          savedGuests.push(host);
-        }
-      });
-
-      document.getElementById('edit-guests').value = savedGuests.join(', ');
-      document.getElementById('edit-overlay').classList.add('active');
-      document.getElementById('edit-panel').classList.add('active');
-    }
-
-    function closePanel() {
-      document.getElementById('edit-overlay').classList.remove('active');
-      document.getElementById('edit-panel').classList.remove('active');
-    }
-
-    function saveEdit() {
-      const id    = parseInt(document.getElementById('edit-id').value);
-      const movie = allMovies.find(m => m.id === id);
-      if (!movie) return;
-
-      movie.episode_date  = document.getElementById('edit-episode-date').value  || movie.episode_date;
-      movie.episode_label = document.getElementById('edit-episode-label').value;
-
-      const checkedRegulars = Array.from(document.querySelectorAll('.host-checkboxes input[type="checkbox"]:checked')).map(cb => cb.value);
-      const guestsRaw = document.getElementById('edit-guests').value;
-      const guests    = guestsRaw ? guestsRaw.split(',').map(h => h.trim()).filter(h => h) : [];
-      movie.hosts     = [...checkedRegulars, ...guests];
-
-      const card = document.getElementById(`card-${id}`);
-      const meta = card.querySelector('.movie-meta');
-      meta.innerHTML = movie.episode_date ? `<span>${formatDate(movie.episode_date)}</span>` : '';
-
-      const existingHosts = card.querySelector('.movie-hosts');
-      if (existingHosts) existingHosts.remove();
-      if (movie.hosts.length > 0) {
-        const hostsDiv = document.createElement('div');
-        hostsDiv.className = 'movie-hosts';
-        hostsDiv.textContent = `Hosts: ${movie.hosts.join(', ')}`;
-        meta.after(hostsDiv);
-      }
-
-      document.getElementById('save-confirmation').textContent = '✓ Saved!';
-    }
-
-    async function loadStreaming(id, title, year) {
-      const container = document.getElementById(`stream-${id}`);
-      container.innerHTML = '<p class="loading">Looking up streaming options...</p>';
-      const sources = await getStreamingInfo(title, year);
-      container.innerHTML = formatSources(sources);
-    }
-
-    function exportJSON() {
-      const data = JSON.stringify(allMovies, null, 2);
-      const blob = new Blob([data], { type: 'application/json' });
-      const url  = URL.createObjectURL(blob);
-      const a    = document.createElement('a');
-      a.href     = url;
-      a.download = 'rewatchables.json';
-      a.click();
-      URL.revokeObjectURL(url);
-    }
   </script>
+
+  <footer id="attribution">
+    Streaming data powered by <a href="https://www.watchmode.com/" target="_blank">Watchmode.com</a>
+  </footer>
 
 </body>
 </html>
