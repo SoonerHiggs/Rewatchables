@@ -13120,7 +13120,10 @@
     "movie_year": 2006,
     "director": "Larry Charles",
     "episode_date": "2026-05-18",
-    "hosts": [],
+    "hosts": [
+      "Bill Simmons",
+      "Kyle Brandt"
+    ],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 24m",
@@ -13138,5 +13141,61 @@
       "Bob Barr"
     ],
     "id": 451
+  },
+  {
+    "movie_title": "Animal House",
+    "movie_year": 1978,
+    "director": "John Landis",
+    "episode_date": "2026-05-25",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 49m",
+    "imdb_rating": 7.5,
+    "rt_audience_score": "91%",
+    "genre": [
+      "Comedy"
+    ],
+    "cast": [
+      "John Belushi",
+      "Tim Matheson",
+      "John Vernon",
+      "Verna Bloom",
+      "Tom Hulce",
+      "Stephen Furst",
+      "Donald Sutherland",
+      "Karen Allen",
+      "Peter Riegert",
+      "Kevin Bacon"
+    ],
+    "id": 452
+  },
+  {
+    "movie_title": "2001: A Space Odyssey",
+    "movie_year": 1968,
+    "director": "Stanley Kubrick",
+    "episode_date": "2026-06-01",
+    "hosts": [],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "2h 29m",
+    "imdb_rating": 8.3,
+    "rt_audience_score": "89%",
+    "genre": [
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "cast": [
+      "Keir Dullea",
+      "Gary Lockwood",
+      "William Sylvester",
+      "Douglas Rain",
+      "Daniel Richter",
+      "Leonard Rossiter"
+    ],
+    "id": 453
   }
 ]
