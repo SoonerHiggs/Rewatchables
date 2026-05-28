@@ -112,7 +112,11 @@
       "Dennis Quaid",
       "James Woods",
       "Matthew Modine",
-      "Jamie Foxx"
+      "Jamie Foxx",
+      "Ann-Margret",
+      "Aaron Eckhart",
+      "LL Cool J",
+      "Jim Brown"
     ]
   },
   {
@@ -228,7 +232,9 @@
       "Jack Nicholson",
       "Martin Sheen",
       "Ray Winstone",
-      "Vera Farmiga"
+      "Vera Farmiga",
+      "Mark Wahlberg",
+      "Alec Baldwin"
     ]
   },
   {
@@ -942,7 +948,12 @@
       "Matt Damon",
       "Andy Garcia",
       "Don Cheadle",
-      "Bernie Mac"
+      "Bernie Mac",
+      "Elliott Gould",
+      "Scott Caan",
+      "Casey Affleck",
+      "Julia Roberts",
+      "Carl Reiner"
     ]
   },
   {
@@ -1202,7 +1213,9 @@
       "Rachel McAdams",
       "Christopher Walken",
       "Isla Fisher",
-      "Bradley Cooper"
+      "Bradley Cooper",
+      "Jane Seymour",
+      "Will Ferrell"
     ]
   },
   {
@@ -1488,12 +1501,17 @@
       "Drama"
     ],
     "cast": [
-      "Brando",
-      "Pacino",
-      "Caan",
-      "Duvall",
-      "Castellano",
-      "Tomei"
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan",
+      "Robert Duvall",
+      "Diane Keaton",
+      "Richard Castellano",
+      "Talia Shire",
+      "Richard Conte",
+      "Sterling Hayden",
+      "John Marley",
+      "John Cazale"
     ]
   },
   {
@@ -1517,11 +1535,14 @@
     ],
     "cast": [
       "Will Ferrell",
-      "John C. Reilly",
       "Vince Vaughn",
-      "Juliette Lewis",
+      "Luke Wilson",
       "Jeremy Piven",
-      "Ellen Pompeo"
+      "John C. Reilly",
+      "Leah Remini",
+      "Elisha Cuthbert",
+      "Craig Kilborn",
+      "Perrey Reeves"
     ]
   },
   {
@@ -1843,7 +1864,9 @@
       "Dwayne Johnson",
       "Jordana Brewster",
       "Tyrese Gibson",
-      "Ludacris"
+      "Ludacris",
+      "Gal Gadot",
+      "Sung Kang"
     ]
   },
   {
@@ -1871,7 +1894,10 @@
       "Corbin Bernsen",
       "Wesley Snipes",
       "James Gammon",
-      "Rene Russo"
+      "Rene Russo",
+      "Dennis Haysbert",
+      "Bob Uecker",
+      "Margaret Whitton"
     ]
   },
   {
@@ -1985,7 +2011,9 @@
       "Zach Galifianakis",
       "Justin Bartha",
       "Heather Graham",
-      "Jeffrey Tambor"
+      "Jeffrey Tambor",
+      "Ken Jeong",
+      "Mike Tyson"
     ]
   },
   {
@@ -2131,7 +2159,10 @@
       "Michael Fassbender",
       "Eli Roth",
       "Diane Kruger",
-      "Daniel Br\u00fchl"
+      "Daniel Br\u00fchl",
+      "M\u00e9lanie Laurent",
+      "Mike Myers",
+      "Denis M\u00e9nochet"
     ]
   },
   {
@@ -2190,7 +2221,9 @@
       "Michael Madsen",
       "Steve Buscemi",
       "Lawrence Tierney",
-      "Quentin Tarantino"
+      "Quentin Tarantino",
+      "Chris Penn",
+      "Kirk Baltz"
     ]
   },
   {
@@ -2481,8 +2514,10 @@
       "Will Patton",
       "Wood Harris",
       "Ryan Gosling",
-      "Craig Seibert",
-      "Ethan Suplee"
+      "Ethan Suplee",
+      "Ryan Hurst",
+      "Donald Faison",
+      "Hayden Panettiere"
     ]
   },
   {
@@ -2863,7 +2898,11 @@
       "Margot Robbie",
       "Emile Hirsch",
       "Margaret Qualley",
-      "Timothy Olyphant"
+      "Timothy Olyphant",
+      "Dakota Fanning",
+      "Austin Butler",
+      "Al Pacino",
+      "Bruce Dern"
     ]
   },
   {
@@ -2975,10 +3014,15 @@
     "cast": [
       "George Clooney",
       "Brad Pitt",
-      "Matt Dillon",
-      "Scott Caan",
+      "Matt Damon",
       "Andy Garcia",
-      "Don Cheadle"
+      "Don Cheadle",
+      "Scott Caan",
+      "Bernie Mac",
+      "Elliott Gould",
+      "Casey Affleck",
+      "Julia Roberts",
+      "Catherine Zeta-Jones"
     ]
   },
   {
@@ -3036,7 +3080,11 @@
       "Andy Garcia",
       "Talia Shire",
       "Sofia Coppola",
-      "Raf Vallone"
+      "Raf Vallone",
+      "Eli Wallach",
+      "Joe Mantegna",
+      "Bridget Fonda",
+      "George Hamilton"
     ]
   },
   {
@@ -3147,7 +3195,9 @@
       "Jason Statham",
       "Michelle Rodriguez",
       "Ludacris",
-      "Tyrese Gibson"
+      "Tyrese Gibson",
+      "Dwayne Johnson",
+      "Djimon Hounsou"
     ]
   },
   {
@@ -4685,7 +4735,9 @@
       "Bill Murray",
       "Gwyneth Paltrow",
       "Luke Wilson",
-      "Owen Wilson"
+      "Owen Wilson",
+      "Ben Stiller",
+      "Danny Glover"
     ]
   },
   {
@@ -5807,7 +5859,9 @@
       "Jack Nicholson",
       "Martin Sheen",
       "Ray Winstone",
-      "Vera Farmiga"
+      "Vera Farmiga",
+      "Mark Wahlberg",
+      "Alec Baldwin"
     ]
   },
   {
@@ -6066,7 +6120,11 @@
       "Jack Lemmon",
       "Walter Matthau",
       "Kevin Bacon",
-      "Tommy Lee Jones"
+      "Tommy Lee Jones",
+      "Sissy Spacek",
+      "Joe Pesci",
+      "Laurie Metcalf",
+      "Michael Rooker"
     ]
   },
   {
@@ -6177,10 +6235,12 @@
     "cast": [
       "Robert De Niro",
       "Ray Liotta",
-      "Paul Sorvino",
-      "Lorraine Bracco",
       "Joe Pesci",
-      "Paul Shenar"
+      "Lorraine Bracco",
+      "Paul Sorvino",
+      "Frank Sivero",
+      "Chuck Low",
+      "Frank Vincent"
     ]
   },
   {
@@ -6239,7 +6299,10 @@
       "Robert Duvall",
       "Diane Keaton",
       "Talia Shire",
-      "Marcia Gay Harden"
+      "Lee Strasberg",
+      "Michael V. Gazzo",
+      "Morgana King",
+      "John Cazale"
     ]
   },
   {
@@ -6471,7 +6534,9 @@
       "Joe Pesci",
       "James Woods",
       "Don Rickles",
-      "Alan King"
+      "Alan King",
+      "Frank Vincent",
+      "Kevin Pollak"
     ]
   },
   {
@@ -6552,10 +6617,13 @@
     "cast": [
       "Steve Martin",
       "Mary Steenburgen",
-      "Ryan Phillippe",
       "Dianne Wiest",
       "Keanu Reeves",
-      "Joaquin Phoenix"
+      "Joaquin Phoenix",
+      "Rick Moranis",
+      "Tom Hulce",
+      "Martha Plimpton",
+      "Jason Robards"
     ]
   },
   {
@@ -6840,9 +6908,13 @@
       "Tom Hanks",
       "Geena Davis",
       "Madonna",
-      "Dan Lauria",
+      "Lori Petty",
+      "Rosie O'Donnell",
+      "David Strathairn",
+      "Megan Cavanagh",
+      "Jon Lovitz",
       "Bill Pullman",
-      "Jon Lovitz"
+      "Garry Marshall"
     ]
   },
   {
@@ -7499,7 +7571,9 @@
       "Burt Reynolds",
       "Don Cheadle",
       "John C. Reilly",
-      "William H. Macy"
+      "William H. Macy",
+      "Philip Seymour Hoffman",
+      "Nicole Ari Parker"
     ]
   },
   {
@@ -8613,11 +8687,13 @@
     ],
     "cast": [
       "Seth Rogen",
-      "Evan Goldberg",
       "James Franco",
       "Jonah Hill",
       "Danny McBride",
-      "Craig Robinson"
+      "Craig Robinson",
+      "Jay Baruchel",
+      "Emma Watson",
+      "Michael Cera"
     ]
   },
   {
@@ -9900,7 +9976,11 @@
       "Julianne Moore",
       "Philip Seymour Hoffman",
       "William H. Macy",
-      "John C. Reilly"
+      "John C. Reilly",
+      "Philip Baker Hall",
+      "Melinda Dillon",
+      "Jeremy Blackman",
+      "Melora Walters"
     ]
   },
   {
@@ -10446,7 +10526,13 @@
       "Uma Thurman",
       "Harvey Keitel",
       "Tim Roth",
-      "Amanda Plummer"
+      "Amanda Plummer",
+      "Bruce Willis",
+      "Ving Rhames",
+      "Maria de Medeiros",
+      "Eric Stoltz",
+      "Rosanna Arquette",
+      "Christopher Walken"
     ]
   },
   {
@@ -11188,7 +11274,11 @@
       "Jennifer Esposito",
       "William Fichtner",
       "Brendan Fraser",
-      "Terrence Howard"
+      "Terrence Howard",
+      "Matt Dillon",
+      "Chris \"Ludacris\" Bridges",
+      "Thandiwe Newton",
+      "Ryan Phillippe"
     ]
   },
   {
@@ -11245,7 +11335,10 @@
       "Catherine O'Hara",
       "Parker Posey",
       "Michael McKean",
-      "John Michael Higgins"
+      "John Michael Higgins",
+      "Fred Willard",
+      "Jane Lynch",
+      "Jennifer Coolidge"
     ]
   },
   {
