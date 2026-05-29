@@ -42,7 +42,7 @@
     <button class="service-btn" onclick="filterByService('Hulu')">Hulu</button>
     <button class="service-btn" onclick="filterByService('Prime Video')">Prime Video</button>
     <button class="service-btn" onclick="filterByService('Peacock')">Peacock</button>
-    <button class="service-btn" onclick="filterByService('Apple TV+')">Apple TV+</button>
+    <button class="service-btn" onclick="filterByService('AppleTV+')">Apple TV+</button>
     <button class="service-btn" onclick="filterByService('Disney+')">Disney+</button>
     <button class="service-btn" onclick="filterByService('Tubi TV')">Tubi TV</button>
     <button class="service-btn" onclick="filterByService('Pluto TV')">Pluto TV</button>
@@ -107,10 +107,16 @@
     function movieMatchesService(movie) {
       if (!activeService) return true;
       const sources = getMovieSources(movie);
+      // Free button — match any free source
       if (activeService === 'free') {
         return sources.some(s => s.type === 'free');
       }
-      return sources.some(s => s.service.toLowerCase() === activeService.toLowerCase());
+      // Service buttons — only match free or subscription, not rent/buy
+      const freeOrSub = sources.filter(s => s.type === 'free' || s.type === 'sub' || s.type === 'subscription');
+      if (activeService === 'AppleTV+') {
+        return freeOrSub.some(s => s.service.toLowerCase().includes('appletv'));
+      }
+      return freeOrSub.some(s => s.service.toLowerCase() === activeService.toLowerCase());
     }
 
     function formatDate(dateStr) {
