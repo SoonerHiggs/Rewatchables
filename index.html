@@ -12,7 +12,18 @@
   <p>Find where to watch every movie from the podcast.</p>
 
   <div id="top-bar">
-    <button id="sort-btn" onclick="toggleSort()">Oldest First ↑</button>
+    <span class="sort-label">Sort:</span>
+    <div class="sort-group">
+      <button class="sort-btn active" data-field="episode_date" onclick="setSort('episode_date')">
+        Episode Date <span class="sort-arrow">↑</span>
+      </button>
+      <button class="sort-btn" data-field="imdb_rating" onclick="setSort('imdb_rating')">
+        IMDb <span class="sort-arrow"></span>
+      </button>
+      <button class="sort-btn" data-field="rt_audience_score" onclick="setSort('rt_audience_score')">
+        RT Score <span class="sort-arrow"></span>
+      </button>
+    </div>
   </div>
 
   <div id="search-bar">
@@ -56,6 +67,7 @@
   <script>
     let allMovies = [];
     let streamingData = {};
+    let sortField = 'episode_date';
     let sortAsc = true;
     let activeService = null;
 
@@ -69,17 +81,47 @@
       displayMovies(sortMovies(allMovies));
     });
 
-    function sortMovies(movies) {
-      return [...movies].sort((a, b) =>
-        sortAsc
-          ? a.episode_date.localeCompare(b.episode_date)
-          : b.episode_date.localeCompare(a.episode_date)
-      );
+    function parseRating(val) {
+      if (val == null || val === '') return -Infinity;
+      // RT scores come as "94%" strings; IMDb as numbers
+      const n = parseFloat(String(val).replace('%', ''));
+      return isNaN(n) ? -Infinity : n;
     }
 
-    function toggleSort() {
-      sortAsc = !sortAsc;
-      document.getElementById('sort-btn').textContent = sortAsc ? 'Oldest First ↑' : 'Newest First ↓';
+    function sortMovies(movies) {
+      return [...movies].sort((a, b) => {
+        let av, bv;
+        if (sortField === 'episode_date') {
+          av = a.episode_date || '';
+          bv = b.episode_date || '';
+          return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+        } else {
+          av = parseRating(a[sortField]);
+          bv = parseRating(b[sortField]);
+          // Always put missing ratings at the bottom regardless of direction
+          if (av === -Infinity && bv === -Infinity) return 0;
+          if (av === -Infinity) return 1;
+          if (bv === -Infinity) return -1;
+          return sortAsc ? av - bv : bv - av;
+        }
+      });
+    }
+
+    function setSort(field) {
+      if (sortField === field) {
+        // Same field — flip direction
+        sortAsc = !sortAsc;
+      } else {
+        // New field — default: date asc, ratings desc
+        sortField = field;
+        sortAsc = (field === 'episode_date');
+      }
+      // Update button states
+      document.querySelectorAll('.sort-btn').forEach(btn => {
+        const isActive = btn.dataset.field === sortField;
+        btn.classList.toggle('active', isActive);
+        btn.querySelector('.sort-arrow').textContent = isActive ? (sortAsc ? '↑' : '↓') : '';
+      });
       filterMovies();
     }
 

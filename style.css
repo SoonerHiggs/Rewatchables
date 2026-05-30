@@ -315,45 +315,51 @@ p {
   gap: 12px;
   max-width: 1200px;
   margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
-#top-bar #search {
-  flex: 1;
-  margin-bottom: 0;
-}
-
-#export-btn {
-  padding: 12px 20px;
-  background: transparent;
-  border: 1px solid #e8c96d;
-  color: #e8c96d;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  cursor: pointer;
+.sort-label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
 }
 
-#export-btn:hover {
-  background: #e8c96d;
-  color: #111;
+.sort-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-#sort-btn {
-  padding: 12px 20px;
+.sort-btn {
+  padding: 8px 16px;
   background: transparent;
-  border: 1px solid #555;
+  border: 1px solid #333;
   color: #aaa;
-  border-radius: 8px;
-  font-size: 0.95rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
-#sort-btn:hover {
+.sort-btn:hover {
   border-color: #e8c96d;
   color: #e8c96d;
+}
+
+.sort-btn.active {
+  background: transparent;
+  border-color: #e8c96d;
+  color: #e8c96d;
+  font-weight: bold;
+}
+
+.sort-arrow {
+  display: inline-block;
+  width: 10px;
+  text-align: center;
 }
 /* ── Search bar ─────────────────────────────────────────────────────────── */
 
