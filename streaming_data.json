@@ -20680,12 +20680,6 @@
     "Sideways_2004": {
       "sources": [
         {
-          "service": "Disney+",
-          "type": "sub",
-          "url": "https://www.disneyplus.com/browse/entity-d817cdec-4e05-4ea2-a1cc-f4c80080d224",
-          "price": null
-        },
-        {
           "service": "YouTube",
           "type": "rent",
           "url": "https://www.youtube.com/results?search_query=Sideways%2Bmovie",
