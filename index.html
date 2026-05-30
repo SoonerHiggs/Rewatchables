@@ -178,7 +178,9 @@
       return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     }
 
-    function formatSources(sources) {
+    const SOURCE_PREVIEW = 4;
+
+    function formatSources(sources, movieId) {
       if (!sources || sources.length === 0) {
         return '<p class="no-sources">Not currently streaming.</p>';
       }
@@ -186,10 +188,12 @@
         'free':         { text: 'Free',         color: '#4caf50' },
         'sub':          { text: 'Subscription', color: '#2196f3' },
         'subscription': { text: 'Subscription', color: '#2196f3' },
+        'tve':          { text: 'Cable',        color: '#9c27b0' },
         'rent':         { text: 'Rent',         color: '#ff9800' },
         'buy':          { text: 'Buy',          color: '#9e9e9e' }
       };
-      return sources.slice(0, 8).map(source => {
+
+      function renderSource(source) {
         const label = labels[source.type] || { text: source.type, color: '#888' };
         const price = source.price ? ` · $${source.price}` : '';
         const link = source.url ? `href="${source.url}" target="_blank"` : '';
@@ -198,7 +202,27 @@
             <span class="source-type" style="color: ${label.color}">${label.text}${price}</span>
             <a class="source-name" ${link}>${source.service}</a>
           </div>`;
-      }).join('');
+      }
+
+      const preview = sources.slice(0, SOURCE_PREVIEW).map(renderSource).join('');
+      const extra = sources.slice(SOURCE_PREVIEW);
+
+      if (extra.length === 0) return preview;
+
+      const extraHtml = extra.map(renderSource).join('');
+      const uid = `src-extra-${movieId}`;
+      return `
+        ${preview}
+        <div id="${uid}" style="display:none">${extraHtml}</div>
+        <button class="sources-toggle-btn" onclick="toggleSources('${uid}', this)">+ ${extra.length} more</button>
+      `;
+    }
+
+    function toggleSources(uid, btn) {
+      const el = document.getElementById(uid);
+      const isHidden = el.style.display === 'none';
+      el.style.display = isHidden ? 'block' : 'none';
+      btn.textContent = isHidden ? '− show less' : `+ ${el.querySelectorAll('.source-item').length} more`;
     }
 
     function displayMovies(movies) {
@@ -239,7 +263,7 @@
         // Streaming — show inline from pre-loaded data
         const sources = getMovieSources(movie);
         const streamingHtml = sources.length > 0
-          ? `<div class="streaming-info">${formatSources(sources)}</div>`
+          ? `<div class="streaming-info">${formatSources(sources, movie.id)}</div>`
           : `<div class="streaming-info"><p class="no-sources">Not currently streaming.</p></div>`;
 
         card.innerHTML = `

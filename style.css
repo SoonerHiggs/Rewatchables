@@ -588,3 +588,18 @@ p {
 #attribution a:hover {
   color: #e8c96d;
 }
+
+.sources-toggle-btn {
+  margin-top: 6px;
+  background: transparent;
+  border: none;
+  color: #666;
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 2px 0;
+  transition: color 0.15s;
+}
+
+.sources-toggle-btn:hover {
+  color: #e8c96d;
+}
