@@ -29,21 +29,33 @@
   <div id="search-bar">
     <div class="search-field">
       <label class="search-label">Title</label>
-      <input type="text" id="search-title" placeholder="e.g. Heat">
+      <div class="input-wrap">
+        <input type="text" id="search-title" placeholder="e.g. Heat">
+        <button class="input-clear" onclick="clearField('search-title')" tabindex="-1">✕</button>
+      </div>
     </div>
     <div class="search-field">
       <label class="search-label">Director</label>
-      <input type="text" id="search-director" placeholder="e.g. Scorsese">
+      <div class="input-wrap">
+        <input type="text" id="search-director" placeholder="e.g. Scorsese">
+        <button class="input-clear" onclick="clearField('search-director')" tabindex="-1">✕</button>
+      </div>
     </div>
     <div class="search-field">
       <label class="search-label">Cast</label>
-      <input type="text" id="search-cast" placeholder="e.g. Al Pacino">
+      <div class="input-wrap">
+        <input type="text" id="search-cast" placeholder="e.g. Al Pacino">
+        <button class="input-clear" onclick="clearField('search-cast')" tabindex="-1">✕</button>
+      </div>
     </div>
     <div class="search-field">
       <label class="search-label">Host</label>
-      <input type="text" id="search-host" placeholder="e.g. Van Lathan">
+      <div class="input-wrap">
+        <input type="text" id="search-host" placeholder="e.g. Van Lathan">
+        <button class="input-clear" onclick="clearField('search-host')" tabindex="-1">✕</button>
+      </div>
     </div>
-    <button id="clear-btn" onclick="clearSearch()">Clear</button>
+    <button id="clear-btn" onclick="clearSearch()">Clear All</button>
   </div>
 
   <div id="service-bar">
@@ -267,17 +279,30 @@
     }
 
     function clearSearch() {
-      document.getElementById('search-title').value    = '';
-      document.getElementById('search-director').value = '';
-      document.getElementById('search-cast').value     = '';
-      document.getElementById('search-host').value     = '';
+      ['search-title', 'search-director', 'search-cast', 'search-host'].forEach(id => {
+        const input = document.getElementById(id);
+        input.value = '';
+        input.nextElementSibling.classList.remove('visible');
+      });
       activeService = null;
       document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
       displayMovies(sortMovies(allMovies));
     }
 
+    function clearField(id) {
+      const input = document.getElementById(id);
+      input.value = '';
+      input.nextElementSibling.classList.remove('visible');
+      filterMovies();
+      input.focus();
+    }
+
     ['search-title', 'search-director', 'search-cast', 'search-host'].forEach(id => {
-      document.getElementById(id).addEventListener('input', filterMovies);
+      const input = document.getElementById(id);
+      input.addEventListener('input', () => {
+        input.nextElementSibling.classList.toggle('visible', input.value.length > 0);
+        filterMovies();
+      });
     });
   </script>
 

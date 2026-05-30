@@ -387,8 +387,14 @@ p {
   letter-spacing: 0.06em;
 }
 
+.search-field .input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .search-field input {
-  padding: 10px 14px;
+  padding: 10px 32px 10px 14px;
   font-size: 0.95rem;
   background-color: #1e1e1e;
   border: 1px solid #333;
@@ -401,6 +407,28 @@ p {
 
 .search-field input:focus {
   border-color: #e8c96d;
+}
+
+.input-clear {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  line-height: 1;
+  display: none;
+  transition: color 0.15s;
+}
+
+.input-clear.visible {
+  display: block;
+}
+
+.input-clear:hover {
+  color: #e8c96d;
 }
 
 #clear-btn {
