@@ -796,7 +796,7 @@
     "imdb_rating": 8.8,
     "rt_audience_score": "87%",
     "genre": [
-      "Science Fiction",
+      "Sci-Fi",
       "Action",
       "Thriller"
     ],
@@ -1570,7 +1570,7 @@
       "Bill Simmons",
       "Shea Serrano"
     ],
-    "is_rewatch": true,
+    "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 46m",
     "imdb_rating": 6.8,
@@ -5300,7 +5300,7 @@
     "rt_audience_score": "81%",
     "genre": [
       "Action",
-      "Science Fiction"
+      "Sci-Fi"
     ],
     "cast": [
       "Arnold Schwarzenegger",
@@ -6103,7 +6103,7 @@
     "imdb_rating": 7.4,
     "rt_audience_score": "81%",
     "genre": [
-      "Sports",
+      "Sport",
       "Drama"
     ],
     "cast": [
@@ -6746,7 +6746,7 @@
       "Van Lathan"
     ],
     "is_rewatch": true,
-    "episode_label": "",
+    "episode_label": "Revisit",
     "runtime": "3h 14m",
     "imdb_rating": 7.8,
     "rt_audience_score": "89%",
@@ -7016,7 +7016,7 @@
     "imdb_rating": 7.9,
     "rt_audience_score": "98%",
     "genre": [
-      "Science Fiction",
+      "Sci-Fi",
       "Family"
     ],
     "cast": [
@@ -7275,7 +7275,7 @@
     "rt_audience_score": "39%",
     "genre": [
       "Drama",
-      "Sports"
+      "Sport"
     ],
     "cast": [
       "Duane Martin",
@@ -7495,7 +7495,7 @@
       "Sean Fennessey"
     ],
     "is_rewatch": true,
-    "episode_label": "",
+    "episode_label": "Revisit",
     "runtime": "2h 49m",
     "imdb_rating": 8.6,
     "rt_audience_score": "93%",
@@ -8430,7 +8430,7 @@
     "imdb_rating": 8.5,
     "rt_audience_score": "93%",
     "genre": [
-      "Science Fiction",
+      "Sci-Fi",
       "Horror"
     ],
     "cast": [
@@ -8488,7 +8488,7 @@
     "genre": [
       "Action",
       "Adventure",
-      "Science Fiction"
+      "Sci-Fi"
     ],
     "cast": [
       "Robert Downey Jr.",
@@ -9218,7 +9218,7 @@
     "imdb_rating": 7.2,
     "rt_audience_score": "92%",
     "genre": [
-      "Science Fiction",
+      "Sci-Fi",
       "Horror"
     ],
     "cast": [
@@ -10121,7 +10121,7 @@
       "Van Lathan"
     ],
     "is_rewatch": true,
-    "episode_label": "",
+    "episode_label": "Revisit",
     "runtime": "2h 19m",
     "imdb_rating": 7.3,
     "rt_audience_score": "91%",
@@ -10699,7 +10699,7 @@
     ],
     "is_rewatch": true,
     "id": 366,
-    "episode_label": "",
+    "episode_label": "Revisit",
     "runtime": "1h 47m",
     "imdb_rating": 8.2,
     "rt_audience_score": "87%",
@@ -10993,7 +10993,7 @@
     "rt_audience_score": "58%",
     "genre": [
       "Comedy",
-      "Sports"
+      "Sport"
     ],
     "cast": [
       "Keanu Reeves",
@@ -11160,7 +11160,7 @@
     ],
     "is_rewatch": true,
     "id": 382,
-    "episode_label": "",
+    "episode_label": "Live from LA",
     "runtime": "2h 20m",
     "imdb_rating": 6.7,
     "rt_audience_score": "42%",
@@ -11457,7 +11457,7 @@
       "Sean Fennessey"
     ],
     "is_rewatch": true,
-    "episode_label": "",
+    "episode_label": "Live from Boston",
     "runtime": "2h 6m",
     "imdb_rating": 8.3,
     "rt_audience_score": "86%",
@@ -11928,7 +11928,7 @@
     "imdb_rating": 6.3,
     "rt_audience_score": "50%",
     "genre": [
-      "Science Fiction",
+      "Sci-Fi",
       "Horror",
       "Thriller"
     ],
@@ -11985,7 +11985,7 @@
     "imdb_rating": 7.4,
     "rt_audience_score": "89%",
     "genre": [
-      "Science Fiction",
+      "Sci-Fi",
       "Action",
       "Thriller"
     ],
@@ -12014,7 +12014,7 @@
     "imdb_rating": 7.5,
     "rt_audience_score": "72%",
     "genre": [
-      "Science Fiction",
+      "Sci-Fi",
       "Action"
     ],
     "cast": [
@@ -12706,7 +12706,7 @@
       "Sean Fennessey"
     ],
     "is_rewatch": true,
-    "episode_label": "",
+    "episode_label": "Live from SF",
     "runtime": "2h 38m",
     "imdb_rating": 7.8,
     "rt_audience_score": "90%",
