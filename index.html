@@ -8,6 +8,24 @@
 </head>
 <body>
 
+  <div id="auth-bar">
+    <div id="auth-signed-out">
+      <span class="auth-prompt">Sign in to track what you've watched & listened to</span>
+      <button id="sign-in-btn" onclick="signIn()">Sign in with Google</button>
+    </div>
+    <div id="auth-signed-in" style="display:none">
+      <img id="user-avatar" src="" alt="">
+      <span id="user-name"></span>
+      <div id="track-filter-group">
+        <button class="track-filter-btn" data-filter="watched" onclick="toggleTrackFilter('watched')">🎬 Watched</button>
+        <button class="track-filter-btn" data-filter="unwatched" onclick="toggleTrackFilter('unwatched')">🎬 Unwatched</button>
+        <button class="track-filter-btn" data-filter="listened" onclick="toggleTrackFilter('listened')">🎧 Listened</button>
+        <button class="track-filter-btn" data-filter="unlistened" onclick="toggleTrackFilter('unlistened')">🎧 Unlistened</button>
+      </div>
+      <button id="sign-out-btn" onclick="signOut()">Sign out</button>
+    </div>
+  </div>
+
   <h1>The Rewatchables</h1>
   <p>Find where to watch every movie from the podcast.</p>
 
@@ -75,15 +93,121 @@
   <div id="result-count"></div>
   <div id="movie-list"></div>
 
-  <script src="streaming.js"></script>
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut as fbSignOut, onAuthStateChanged }
+      from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getFirestore, doc, getDoc, setDoc }
+      from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC-c9N0fzTQUk6twvtlmI574FHVncyv3qs",
+      authDomain: "rewatchables-917ea.firebaseapp.com",
+      projectId: "rewatchables-917ea",
+      storageBucket: "rewatchables-917ea.firebasestorage.app",
+      messagingSenderId: "1036089561697",
+      appId: "1:1036089561697:web:4a08136120a731323e9020"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const provider = new GoogleAuthProvider();
+
+    let currentUser = null;
+    // tracking: { [movieId]: { watched: bool, listened: bool } }
+    let tracking = {};
+
+    // Expose to global scope for onclick handlers
+    window.signIn = async () => {
+      try { await signInWithPopup(auth, provider); }
+      catch (e) { console.error('Sign-in error', e); }
+    };
+
+    window.signOut = async () => {
+      await fbSignOut(auth);
+      tracking = {};
+      currentUser = null;
+      document.getElementById('auth-signed-out').style.display = '';
+      document.getElementById('auth-signed-in').style.display = 'none';
+      window.filterMovies();
+    };
+
+    // Load tracking data from Firestore
+    async function loadTracking(uid) {
+      try {
+        const ref = doc(db, 'users', uid, 'data', 'tracking');
+        const snap = await getDoc(ref);
+        tracking = snap.exists() ? (snap.data().items || {}) : {};
+      } catch (e) {
+        console.error('Load tracking error', e);
+        tracking = {};
+      }
+      window.tracking = tracking;
+      window.filterMovies();
+    }
+
+    // Save tracking data to Firestore (debounced)
+    let saveTimer = null;
+    async function saveTracking(uid) {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(async () => {
+        try {
+          const ref = doc(db, 'users', uid, 'data', 'tracking');
+          await setDoc(ref, { items: tracking });
+        } catch (e) { console.error('Save error', e); }
+      }, 800);
+    }
+
+    // Toggle watched/listened for a movie
+    window.toggleTrack = async (movieId, field) => {
+      if (!currentUser) return;
+      const key = String(movieId);
+      if (!tracking[key]) tracking[key] = { watched: false, listened: false };
+      tracking[key][field] = !tracking[key][field];
+      window.tracking = tracking;
+
+      // Update button UI immediately
+      const btn = document.querySelector(`#card-${movieId} .track-btn[data-field="${field}"]`);
+      if (btn) {
+        btn.classList.toggle('active', tracking[key][field]);
+        btn.title = tracking[key][field]
+          ? (field === 'watched' ? 'Watched ✓' : 'Listened ✓')
+          : (field === 'watched' ? 'Mark as watched' : 'Mark as listened');
+      }
+
+      // Re-filter if a track filter is active
+      if (window.activeTrackFilter) window.filterMovies();
+
+      await saveTracking(currentUser.uid);
+    };
+
+    onAuthStateChanged(auth, async user => {
+      if (user) {
+        currentUser = user;
+        document.getElementById('auth-signed-out').style.display = 'none';
+        document.getElementById('auth-signed-in').style.display = '';
+        document.getElementById('user-name').textContent = user.displayName || user.email;
+        const avatar = document.getElementById('user-avatar');
+        if (user.photoURL) { avatar.src = user.photoURL; avatar.style.display = ''; }
+        else { avatar.style.display = 'none'; }
+        await loadTracking(user.uid);
+      }
+    });
+
+    window._currentUser = () => currentUser;
+  </script>
+
   <script>
     let allMovies = [];
     let streamingData = {};
     let sortField = 'episode_date';
     let sortAsc = true;
     let activeService = null;
+    window.activeTrackFilter = null;
+    window.tracking = {};
 
-    // Load both data files
     Promise.all([
       fetch('rewatchables.json').then(r => r.json()),
       fetch('streaming_data.json').then(r => r.json()).catch(() => ({ movies: {} }))
@@ -95,7 +219,6 @@
 
     function parseRating(val) {
       if (val == null || val === '') return -Infinity;
-      // RT scores come as "94%" strings; IMDb as numbers
       const n = parseFloat(String(val).replace('%', ''));
       return isNaN(n) ? -Infinity : n;
     }
@@ -110,7 +233,6 @@
         } else {
           av = parseRating(a[sortField]);
           bv = parseRating(b[sortField]);
-          // Always put missing ratings at the bottom regardless of direction
           if (av === -Infinity && bv === -Infinity) return 0;
           if (av === -Infinity) return 1;
           if (bv === -Infinity) return -1;
@@ -121,14 +243,11 @@
 
     function setSort(field) {
       if (sortField === field) {
-        // Same field — flip direction
         sortAsc = !sortAsc;
       } else {
-        // New field — default: date asc, ratings desc
         sortField = field;
         sortAsc = (field === 'episode_date');
       }
-      // Update button states
       document.querySelectorAll('.sort-btn').forEach(btn => {
         const isActive = btn.dataset.field === sortField;
         btn.classList.toggle('active', isActive);
@@ -146,7 +265,6 @@
     }
 
     function filterByService(service) {
-      // Toggle off if already active
       if (activeService === service) {
         activeService = null;
         document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
@@ -158,18 +276,34 @@
       filterMovies();
     }
 
+    function toggleTrackFilter(filter) {
+      if (window.activeTrackFilter === filter) {
+        window.activeTrackFilter = null;
+        document.querySelectorAll('.track-filter-btn').forEach(b => b.classList.remove('active'));
+      } else {
+        window.activeTrackFilter = filter;
+        document.querySelectorAll('.track-filter-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector(`.track-filter-btn[data-filter="${filter}"]`).classList.add('active');
+      }
+      filterMovies();
+    }
+
+    function movieMatchesTrackFilter(movie) {
+      if (!window.activeTrackFilter) return true;
+      const t = (window.tracking[String(movie.id)] || {});
+      if (window.activeTrackFilter === 'watched')   return !!t.watched;
+      if (window.activeTrackFilter === 'unwatched')  return !t.watched;
+      if (window.activeTrackFilter === 'listened')  return !!t.listened;
+      if (window.activeTrackFilter === 'unlistened') return !t.listened;
+      return true;
+    }
+
     function movieMatchesService(movie) {
       if (!activeService) return true;
       const sources = getMovieSources(movie);
-      // Free button — match any free source
-      if (activeService === 'free') {
-        return sources.some(s => s.type === 'free');
-      }
-      // Service buttons — only match free or subscription, not rent/buy
+      if (activeService === 'free') return sources.some(s => s.type === 'free');
       const freeOrSub = sources.filter(s => s.type === 'free' || s.type === 'sub' || s.type === 'subscription');
-      if (activeService === 'AppleTV+') {
-        return freeOrSub.some(s => s.service.toLowerCase().includes('appletv'));
-      }
+      if (activeService === 'AppleTV+') return freeOrSub.some(s => s.service.toLowerCase().includes('appletv'));
       return freeOrSub.some(s => s.service.toLowerCase() === activeService.toLowerCase());
     }
 
@@ -206,9 +340,7 @@
 
       const preview = sources.slice(0, SOURCE_PREVIEW).map(renderSource).join('');
       const extra = sources.slice(SOURCE_PREVIEW);
-
       if (extra.length === 0) return preview;
-
       const extraHtml = extra.map(renderSource).join('');
       const uid = `src-extra-${movieId}`;
       return `
@@ -223,6 +355,25 @@
       const isHidden = el.style.display === 'none';
       el.style.display = isHidden ? 'block' : 'none';
       btn.textContent = isHidden ? '− show less' : `+ ${el.querySelectorAll('.source-item').length} more`;
+    }
+
+    function renderTrackButtons(movieId) {
+      const user = window._currentUser ? window._currentUser() : null;
+      if (!user) return '';
+      const t = window.tracking[String(movieId)] || {};
+      return `
+        <div class="track-row">
+          <button class="track-btn ${t.watched ? 'active' : ''}" data-field="watched"
+            onclick="toggleTrack(${movieId}, 'watched')"
+            title="${t.watched ? 'Watched ✓' : 'Mark as watched'}">
+            🎬 ${t.watched ? 'Watched' : 'Watched?'}
+          </button>
+          <button class="track-btn ${t.listened ? 'active' : ''}" data-field="listened"
+            onclick="toggleTrack(${movieId}, 'listened')"
+            title="${t.listened ? 'Listened ✓' : 'Mark as listened'}">
+            🎧 ${t.listened ? 'Listened' : 'Listened?'}
+          </button>
+        </div>`;
     }
 
     function displayMovies(movies) {
@@ -244,6 +395,10 @@
         card.className = 'movie-card';
         card.id = `card-${movie.id}`;
 
+        const t = window.tracking[String(movie.id)] || {};
+        if (t.watched) card.classList.add('card-watched');
+        if (t.listened) card.classList.add('card-listened');
+
         const genres = (movie.genre || []).map(g =>
           `<span class="genre-tag">${g}</span>`
         ).join('');
@@ -260,7 +415,6 @@
           ? `<div class="movie-cast">${movie.cast.join(' · ')}</div>`
           : '';
 
-        // Streaming — show inline from pre-loaded data
         const sources = getMovieSources(movie);
         const streamingHtml = sources.length > 0
           ? `<div class="streaming-info">${formatSources(sources, movie.id)}</div>`
@@ -279,12 +433,13 @@
           </div>
           ${movie.hosts && movie.hosts.length > 0 ? `<div class="movie-hosts">Hosts: ${movie.hosts.join(', ')}</div>` : ''}
           ${streamingHtml}
+          ${renderTrackButtons(movie.id)}
         `;
         container.appendChild(card);
       });
     }
 
-    function filterMovies() {
+    window.filterMovies = function filterMovies() {
       const title    = document.getElementById('search-title').value.toLowerCase().trim();
       const director = document.getElementById('search-director').value.toLowerCase().trim();
       const cast     = document.getElementById('search-cast').value.toLowerCase().trim();
@@ -296,6 +451,7 @@
         if (cast     && !(movie.cast || []).some(c => c.toLowerCase().includes(cast)))     return false;
         if (host     && !(movie.hosts || []).some(h => h.toLowerCase().includes(host)))    return false;
         if (!movieMatchesService(movie))                                                   return false;
+        if (!movieMatchesTrackFilter(movie))                                               return false;
         return true;
       });
 
@@ -309,7 +465,9 @@
         input.nextElementSibling.classList.remove('visible');
       });
       activeService = null;
+      window.activeTrackFilter = null;
       document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.track-filter-btn').forEach(b => b.classList.remove('active'));
       displayMovies(sortMovies(allMovies));
     }
 
