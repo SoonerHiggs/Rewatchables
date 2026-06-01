@@ -765,3 +765,28 @@ p {
 .card-listened .movie-hosts {
   color: #4caf5099;
 }
+
+/* ── Track stats ─────────────────────────────────────────────────────────── */
+
+#track-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.track-stat {
+  color: #777;
+}
+
+.track-stat-divider {
+  color: #444;
+}
+
+#track-stats #stat-watched-count,
+#track-stats #stat-listened-count {
+  color: #4caf50;
+  font-weight: 600;
+}

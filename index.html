@@ -22,6 +22,11 @@
         <button class="track-filter-btn" data-filter="listened" onclick="toggleTrackFilter('listened')">🎧 Listened</button>
         <button class="track-filter-btn" data-filter="unlistened" onclick="toggleTrackFilter('unlistened')">🎧 Unlistened</button>
       </div>
+      <div id="track-stats">
+        <span id="stat-watched" class="track-stat">🎬 <span id="stat-watched-count">0</span> of <span id="stat-watched-total">0</span> watched</span>
+        <span class="track-stat-divider">·</span>
+        <span id="stat-listened" class="track-stat">🎧 <span id="stat-listened-count">0</span> of <span id="stat-listened-total">0</span> listened</span>
+      </div>
       <button id="sign-out-btn" onclick="signOut()">Sign out</button>
     </div>
   </div>
@@ -168,21 +173,85 @@
       const key = String(movieId);
       if (!tracking[key]) tracking[key] = { watched: false, listened: false };
       tracking[key][field] = !tracking[key][field];
-      window.tracking = tracking;
+      const newVal = tracking[key][field];
 
-      // Update button UI immediately
-      const btn = document.querySelector(`#card-${movieId} .track-btn[data-field="${field}"]`);
-      if (btn) {
-        btn.classList.toggle('active', tracking[key][field]);
-        btn.title = tracking[key][field]
-          ? (field === 'watched' ? 'Watched ✓' : 'Listened ✓')
-          : (field === 'watched' ? 'Mark as watched' : 'Mark as listened');
+      // If toggling watched, sync all episodes of the same movie
+      if (field === 'watched') {
+        const movie = window.allMovies.find(m => m.id === movieId);
+        if (movie) {
+          const siblings = window.allMovies.filter(m =>
+            m.movie_title === movie.movie_title && m.movie_year === movie.movie_year
+          );
+          siblings.forEach(m => {
+            const k = String(m.id);
+            if (!tracking[k]) tracking[k] = { watched: false, listened: false };
+            tracking[k].watched = newVal;
+            // Update sibling card buttons in the DOM
+            const sibBtn = document.querySelector(`#card-${m.id} .track-btn[data-field="watched"]`);
+            if (sibBtn) {
+              sibBtn.classList.toggle('active', newVal);
+              sibBtn.textContent = newVal ? '🎬 Watched' : '🎬 Watched?';
+            }
+            const sibCard = document.getElementById(`card-${m.id}`);
+            if (sibCard) sibCard.classList.toggle('card-watched', newVal);
+          });
+        }
+      } else {
+        // Update just this card's button
+        const btn = document.querySelector(`#card-${movieId} .track-btn[data-field="${field}"]`);
+        if (btn) {
+          btn.classList.toggle('active', newVal);
+          btn.textContent = newVal ? '🎧 Listened' : '🎧 Listened?';
+        }
+        const card = document.getElementById(`card-${movieId}`);
+        if (card) card.classList.toggle('card-listened', newVal);
       }
+
+      window.tracking = tracking;
+      updateTrackStats();
 
       // Re-filter if a track filter is active
       if (window.activeTrackFilter) window.filterMovies();
 
       await saveTracking(currentUser.uid);
+    };
+
+    // Compute and display watched/listened counts
+    window.updateTrackStats = function() {
+      if (!window.allMovies || !window.allMovies.length) return;
+
+      // Unique movies: dedupe by title+year
+      const uniqueMovies = [];
+      const seen = new Set();
+      window.allMovies.forEach(m => {
+        const k = m.movie_title + '_' + m.movie_year;
+        if (!seen.has(k)) { seen.add(k); uniqueMovies.push(m); }
+      });
+
+      // Count watched unique movies (any episode of movie marked watched)
+      const watchedCount = uniqueMovies.filter(m => {
+        const episodes = window.allMovies.filter(e =>
+          e.movie_title === m.movie_title && e.movie_year === m.movie_year
+        );
+        return episodes.some(e => (window.tracking[String(e.id)] || {}).watched);
+      }).length;
+
+      // Count listened episodes
+      const listenedCount = window.allMovies.filter(m =>
+        (window.tracking[String(m.id)] || {}).listened
+      ).length;
+
+      const totalUnique = uniqueMovies.length;
+      const totalEpisodes = window.allMovies.length;
+
+      const wc = document.getElementById('stat-watched-count');
+      const wt = document.getElementById('stat-watched-total');
+      const lc = document.getElementById('stat-listened-count');
+      const lt = document.getElementById('stat-listened-total');
+      if (wc) wc.textContent = watchedCount;
+      if (wt) wt.textContent = totalUnique;
+      if (lc) lc.textContent = listenedCount;
+      if (lt) lt.textContent = totalEpisodes;
     };
 
     window._currentUser = () => currentUser;
@@ -228,7 +297,9 @@
       fetch('streaming_data.json').then(r => r.json()).catch(() => ({ movies: {} }))
     ]).then(([movies, streaming]) => {
       allMovies = movies;
+      window.allMovies = movies;
       streamingData = streaming.movies || {};
+      if (window.updateTrackStats) window.updateTrackStats();
       displayMovies(sortMovies(allMovies));
     });
 
