@@ -96,7 +96,7 @@
   <!-- Firebase SDKs -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut as fbSignOut, onAuthStateChanged }
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut as fbSignOut, onAuthStateChanged }
       from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
     import { getFirestore, doc, getDoc, setDoc }
       from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -121,7 +121,7 @@
 
     // Expose to global scope for onclick handlers
     window.signIn = async () => {
-      try { await signInWithRedirect(auth, provider); }
+      try { await signInWithPopup(auth, provider); }
       catch (e) { console.error('Sign-in error', e); }
     };
 
@@ -193,19 +193,8 @@
       else { window.addEventListener('load', fn); }
     }
 
-    getRedirectResult(auth).then(async result => {
-      console.log('getRedirectResult fired, result:', result);
-      if (result && result.user) {
-        console.log('Redirect sign-in successful:', result.user.displayName);
-      }
-    }).catch(e => {
-      console.error('Redirect result error:', e.code, e.message);
-    });
-
     onAuthStateChanged(auth, async user => {
-      console.log('onAuthStateChanged fired, user:', user ? user.email : 'null');
       onReady(async () => {
-        console.log('onReady fired, user:', user ? user.email : 'null');
         if (user) {
           currentUser = user;
           document.getElementById('auth-signed-out').style.display = 'none';
