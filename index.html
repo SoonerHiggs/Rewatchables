@@ -125,15 +125,7 @@
       catch (e) { console.error('Sign-in error', e); }
     };
 
-    // Handle result when user returns from Google redirect
-    getRedirectResult(auth).then(async result => {
-      if (result && result.user) {
-        // Successfully signed in via redirect - onAuthStateChanged will fire
-        console.log('Redirect sign-in successful:', result.user.displayName);
-      }
-    }).catch(e => {
-      console.error('Redirect result error', e);
-    });
+
 
     window.signOut = async () => {
       await fbSignOut(auth);
@@ -201,8 +193,19 @@
       else { window.addEventListener('load', fn); }
     }
 
+    getRedirectResult(auth).then(async result => {
+      console.log('getRedirectResult fired, result:', result);
+      if (result && result.user) {
+        console.log('Redirect sign-in successful:', result.user.displayName);
+      }
+    }).catch(e => {
+      console.error('Redirect result error:', e.code, e.message);
+    });
+
     onAuthStateChanged(auth, async user => {
+      console.log('onAuthStateChanged fired, user:', user ? user.email : 'null');
       onReady(async () => {
+        console.log('onReady fired, user:', user ? user.email : 'null');
         if (user) {
           currentUser = user;
           document.getElementById('auth-signed-out').style.display = 'none';
