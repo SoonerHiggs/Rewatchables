@@ -152,6 +152,7 @@
         tracking = {};
       }
       window.tracking = tracking;
+      if (window.updateTrackStats) window.updateTrackStats();
       window.filterMovies();
     }
 
