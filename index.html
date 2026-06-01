@@ -126,7 +126,14 @@
     };
 
     // Handle result when user returns from Google redirect
-    getRedirectResult(auth).catch(e => console.error('Redirect result error', e));
+    getRedirectResult(auth).then(async result => {
+      if (result && result.user) {
+        // Successfully signed in via redirect - onAuthStateChanged will fire
+        console.log('Redirect sign-in successful:', result.user.displayName);
+      }
+    }).catch(e => {
+      console.error('Redirect result error', e);
+    });
 
     window.signOut = async () => {
       await fbSignOut(auth);
@@ -186,20 +193,33 @@
       await saveTracking(currentUser.uid);
     };
 
-    onAuthStateChanged(auth, async user => {
-      if (user) {
-        currentUser = user;
-        document.getElementById('auth-signed-out').style.display = 'none';
-        document.getElementById('auth-signed-in').style.display = '';
-        document.getElementById('user-name').textContent = user.displayName || user.email;
-        const avatar = document.getElementById('user-avatar');
-        if (user.photoURL) { avatar.src = user.photoURL; avatar.style.display = ''; }
-        else { avatar.style.display = 'none'; }
-        await loadTracking(user.uid);
-      }
-    });
-
     window._currentUser = () => currentUser;
+
+    // Wait for DOM and main script to be ready before handling auth state
+    function onReady(fn) {
+      if (document.readyState === 'complete') { fn(); }
+      else { window.addEventListener('load', fn); }
+    }
+
+    onAuthStateChanged(auth, async user => {
+      onReady(async () => {
+        if (user) {
+          currentUser = user;
+          document.getElementById('auth-signed-out').style.display = 'none';
+          document.getElementById('auth-signed-in').style.display = '';
+          document.getElementById('user-name').textContent = user.displayName || user.email;
+          const avatar = document.getElementById('user-avatar');
+          if (user.photoURL) { avatar.src = user.photoURL; avatar.style.display = ''; }
+          else { avatar.style.display = 'none'; }
+          await loadTracking(user.uid);
+        } else {
+          currentUser = null;
+          document.getElementById('auth-signed-out').style.display = '';
+          document.getElementById('auth-signed-in').style.display = 'none';
+          if (window.filterMovies) window.filterMovies();
+        }
+      });
+    });
   </script>
 
   <script>
