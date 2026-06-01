@@ -96,7 +96,7 @@
   <!-- Firebase SDKs -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut as fbSignOut, onAuthStateChanged }
+    import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut as fbSignOut, onAuthStateChanged }
       from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
     import { getFirestore, doc, getDoc, setDoc }
       from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -121,9 +121,12 @@
 
     // Expose to global scope for onclick handlers
     window.signIn = async () => {
-      try { await signInWithPopup(auth, provider); }
+      try { await signInWithRedirect(auth, provider); }
       catch (e) { console.error('Sign-in error', e); }
     };
+
+    // Handle result when user returns from Google redirect
+    getRedirectResult(auth).catch(e => console.error('Redirect result error', e));
 
     window.signOut = async () => {
       await fbSignOut(auth);
