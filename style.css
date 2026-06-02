@@ -790,3 +790,33 @@ p {
   color: #4caf50;
   font-weight: 600;
 }
+
+/* ── Page header with leaderboard button ────────────────────────────────── */
+
+#page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-bottom: 0;
+}
+
+.leaderboard-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #e8c96d;
+  color: #e8c96d;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-top: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.leaderboard-btn:hover {
+  background: #e8c96d;
+  color: #111;
+}

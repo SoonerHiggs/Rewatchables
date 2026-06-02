@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Rewatchables — Leaderboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="leaderboard.css">
+</head>
+<body>
+
+  <div id="lb-header">
+    <a href="index.html" class="back-btn">← Back to Movies</a>
+    <h1>Leaderboard</h1>
+    <p>Rankings across all Rewatchables users.</p>
+  </div>
+
+  <div id="auth-bar">
+    <div id="auth-signed-out">
+      <span class="auth-prompt">Sign in to appear on the leaderboard</span>
+      <button id="sign-in-btn" onclick="signIn()">Sign in with Google</button>
+    </div>
+    <div id="auth-signed-in" style="display:none">
+      <img id="user-avatar" src="" alt="">
+      <span id="user-name"></span>
+      <div id="nickname-section">
+        <span class="nickname-label">Leaderboard name:</span>
+        <span id="nickname-display"></span>
+        <button id="nickname-edit-btn" onclick="openNicknameModal()">✏️ Edit</button>
+      </div>
+      <button id="sign-out-btn" onclick="signOut()">Sign out</button>
+    </div>
+  </div>
+
+  <!-- Nickname modal -->
+  <div id="nickname-overlay" style="display:none">
+    <div id="nickname-modal">
+      <h2>Your leaderboard name</h2>
+      <p>This is how you'll appear on the leaderboard.</p>
+      <input type="text" id="nickname-input" maxlength="24" placeholder="Enter a nickname">
+      <div id="nickname-error"></div>
+      <div id="nickname-actions">
+        <button class="modal-cancel-btn" onclick="closeNicknameModal()">Cancel</button>
+        <button class="modal-save-btn" onclick="saveNickname()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="leaderboards">
+
+    <div class="lb-section">
+      <div class="lb-section-header">
+        <span class="lb-icon">👤</span>
+        <div>
+          <div class="lb-title">Top Movie Watchers</div>
+          <div class="lb-subtitle">Users who've watched the most unique movies</div>
+        </div>
+      </div>
+      <div class="lb-table" id="lb-user-watched">
+        <div class="lb-loading">Loading...</div>
+      </div>
+    </div>
+
+    <div class="lb-section">
+      <div class="lb-section-header">
+        <span class="lb-icon">👤</span>
+        <div>
+          <div class="lb-title">Top Podcast Listeners</div>
+          <div class="lb-subtitle">Users who've listened to the most episodes</div>
+        </div>
+      </div>
+      <div class="lb-table" id="lb-user-listened">
+        <div class="lb-loading">Loading...</div>
+      </div>
+    </div>
+
+    <div class="lb-section">
+      <div class="lb-section-header">
+        <span class="lb-icon">🎬</span>
+        <div>
+          <div class="lb-title">Most Watched Movies</div>
+          <div class="lb-subtitle">Movies marked watched by the most users</div>
+        </div>
+      </div>
+      <div class="lb-table" id="lb-movie-watched">
+        <div class="lb-loading">Loading...</div>
+      </div>
+    </div>
+
+    <div class="lb-section">
+      <div class="lb-section-header">
+        <span class="lb-icon">🎧</span>
+        <div>
+          <div class="lb-title">Most Listened Episodes</div>
+          <div class="lb-subtitle">Episodes listened to by the most users</div>
+        </div>
+      </div>
+      <div class="lb-table" id="lb-episode-listened">
+        <div class="lb-loading">Loading...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut as fbSignOut, onAuthStateChanged }
+      from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getFirestore, doc, getDoc, setDoc, collection, getDocs }
+      from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC-c9N0fzTQUk6twvtlmI574FHVncyv3qs",
+      authDomain: "rewatchables-917ea.firebaseapp.com",
+      projectId: "rewatchables-917ea",
+      storageBucket: "rewatchables-917ea.firebasestorage.app",
+      messagingSenderId: "1036089561697",
+      appId: "1:1036089561697:web:4a08136120a731323e9020"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const provider = new GoogleAuthProvider();
+
+    let currentUser = null;
+    let allMovies = [];
+    let allUsersData = []; // [{uid, nickname, tracking}]
+
+    // Load movie data
+    fetch('rewatchables.json').then(r => r.json()).then(movies => {
+      allMovies = movies;
+      loadAllUsersAndRender();
+    });
+
+    window.signIn = async () => {
+      try { await signInWithPopup(auth, provider); }
+      catch (e) { console.error('Sign-in error', e); }
+    };
+
+    window.signOut = async () => {
+      await fbSignOut(auth);
+      currentUser = null;
+      document.getElementById('auth-signed-out').style.display = '';
+      document.getElementById('auth-signed-in').style.display = 'none';
+    };
+
+    window.openNicknameModal = () => {
+      const current = document.getElementById('nickname-display').textContent;
+      document.getElementById('nickname-input').value = current === 'Not set' ? '' : current;
+      document.getElementById('nickname-error').textContent = '';
+      document.getElementById('nickname-overlay').style.display = 'flex';
+      setTimeout(() => document.getElementById('nickname-input').focus(), 50);
+    };
+
+    window.closeNicknameModal = () => {
+      document.getElementById('nickname-overlay').style.display = 'none';
+    };
+
+    window.saveNickname = async () => {
+      const val = document.getElementById('nickname-input').value.trim();
+      if (!val) {
+        document.getElementById('nickname-error').textContent = 'Please enter a nickname.';
+        return;
+      }
+      if (val.length < 2) {
+        document.getElementById('nickname-error').textContent = 'Nickname must be at least 2 characters.';
+        return;
+      }
+      try {
+        const ref = doc(db, 'users', currentUser.uid, 'data', 'profile');
+        await setDoc(ref, { nickname: val }, { merge: true });
+        document.getElementById('nickname-display').textContent = val;
+        closeNicknameModal();
+        loadAllUsersAndRender(); // refresh leaderboards with new nickname
+      } catch (e) {
+        document.getElementById('nickname-error').textContent = 'Error saving. Please try again.';
+      }
+    };
+
+    // Allow Enter key in nickname input
+    document.getElementById('nickname-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') window.saveNickname();
+      if (e.key === 'Escape') window.closeNicknameModal();
+    });
+
+    // Close modal on overlay click
+    document.getElementById('nickname-overlay').addEventListener('click', e => {
+      if (e.target === document.getElementById('nickname-overlay')) window.closeNicknameModal();
+    });
+
+    async function loadUserData(uid) {
+      const [trackingSnap, profileSnap] = await Promise.all([
+        getDoc(doc(db, 'users', uid, 'data', 'tracking')),
+        getDoc(doc(db, 'users', uid, 'data', 'profile'))
+      ]);
+      return {
+        uid,
+        nickname: profileSnap.exists() ? (profileSnap.data().nickname || null) : null,
+        tracking: trackingSnap.exists() ? (trackingSnap.data().items || {}) : {}
+      };
+    }
+
+    async function loadAllUsersAndRender() {
+      if (!allMovies.length) return;
+
+      try {
+        // Get all user UIDs from the users collection
+        const usersSnap = await getDocs(collection(db, 'users'));
+        const uids = usersSnap.docs.map(d => d.id);
+
+        // Load tracking + profile for each user
+        allUsersData = await Promise.all(uids.map(uid => loadUserData(uid)));
+
+        renderLeaderboards();
+      } catch (e) {
+        console.error('Error loading users:', e);
+        ['lb-user-watched', 'lb-user-listened', 'lb-movie-watched', 'lb-episode-listened'].forEach(id => {
+          document.getElementById(id).innerHTML = '<div class="lb-empty">Unable to load data.</div>';
+        });
+      }
+    }
+
+    function getUniqueMovies() {
+      const seen = new Set();
+      return allMovies.filter(m => {
+        const k = m.movie_title + '_' + m.movie_year;
+        if (seen.has(k)) return false;
+        seen.add(k); return true;
+      });
+    }
+
+    function getUserDisplayName(user) {
+      return user.nickname || 'Anonymous';
+    }
+
+    function renderLeaderboards() {
+      const uniqueMovies = getUniqueMovies();
+
+      // 1. Top Movie Watchers — unique movies watched per user
+      const userWatched = allUsersData.map(user => {
+        const count = uniqueMovies.filter(m => {
+          const episodes = allMovies.filter(e =>
+            e.movie_title === m.movie_title && e.movie_year === m.movie_year
+          );
+          return episodes.some(e => (user.tracking[String(e.id)] || {}).watched);
+        }).length;
+        return { name: getUserDisplayName(user), count, uid: user.uid };
+      }).filter(u => u.count > 0).sort((a, b) => b.count - a.count).slice(0, 10);
+
+      // 2. Top Podcast Listeners — episodes listened per user
+      const userListened = allUsersData.map(user => {
+        const count = allMovies.filter(m => (user.tracking[String(m.id)] || {}).listened).length;
+        return { name: getUserDisplayName(user), count, uid: user.uid };
+      }).filter(u => u.count > 0).sort((a, b) => b.count - a.count).slice(0, 10);
+
+      // 3. Most Watched Movies — count users who watched each unique movie
+      const movieWatched = uniqueMovies.map(m => {
+        const episodes = allMovies.filter(e =>
+          e.movie_title === m.movie_title && e.movie_year === m.movie_year
+        );
+        const count = allUsersData.filter(user =>
+          episodes.some(e => (user.tracking[String(e.id)] || {}).watched)
+        ).length;
+        return { name: `${m.movie_title} (${m.movie_year})`, count };
+      }).filter(m => m.count > 0).sort((a, b) => b.count - a.count).slice(0, 10);
+
+      // 4. Most Listened Episodes — count users who listened to each episode
+      const episodeListened = allMovies.map(m => {
+        const count = allUsersData.filter(user =>
+          (user.tracking[String(m.id)] || {}).listened
+        ).length;
+        return { name: m.movie_title, year: m.movie_year, date: m.episode_date, count };
+      }).filter(e => e.count > 0).sort((a, b) => b.count - a.count).slice(0, 10);
+
+      renderTable('lb-user-watched', userWatched, 'movies watched', currentUser);
+      renderTable('lb-user-listened', userListened, 'episodes listened', currentUser);
+      renderTable('lb-movie-watched', movieWatched, 'users watched');
+      renderTable('lb-episode-listened', episodeListened, 'users listened');
+    }
+
+    function renderTable(containerId, rows, unit, currentUser) {
+      const el = document.getElementById(containerId);
+      if (!rows.length) {
+        el.innerHTML = '<div class="lb-empty">No data yet — be the first!</div>';
+        return;
+      }
+
+      const medals = ['🥇', '🥈', '🥉'];
+      el.innerHTML = rows.map((row, i) => {
+        const isMe = currentUser && row.uid === currentUser.uid;
+        return `
+          <div class="lb-row ${isMe ? 'lb-row-me' : ''}">
+            <span class="lb-rank">${medals[i] || `#${i + 1}`}</span>
+            <span class="lb-name">${row.name}${isMe ? ' <span class="lb-you">(you)</span>' : ''}</span>
+            <span class="lb-score">${row.count} <span class="lb-unit">${unit}</span></span>
+          </div>`;
+      }).join('');
+    }
+
+    onAuthStateChanged(auth, async user => {
+      if (user) {
+        currentUser = user;
+        document.getElementById('auth-signed-out').style.display = 'none';
+        document.getElementById('auth-signed-in').style.display = '';
+        document.getElementById('user-name').textContent = user.displayName || user.email;
+        const avatar = document.getElementById('user-avatar');
+        if (user.photoURL) { avatar.src = user.photoURL; avatar.style.display = ''; }
+        else { avatar.style.display = 'none'; }
+
+        // Load this user's nickname
+        const profileSnap = await getDoc(doc(db, 'users', user.uid, 'data', 'profile'));
+        const nickname = profileSnap.exists() ? (profileSnap.data().nickname || null) : null;
+        document.getElementById('nickname-display').textContent = nickname || 'Not set';
+
+        // If no nickname, prompt them
+        if (!nickname) openNicknameModal();
+
+        loadAllUsersAndRender();
+      }
+    });
+  </script>
+
+  <footer id="attribution">
+    Streaming data powered by <a href="https://www.watchmode.com/" target="_blank">Watchmode.com</a>
+  </footer>
+
+</body>
+</html>

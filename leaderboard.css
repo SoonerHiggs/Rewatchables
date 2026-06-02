@@ -1,0 +1,279 @@
+/* ── Leaderboard page ───────────────────────────────────────────────────── */
+
+#lb-header {
+  max-width: 900px;
+  margin-bottom: 28px;
+}
+
+#lb-header h1 {
+  margin-bottom: 6px;
+}
+
+#lb-header p {
+  margin-bottom: 0;
+}
+
+.back-btn {
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: #e8c96d;
+}
+
+#leaderboards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+}
+
+.lb-section {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.lb-section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #2a2a2a;
+  background: #1a1a1a;
+}
+
+.lb-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.lb-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e8c96d;
+  margin-bottom: 2px;
+}
+
+.lb-subtitle {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.lb-table {
+  padding: 8px 0;
+}
+
+.lb-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #222;
+  transition: background 0.15s;
+}
+
+.lb-row:last-child {
+  border-bottom: none;
+}
+
+.lb-row:hover {
+  background: #242424;
+}
+
+.lb-row-me {
+  background: #1e2a1e;
+  border-left: 3px solid #4caf50;
+  padding-left: 17px;
+}
+
+.lb-row-me:hover {
+  background: #223022;
+}
+
+.lb-rank {
+  font-size: 1rem;
+  width: 28px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.lb-name {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lb-you {
+  color: #4caf50;
+  font-size: 0.78rem;
+  font-weight: normal;
+}
+
+.lb-score {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #e8c96d;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lb-unit {
+  font-size: 0.72rem;
+  font-weight: normal;
+  color: #666;
+}
+
+.lb-loading {
+  padding: 20px;
+  text-align: center;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.lb-empty {
+  padding: 20px;
+  text-align: center;
+  color: #555;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* ── Nickname modal ─────────────────────────────────────────────────────── */
+
+#nickname-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nickname-modal {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 28px 32px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#nickname-modal h2 {
+  font-size: 1.1rem;
+  color: #e8c96d;
+  margin: 0;
+}
+
+#nickname-modal p {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+#nickname-input {
+  padding: 10px 14px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #f0f0f0;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#nickname-input:focus {
+  border-color: #e8c96d;
+}
+
+#nickname-error {
+  font-size: 0.8rem;
+  color: #e57373;
+  min-height: 16px;
+}
+
+#nickname-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.modal-cancel-btn {
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid #444;
+  color: #888;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.modal-cancel-btn:hover {
+  border-color: #888;
+  color: #ccc;
+}
+
+.modal-save-btn {
+  padding: 8px 18px;
+  background: #e8c96d;
+  border: none;
+  color: #111;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-save-btn:hover {
+  background: #f0d97d;
+}
+
+/* ── Nickname section in auth bar ───────────────────────────────────────── */
+
+#nickname-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.nickname-label {
+  color: #666;
+}
+
+#nickname-display {
+  color: #e8c96d;
+  font-weight: 500;
+}
+
+#nickname-edit-btn {
+  background: transparent;
+  border: none;
+  color: #666;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+#nickname-edit-btn:hover {
+  color: #e8c96d;
+}
