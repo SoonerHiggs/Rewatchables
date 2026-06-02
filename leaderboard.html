@@ -202,21 +202,32 @@
     }
 
     async function loadAllUsersAndRender() {
-      if (!allMovies.length) return;
+      if (!allMovies.length) { console.log('Movies not loaded yet'); return; }
 
       try {
-        // Get all user UIDs from the users collection
+        console.log('Fetching users collection...');
         const usersSnap = await getDocs(collection(db, 'users'));
+        console.log('Users found:', usersSnap.docs.length, usersSnap.docs.map(d => d.id));
+
         const uids = usersSnap.docs.map(d => d.id);
+
+        if (uids.length === 0) {
+          console.log('No users found in Firestore users collection');
+          ['lb-user-watched', 'lb-user-listened', 'lb-movie-watched', 'lb-episode-listened'].forEach(id => {
+            document.getElementById(id).innerHTML = '<div class="lb-empty">No users found in database.</div>';
+          });
+          return;
+        }
 
         // Load tracking + profile for each user
         allUsersData = await Promise.all(uids.map(uid => loadUserData(uid)));
+        console.log('User data loaded:', allUsersData.map(u => ({ uid: u.uid, nickname: u.nickname, trackingKeys: Object.keys(u.tracking).length })));
 
         renderLeaderboards();
       } catch (e) {
-        console.error('Error loading users:', e);
+        console.error('Error loading users:', e.code, e.message);
         ['lb-user-watched', 'lb-user-listened', 'lb-movie-watched', 'lb-episode-listened'].forEach(id => {
-          document.getElementById(id).innerHTML = '<div class="lb-empty">Unable to load data.</div>';
+          document.getElementById(id).innerHTML = `<div class="lb-empty">Error: ${e.message}</div>`;
         });
       }
     }
