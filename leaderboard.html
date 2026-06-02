@@ -106,7 +106,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getAuth, GoogleAuthProvider, signInWithPopup, signOut as fbSignOut, onAuthStateChanged }
       from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-    import { getFirestore, doc, getDoc, setDoc, collection, getDocs }
+    import { getFirestore, doc, getDoc, setDoc, collection, getDocs, serverTimestamp }
       from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
     const firebaseConfig = {
@@ -318,6 +318,13 @@
         const avatar = document.getElementById('user-avatar');
         if (user.photoURL) { avatar.src = user.photoURL; avatar.style.display = ''; }
         else { avatar.style.display = 'none'; }
+
+        // Ensure user document exists in the users collection
+        await setDoc(doc(db, 'users', user.uid), {
+          displayName: user.displayName || '',
+          email: user.email || '',
+          lastSeen: serverTimestamp()
+        }, { merge: true });
 
         // Load this user's nickname
         const profileSnap = await getDoc(doc(db, 'users', user.uid, 'data', 'profile'));
