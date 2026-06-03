@@ -4889,11 +4889,15 @@
     ],
     "cast": [
       "George Clooney",
-      "Quentin Tarantino",
-      "Jennifer Tilly",
-      "David Jansen",
+      "Jennifer Lopez",
+      "Ving Rhames",
+      "Don Cheadle",
+      "Dennis Farina",
+      "Albert Brooks",
       "Steve Zahn",
-      "Catherine Keener"
+      "Catherine Keener",
+      "Isaiah Washington",
+      "Luis Guzm\u00e1n"
     ]
   },
   {
@@ -5212,36 +5216,6 @@
       "Mitchell Ryan",
       "Tom Atkins",
       "Darlene Love"
-    ]
-  },
-  {
-    "id": 177,
-    "movie_title": "Leon: The Professional",
-    "movie_year": 1994,
-    "director": "Luc Besson",
-    "episode_date": "2021-04-07",
-    "hosts": [
-      "Bill Simmons",
-      "Chris Ryan",
-      "Sean Fennessey"
-    ],
-    "is_rewatch": false,
-    "episode_label": "",
-    "runtime": "1h 50m",
-    "imdb_rating": 8.9,
-    "rt_audience_score": "86%",
-    "genre": [
-      "Action",
-      "Crime",
-      "Drama"
-    ],
-    "cast": [
-      "Jean Reno",
-      "Natalie Portman",
-      "Gary Oldman",
-      "Danny Aiello",
-      "Peter Appel",
-      "Willi One Blood"
     ]
   },
   {
@@ -13270,7 +13244,11 @@
     "movie_year": 1968,
     "director": "Stanley Kubrick",
     "episode_date": "2026-06-01",
-    "hosts": [],
+    "hosts": [
+      "Bill Simmons",
+      "Steven Spielberg",
+      "Sean Fennessey"
+    ],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "2h 29m",
