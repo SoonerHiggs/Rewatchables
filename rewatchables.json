@@ -13127,7 +13127,7 @@
     "id": 449,
     "movie_title": "There's Something About Mary",
     "movie_year": 1998,
-    "director": "Bobby Farrelly",
+    "director": "Peter Farrelly & Bobby Farrelly",
     "episode_date": "2026-05-04",
     "hosts": [
       "Bill Simmons",
@@ -13144,12 +13144,13 @@
       "Romance"
     ],
     "cast": [
+      "Ben Stiller",
       "Cameron Diaz",
       "Matt Dillon",
       "Lee Evans",
-      "Mariah Carey",
       "Chris Elliott",
-      "Jonathan Richman"
+      "Lin Shaye",
+      "W. Earl Brown"
     ]
   },
   {
