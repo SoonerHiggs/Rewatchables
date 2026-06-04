@@ -7497,8 +7497,8 @@
       "Chris Ryan",
       "Sean Fennessey"
     ],
-    "is_rewatch": true,
-    "episode_label": "Revisit",
+    "is_rewatch": false,
+    "episode_label": "",
     "runtime": "2h 49m",
     "imdb_rating": 8.6,
     "rt_audience_score": "93%",
@@ -10706,9 +10706,9 @@
       "Chris Ryan",
       "Jason Concepcion"
     ],
-    "is_rewatch": true,
+    "is_rewatch": false,
     "id": 366,
-    "episode_label": "Revisit",
+    "episode_label": "",
     "runtime": "1h 47m",
     "imdb_rating": 8.2,
     "rt_audience_score": "87%",
