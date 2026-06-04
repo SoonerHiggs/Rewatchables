@@ -51,6 +51,9 @@
       <button class="sort-btn" data-field="rt_audience_score" onclick="setSort('rt_audience_score')">
         RT Score <span class="sort-arrow"></span>
       </button>
+      <button class="sort-btn" data-field="runtime" onclick="setSort('runtime')">
+        Runtime <span class="sort-arrow"></span>
+      </button>
     </div>
   </div>
 
@@ -321,6 +324,13 @@
       return isNaN(n) ? -Infinity : n;
     }
 
+    function parseRuntime(str) {
+      if (!str) return -Infinity;
+      const h = str.match(/(\d+)h/);
+      const m = str.match(/(\d+)m/);
+      return (h ? parseInt(h[1]) * 60 : 0) + (m ? parseInt(m[1]) : 0) || -Infinity;
+    }
+
     function sortMovies(movies) {
       return [...movies].sort((a, b) => {
         let av, bv;
@@ -328,6 +338,13 @@
           av = a.episode_date || '';
           bv = b.episode_date || '';
           return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+        } else if (sortField === 'runtime') {
+          av = parseRuntime(a.runtime);
+          bv = parseRuntime(b.runtime);
+          if (av === -Infinity && bv === -Infinity) return 0;
+          if (av === -Infinity) return 1;
+          if (bv === -Infinity) return -1;
+          return sortAsc ? av - bv : bv - av;
         } else {
           av = parseRating(a[sortField]);
           bv = parseRating(b[sortField]);
