@@ -820,3 +820,108 @@ p {
   background: #e8c96d;
   color: #111;
 }
+
+/* ── Runtime slider bar ─────────────────────────────────────────────────── */
+
+#runtime-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 1200px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.runtime-label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.runtime-slider-wrap {
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+}
+
+.runtime-track {
+  position: relative;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  margin: 14px 0;
+}
+
+#runtime-range-fill {
+  position: absolute;
+  height: 100%;
+  background: #e8c96d;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.runtime-track input[type="range"] {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: none;
+  outline: none;
+}
+
+.runtime-track input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #e8c96d;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  border: 2px solid #111;
+  transition: transform 0.1s;
+}
+
+.runtime-track input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.runtime-track input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #e8c96d;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  border: 2px solid #111;
+}
+
+#runtime-display {
+  font-size: 0.82rem;
+  color: #e8c96d;
+  white-space: nowrap;
+  min-width: 110px;
+}
+
+#runtime-clear-btn {
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid #444;
+  color: #777;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+#runtime-clear-btn:hover {
+  border-color: #e8c96d;
+  color: #e8c96d;
+}

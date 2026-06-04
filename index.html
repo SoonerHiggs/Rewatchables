@@ -103,6 +103,19 @@
     <button class="service-btn free-btn" onclick="filterByService('free')">Free</button>
   </div>
 
+  <div id="runtime-bar">
+    <span class="runtime-label">Runtime:</span>
+    <div class="runtime-slider-wrap">
+      <div class="runtime-track">
+        <div id="runtime-range-fill"></div>
+        <input type="range" id="runtime-min" min="60" max="240" value="60" step="5">
+        <input type="range" id="runtime-max" min="60" max="240" value="240" step="5">
+      </div>
+    </div>
+    <span id="runtime-display">Any length</span>
+    <button id="runtime-clear-btn" onclick="clearRuntime()" style="display:none">✕ Clear</button>
+  </div>
+
   <div id="result-count"></div>
   <div id="movie-list"></div>
 
@@ -559,6 +572,9 @@
       const director = document.getElementById('search-director').value.toLowerCase().trim();
       const cast     = document.getElementById('search-cast').value.toLowerCase().trim();
       const host     = document.getElementById('search-host').value.toLowerCase().trim();
+      const minMins  = parseInt(runtimeMin.value);
+      const maxMins  = parseInt(runtimeMax.value);
+      const runtimeActive = minMins > 60 || maxMins < 240;
 
       const filtered = allMovies.filter(movie => {
         if (title    && !movie.movie_title.toLowerCase().includes(title))                  return false;
@@ -567,6 +583,11 @@
         if (host     && !(movie.hosts || []).some(h => h.toLowerCase().includes(host)))    return false;
         if (!movieMatchesService(movie))                                                   return false;
         if (!movieMatchesTrackFilter(movie))                                               return false;
+        if (runtimeActive) {
+          const mins = parseRuntime(movie.runtime);
+          if (mins === -Infinity) return false;
+          if (mins < minMins || mins > maxMins) return false;
+        }
         return true;
       });
 
@@ -583,6 +604,9 @@
       window.activeTrackFilter = null;
       document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.track-filter-btn').forEach(b => b.classList.remove('active'));
+      runtimeMin.value = 60;
+      runtimeMax.value = 240;
+      updateRuntimeUI();
       displayMovies(sortMovies(allMovies));
     }
 
@@ -594,6 +618,54 @@
       input.focus();
     }
 
+    // ── Runtime slider ───────────────────────────────────────────────────
+    const runtimeMin = document.getElementById('runtime-min');
+    const runtimeMax = document.getElementById('runtime-max');
+    const runtimeDisplay = document.getElementById('runtime-display');
+    const runtimeFill = document.getElementById('runtime-range-fill');
+    const runtimeClearBtn = document.getElementById('runtime-clear-btn');
+
+    function updateRuntimeUI() {
+      const min = parseInt(runtimeMin.value);
+      const max = parseInt(runtimeMax.value);
+      const total = 240 - 60;
+      const leftPct  = ((min - 60) / total) * 100;
+      const rightPct = ((max - 60) / total) * 100;
+      runtimeFill.style.left  = leftPct + '%';
+      runtimeFill.style.width = (rightPct - leftPct) + '%';
+      const isDefault = min === 60 && max === 240;
+      runtimeDisplay.textContent = isDefault ? 'Any length' : `${fmtMins(min)} – ${fmtMins(max)}`;
+      runtimeClearBtn.style.display = isDefault ? 'none' : '';
+    }
+
+    function fmtMins(m) {
+      const h = Math.floor(m / 60);
+      const mins = m % 60;
+      return h > 0 ? (mins > 0 ? `${h}h ${mins}m` : `${h}h`) : `${mins}m`;
+    }
+
+    window.clearRuntime = function() {
+      runtimeMin.value = 60;
+      runtimeMax.value = 240;
+      updateRuntimeUI();
+      filterMovies();
+    };
+
+    runtimeMin.addEventListener('input', () => {
+      if (parseInt(runtimeMin.value) > parseInt(runtimeMax.value) - 5)
+        runtimeMin.value = parseInt(runtimeMax.value) - 5;
+      updateRuntimeUI();
+      filterMovies();
+    });
+
+    runtimeMax.addEventListener('input', () => {
+      if (parseInt(runtimeMax.value) < parseInt(runtimeMin.value) + 5)
+        runtimeMax.value = parseInt(runtimeMin.value) + 5;
+      updateRuntimeUI();
+      filterMovies();
+    });
+
+    updateRuntimeUI();
     ['search-title', 'search-director', 'search-cast', 'search-host'].forEach(id => {
       const input = document.getElementById(id);
       input.addEventListener('input', () => {
