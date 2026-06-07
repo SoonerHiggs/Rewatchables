@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-29",
+  "last_updated": "2026-06-07",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -32549,6 +32549,12 @@
           "price": null
         },
         {
+          "service": "Pluto TV",
+          "type": "free",
+          "url": "https://pluto.tv/on-demand/movies/tropic-thunder-2008-1-1?utm_medium=deeplink&utm_source=",
+          "price": null
+        },
+        {
           "service": "Paramount Plus",
           "type": "sub",
           "url": "https://www.paramountplus.com/movies/tropic-thunder/26DFYvRxPukwiQsNS596_MwDDvPnYWyw?searchReferral=publisher&source=search-feeds",
@@ -32561,21 +32567,21 @@
           "price": null
         },
         {
-          "service": "YouTube",
-          "type": "rent",
-          "url": "https://www.youtube.com/results?search_query=Tropic+Thunder+-+Director%27s+Cut%2Bmovie",
-          "price": 3.99
+          "service": "MGM+",
+          "type": "sub",
+          "url": "https://www.mgmplus.com/movie/tropic-thunder-directors-cut",
+          "price": null
         },
         {
           "service": "Amazon",
           "type": "rent",
-          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.92a9f742-6d7c-3d37-daaa-ec8a7703585c",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.f610c9eb-b781-4501-bc3b-0e5615b57c87",
           "price": 3.99
         },
         {
           "service": "AppleTV",
           "type": "rent",
-          "url": "https://tv.apple.com/us/movie/tropic-thunder/umc.cmc.5iudnxk9tyxo63gewawi330mw?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A295409960",
+          "url": "https://tv.apple.com/us/movie/tropic-thunder/umc.cmc.5iudnxk9tyxo63gewawi330mw?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A291563909",
           "price": 4.99
         },
         {
@@ -32591,34 +32597,10 @@
           "price": 3.99
         },
         {
-          "service": "Plex",
-          "type": "rent",
-          "url": "https://watch.plex.tv/movie/tropic-thunder?utm_content=5d776831999c64001ec2e7ab&utm_medium=deeplink&utm_source=",
-          "price": 3.99
-        },
-        {
           "service": "Google Play",
           "type": "rent",
           "url": "https://play.google.com/store/movies/details?id=ycVk2-HfGow&PAffiliateID=1101l32vn",
           "price": 3.99
-        },
-        {
-          "service": "YouTube",
-          "type": "buy",
-          "url": "https://www.youtube.com/results?search_query=Tropic+Thunder+-+Director%27s+Cut%2Bmovie",
-          "price": 14.99
-        },
-        {
-          "service": "Amazon",
-          "type": "buy",
-          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.92a9f742-6d7c-3d37-daaa-ec8a7703585c",
-          "price": 4.99
-        },
-        {
-          "service": "AppleTV",
-          "type": "buy",
-          "url": "https://tv.apple.com/us/movie/tropic-thunder/umc.cmc.5iudnxk9tyxo63gewawi330mw?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A295409960",
-          "price": 14.99
         },
         {
           "service": "Fandango at Home",
@@ -32649,12 +32631,6 @@
           "price": 3.99
         },
         {
-          "service": "YouTube",
-          "type": "rent",
-          "url": "https://www.youtube.com/results?search_query=Borat%3A+Cultural+Learnings+of+America+for+Make+Benefit+Glorious+Nation+of+Kazakhstan%2Bmovie",
-          "price": 3.99
-        },
-        {
           "service": "Amazon",
           "type": "rent",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.33975758-fdac-4427-b9a2-11d77cefa955",
@@ -32665,42 +32641,12 @@
           "type": "rent",
           "url": "https://tv.apple.com/us/movie/borat-cultural-learnings-of-america-for-make-benefit-glorious-nation-of-kazakhstan/umc.cmc.77y3nh5a0spyce0i55yh433p?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A296113139",
           "price": 4.99
-        },
-        {
-          "service": "Google Play",
-          "type": "rent",
-          "url": "https://play.google.com/store/movies/details?id=5oZh7unviAI&PAffiliateID=1101l32vn",
-          "price": 3.99
         },
         {
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/Borat/69196",
-          "price": 14.99
-        },
-        {
-          "service": "YouTube",
-          "type": "buy",
-          "url": "https://www.youtube.com/results?search_query=Borat%3A+Cultural+Learnings+of+America+for+Make+Benefit+Glorious+Nation+of+Kazakhstan%2Bmovie",
-          "price": 14.99
-        },
-        {
-          "service": "Amazon",
-          "type": "buy",
-          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.33975758-fdac-4427-b9a2-11d77cefa955",
-          "price": 4.99
-        },
-        {
-          "service": "AppleTV",
-          "type": "buy",
-          "url": "https://tv.apple.com/us/movie/borat-cultural-learnings-of-america-for-make-benefit-glorious-nation-of-kazakhstan/umc.cmc.77y3nh5a0spyce0i55yh433p?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A296113139",
-          "price": 14.99
-        },
-        {
-          "service": "Google Play",
-          "type": "buy",
-          "url": "https://play.google.com/store/movies/details?id=5oZh7unviAI&PAffiliateID=1101l32vn",
-          "price": 12.99
+          "price": 5
         }
       ]
     },
@@ -32740,25 +32686,25 @@
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/National-Lampoon-s-Animal-House/4762",
-          "price": 12.99
+          "price": 5
         },
         {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.90a9f74d-f0ef-f300-deab-9dddf41eb8bb",
-          "price": 12.99
+          "price": 4.99
         },
         {
           "service": "AppleTV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/national-lampoons-animal-house/umc.cmc.6xu2tdd0sg4kkc6xeiua1sjf7?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A283062647",
-          "price": 12.99
+          "price": 4.99
         },
         {
           "service": "YouTube",
           "type": "buy",
           "url": "https://www.youtube.com/results?search_query=National+Lampoon%27s+Animal+House%2Bmovie",
-          "price": 12.99
+          "price": 14.69
         }
       ]
     },
@@ -32795,12 +32741,6 @@
           "price": 5.99
         },
         {
-          "service": "YouTube",
-          "type": "rent",
-          "url": "https://www.youtube.com/results?search_query=2001%3A+A+Space+Odyssey%2Bmovie",
-          "price": 5.99
-        },
-        {
           "service": "Spectrum On Demand",
           "type": "rent",
           "url": "https://ondemand.spectrum.net/movies/6252/2001-a-space-odyssey/",
@@ -32817,6 +32757,168 @@
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/2001-A-Space-Odyssey/9000",
           "price": 14.99
+        },
+        {
+          "service": "AppleTV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/2001-a-space-odyssey/umc.cmc.1au04fbnh3q5i2p6sy0ik4rkz?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A285993250",
+          "price": 14.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.92a9f688-d43b-4e9a-b14d-6394c8b616c9",
+          "price": 14.99
+        }
+      ]
+    },
+    "Single White Female_1992": {
+      "sources": [
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/968158",
+          "price": null
+        },
+        {
+          "service": "AppleTV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/single-white-female/umc.cmc.6bdwr2ro9qkvdc05pug3xz54y?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A263714640",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Single-White-Female/12765",
+          "price": 3.99
+        },
+        {
+          "service": "YouTube",
+          "type": "rent",
+          "url": "https://www.youtube.com/results?search_query=Single+White+Female%2Bmovie",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=l_pMVD1AUCY&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "AppleTV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/single-white-female/umc.cmc.6bdwr2ro9qkvdc05pug3xz54y?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A263714640",
+          "price": 12.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Single-White-Female/12765",
+          "price": 12.99
+        },
+        {
+          "service": "YouTube",
+          "type": "buy",
+          "url": "https://www.youtube.com/results?search_query=Single+White+Female%2Bmovie",
+          "price": 12.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=l_pMVD1AUCY&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "The Hand That Rocks the Cradle_1992": {
+      "sources": [
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/569891",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/The-Hand-That-Rocks-the-Cradle/13484",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.f2a9f7a4-49a1-3a68-3bd1-93a6d2cfc82e",
+          "price": 3.99
+        },
+        {
+          "service": "AppleTV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/the-hand-that-rocks-the-cradle/umc.cmc.6plrb0ksajnpvnctcp7btj7at?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A443381770",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=kyLSh5EFvrA&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/The-Hand-That-Rocks-the-Cradle/13484",
+          "price": 17.98
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=kyLSh5EFvrA&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "The Good Son_1993": {
+      "sources": [
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/60036152",
+          "price": null
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.8ea9f739-83f0-9d8f-188e-cbacec7a061c",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/The-Good-Son/8233",
+          "price": 3.99
+        },
+        {
+          "service": "AppleTV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/the-good-son/umc.cmc.1wsudwdlcfoghv66bcc8jg65l?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A280682329",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=Myk8PyBMWQY&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/The-Good-Son/8233",
+          "price": 5
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=Myk8PyBMWQY&PAffiliateID=1101l32vn",
+          "price": 12.99
         }
       ]
     }
