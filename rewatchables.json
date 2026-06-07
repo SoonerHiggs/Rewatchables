@@ -13270,5 +13270,78 @@
       "Sean Sullivan"
     ],
     "id": 453
+  },
+  {
+    "movie_title": "Single White Female",
+    "movie_year": 1992,
+    "director": "Barbet Schroeder",
+    "episode_date": "2026-06-08",
+    "hosts": [],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 47m",
+    "imdb_rating": 6.3,
+    "rt_audience_score": "44%",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "cast": [
+      "Bridget Fonda",
+      "Jennifer Jason Leigh",
+      "Steven Weber",
+      "Peter Friedman",
+      "Stephen Tobolowsky"
+    ],
+    "id": 454
+  },
+  {
+    "movie_title": "The Hand That Rocks the Cradle",
+    "movie_year": 1992,
+    "director": "Curtis Hanson",
+    "episode_date": "2026-06-15",
+    "hosts": [],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 50m",
+    "imdb_rating": 6.7,
+    "rt_audience_score": "62%",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "cast": [
+      "Annabella Sciorra",
+      "Rebecca De Mornay",
+      "Matt McCoy",
+      "Ernie Hudson",
+      "Julianne Moore",
+      "Madeline Zima"
+    ],
+    "id": 455
+  },
+  {
+    "movie_title": "The Good Son",
+    "movie_year": 1993,
+    "director": "Joseph Ruben",
+    "episode_date": "2026-06-22",
+    "hosts": [],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 27m",
+    "imdb_rating": 6.4,
+    "rt_audience_score": "54%",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "cast": [
+      "Macaulay Culkin",
+      "Elijah Wood",
+      "Wendy Crewson",
+      "David Morse",
+      "Jacqueline Brookes"
+    ],
+    "id": 456
   }
 ]
