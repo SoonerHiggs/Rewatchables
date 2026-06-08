@@ -2153,46 +2153,6 @@
         }
       ]
     },
-    "The Big Lebowski_1998": {
-      "sources": [
-        {
-          "service": "Prime Video",
-          "type": "sub",
-          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.e8a9f700-aed6-c38f-8d98-c188a4115640",
-          "price": null
-        },
-        {
-          "service": "YouTube TV",
-          "type": "sub",
-          "url": "https://tv.youtube.com/browse/UCjR9mwRY5jouP5agSmkAoSw",
-          "price": null
-        },
-        {
-          "service": "AppleTV",
-          "type": "rent",
-          "url": "https://tv.apple.com/us/movie/the-big-lebowski/umc.cmc.3ev2yyf8c4chboxiibx165ysv?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A280338635",
-          "price": 3.99
-        },
-        {
-          "service": "YouTube",
-          "type": "rent",
-          "url": "https://www.youtube.com/results?search_query=The+Big+Lebowski%2Bmovie",
-          "price": 3.99
-        },
-        {
-          "service": "Amazon",
-          "type": "rent",
-          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.e8a9f700-aed6-c38f-8d98-c188a4115640",
-          "price": 3.99
-        },
-        {
-          "service": "Fandango at Home",
-          "type": "buy",
-          "url": "https://athome.fandango.com/content/browse/details/The-Big-Lebowski/5738",
-          "price": 14.99
-        }
-      ]
-    },
     "Inception_2010": {
       "sources": [
         {
@@ -20677,40 +20637,6 @@
         }
       ]
     },
-    "Sideways_2004": {
-      "sources": [
-        {
-          "service": "YouTube",
-          "type": "rent",
-          "url": "https://www.youtube.com/results?search_query=Sideways%2Bmovie",
-          "price": 3.99
-        },
-        {
-          "service": "Fandango at Home",
-          "type": "rent",
-          "url": "https://athome.fandango.com/content/browse/details/Sideways/8952",
-          "price": 3.99
-        },
-        {
-          "service": "AppleTV",
-          "type": "rent",
-          "url": "https://tv.apple.com/us/movie/sideways/umc.cmc.4k31ofhzpo137s0twc1i6tmpb?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A270199674",
-          "price": 3.99
-        },
-        {
-          "service": "Amazon",
-          "type": "rent",
-          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.f84d7f92-d30b-45ff-bfc4-67e0b3c1af91",
-          "price": 3.99
-        },
-        {
-          "service": "Fandango at Home",
-          "type": "buy",
-          "url": "https://athome.fandango.com/content/browse/details/Sideways/8952",
-          "price": 14.99
-        }
-      ]
-    },
     "Alive_1993": {
       "sources": [
         {
@@ -32918,6 +32844,116 @@
           "service": "Google Play",
           "type": "buy",
           "url": "https://play.google.com/store/movies/details?id=Myk8PyBMWQY&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "The Big Lebowski_1998": {
+      "sources": [
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UCjR9mwRY5jouP5agSmkAoSw",
+          "price": null
+        },
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/1181532",
+          "price": null
+        },
+        {
+          "service": "AppleTV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/the-big-lebowski/umc.cmc.3ev2yyf8c4chboxiibx165ysv?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A280338635",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.e8a9f700-aed6-c38f-8d98-c188a4115640",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=tgKhPObZeaw&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/The-Big-Lebowski/5738",
+          "price": 14.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=tgKhPObZeaw&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "Sideways_2004": {
+      "sources": [
+        {
+          "service": "YouTube",
+          "type": "rent",
+          "url": "https://www.youtube.com/results?search_query=Sideways%2Bmovie",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Sideways/8952",
+          "price": 3.99
+        },
+        {
+          "service": "AppleTV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/sideways/umc.cmc.4k31ofhzpo137s0twc1i6tmpb?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A270199674",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.f84d7f92-d30b-45ff-bfc4-67e0b3c1af91",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=tDXnT7eMgAU&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "YouTube",
+          "type": "buy",
+          "url": "https://www.youtube.com/results?search_query=Sideways%2Bmovie",
+          "price": 14.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Sideways/8952",
+          "price": 14.99
+        },
+        {
+          "service": "AppleTV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/sideways/umc.cmc.4k31ofhzpo137s0twc1i6tmpb?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A270199674",
+          "price": 14.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.f84d7f92-d30b-45ff-bfc4-67e0b3c1af91",
+          "price": 4.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=tDXnT7eMgAU&PAffiliateID=1101l32vn",
           "price": 12.99
         }
       ]
