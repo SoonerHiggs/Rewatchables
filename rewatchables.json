@@ -3182,7 +3182,7 @@
   {
     "id": 107,
     "movie_title": "The Karate Kid",
-    "movie_year": 2023,
+    "movie_year": 1984,
     "director": "John G. Avildsen",
     "episode_date": "2020-03-26",
     "hosts": [
@@ -3191,20 +3191,19 @@
     ],
     "is_rewatch": false,
     "episode_label": "",
-    "runtime": "2h 24m",
-    "imdb_rating": 7.2,
-    "rt_audience_score": "97%",
+    "runtime": "2h 6m",
+    "imdb_rating": 7.3,
+    "rt_audience_score": "88%",
     "genre": [
       "Action",
       "Drama"
     ],
     "cast": [
-      "Jackie Chan",
       "Ralph Macchio",
-      "Jaden Smith",
-      "Yuji Okumoto",
-      "Hayabusa Daichi",
-      "Wenwen Han"
+      "Pat Morita",
+      "Elisabeth Shue",
+      "William Zabka",
+      "Martin Kove"
     ]
   },
   {
@@ -13276,7 +13275,11 @@
     "movie_year": 1992,
     "director": "Barbet Schroeder",
     "episode_date": "2026-06-08",
-    "hosts": [],
+    "hosts": [
+      "Bill Simmons",
+      "Mallory Rubin",
+      "Van Lathan"
+    ],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 47m",
