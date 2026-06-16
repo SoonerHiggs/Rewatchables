@@ -13302,8 +13302,12 @@
     "movie_title": "The Hand That Rocks the Cradle",
     "movie_year": 1992,
     "director": "Curtis Hanson",
-    "episode_date": "2026-06-15",
-    "hosts": [],
+    "episode_date": "2026-06-14",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Joanna Robinson"
+    ],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 50m",
