@@ -13294,7 +13294,8 @@
       "Jennifer Jason Leigh",
       "Steven Weber",
       "Peter Friedman",
-      "Stephen Tobolowsky"
+      "Stephen Tobolowsky",
+      "Frances Bay"
     ],
     "id": 453
   },
@@ -13337,7 +13338,7 @@
     "episode_label": "",
     "runtime": "1h 29m",
     "imdb_rating": 5.6,
-    "rt_audience_score": "44%",
+    "rt_audience_score": "38%",
     "genre": [
       "Crime",
       "Drama",
@@ -13349,7 +13350,7 @@
       "Teri Polo",
       "Matt O'Leary",
       "Steve Buscemi",
-      "Susan Floyd"
+      "Ruben Santiago-Hudson"
     ],
     "id": 455
   },
@@ -13363,31 +13364,7 @@
     "episode_label": "",
     "runtime": "1h 27m",
     "imdb_rating": 6.4,
-    "rt_audience_score": "54%",
-    "genre": [
-      "Drama",
-      "Thriller"
-    ],
-    "cast": [
-      "Macaulay Culkin",
-      "Elijah Wood",
-      "Wendy Crewson",
-      "David Morse",
-      "Jacqueline Brookes"
-    ],
-    "id": 456
-  },
-  {
-    "movie_title": "The Good Son",
-    "movie_year": 1993,
-    "director": "Joseph Ruben",
-    "episode_date": "2026-06-25",
-    "hosts": [],
-    "is_rewatch": false,
-    "episode_label": "",
-    "runtime": "1h 27m",
-    "imdb_rating": 6.4,
-    "rt_audience_score": "57%",
+    "rt_audience_score": "82%",
     "genre": [
       "Drama",
       "Thriller"
@@ -13400,7 +13377,7 @@
       "Daniel Hugh Kelly",
       "Jacqueline Brookes"
     ],
-    "id": 457
+    "id": 456
   },
   {
     "movie_title": "Pacific Heights",
@@ -13427,6 +13404,6 @@
       "Laurie Metcalf",
       "Beverly D'Angelo"
     ],
-    "id": 458
+    "id": 457
   }
 ]
