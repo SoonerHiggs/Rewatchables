@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16",
+  "last_updated": "2026-06-21",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -27426,6 +27426,170 @@
           "type": "tve",
           "url": "https://www.amc.com/movies/american-gangster--1055113",
           "price": null
+        }
+      ]
+    },
+    "Domestic Disturbance_2001": {
+      "sources": [
+        {
+          "service": "Hoopla",
+          "type": "free",
+          "url": "https://www.hoopladigital.com/title/15751068?utm_source=",
+          "price": null
+        },
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/60021888",
+          "price": null
+        },
+        {
+          "service": "MGM+",
+          "type": "sub",
+          "url": "https://www.mgmplus.com/movie/domestic-disturbance-2001",
+          "price": null
+        },
+        {
+          "service": "AppleTV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/domestic-disturbance/umc.cmc.oeaagoay3iqdiz558phcyl4u?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A208605175",
+          "price": 5.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Domestic-Disturbance/25266",
+          "price": 5.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.b6e3d894-c1ef-4d65-b1f0-fdb6960891ef",
+          "price": 5.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=yJdXYximC2Y&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "AppleTV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/domestic-disturbance/umc.cmc.oeaagoay3iqdiz558phcyl4u?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A208605175",
+          "price": 9.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Domestic-Disturbance/25266",
+          "price": 5
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=yJdXYximC2Y&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "Pacific Heights_1990": {
+      "sources": [
+        {
+          "service": "Tubi TV",
+          "type": "free",
+          "url": "https://tubitv.com/movies/665879",
+          "price": null
+        },
+        {
+          "service": "Shout! Factory TV",
+          "type": "free",
+          "url": "https://watch.shout-tv.com/interstitial/606778",
+          "price": null
+        },
+        {
+          "service": "Kanopy",
+          "type": "free",
+          "url": "https://www.kanopy.com/product/movie-12374294",
+          "price": null
+        },
+        {
+          "service": "Pluto TV",
+          "type": "free",
+          "url": "https://pluto.tv/on-demand/movies/pacific-heights-1990-1-1-ptv1?utm_medium=deeplink&utm_source=",
+          "price": null
+        },
+        {
+          "service": "The Roku Channel",
+          "type": "free",
+          "url": "https://therokuchannel.roku.com/details/e0c9f6ceb6935c91aa510a1b8f1fcd14/pacific-heights?source=bing",
+          "price": null
+        },
+        {
+          "service": "Amazon Freevee",
+          "type": "free",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.c9f7d00a-7918-4797-a71f-61143d5785aa",
+          "price": null
+        },
+        {
+          "service": "Fawesome",
+          "type": "free",
+          "url": "https://fawesome.tv/movies/10581847/pacific-heights?utm_source=&utm_medium=feed",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home Free",
+          "type": "free",
+          "url": "https://athome.fandango.com/content/browse/details/Pacific-Heights/9280",
+          "price": null
+        },
+        {
+          "service": "Prime Video",
+          "type": "sub",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.c9f7d00a-7918-4797-a71f-61143d5785aa",
+          "price": null
+        },
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/838117",
+          "price": null
+        },
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV000322170000?irmp=1206980&irad=599309",
+          "price": null
+        },
+        {
+          "service": "The Criterion Channel",
+          "type": "sub",
+          "url": "https://www.criterionchannel.com/pacific-heights",
+          "price": null
+        },
+        {
+          "service": "AppleTV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/pacific-heights/umc.cmc.7ghr4yzu671n67hva6otl3z7l?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1597170812",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=QvvNrWJFZc0&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "AppleTV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/pacific-heights/umc.cmc.7ghr4yzu671n67hva6otl3z7l?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1597170812",
+          "price": 8.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=QvvNrWJFZc0&PAffiliateID=1101l32vn",
+          "price": 12.99
         }
       ]
     }
