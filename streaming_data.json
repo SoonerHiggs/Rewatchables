@@ -1750,12 +1750,6 @@
           "price": null
         },
         {
-          "service": "Prime Video",
-          "type": "sub",
-          "url": "https://www.amazon.com/gp/video/detail/B0B8MBX5WD?tag=&autoplay=1",
-          "price": null
-        },
-        {
           "service": "Hoopla",
           "type": "sub",
           "url": "https://www.hoopladigital.com/title/15742134",
@@ -2795,12 +2789,6 @@
           "service": "The Roku Channel",
           "type": "free",
           "url": "https://therokuchannel.roku.com/details/9e8491d0940353ae9a71814700e9f075/mr-mom?source=bing",
-          "price": null
-        },
-        {
-          "service": "Prime Video",
-          "type": "free",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.010ca83b-8120-4a7d-9c4c-20f67f5d3162?tag=&autoplay=1",
           "price": null
         },
         {
@@ -4109,12 +4097,6 @@
           "service": "The Roku Channel",
           "type": "free",
           "url": "https://therokuchannel.roku.com/details/fabac69facb354f4a46be700f9487ca6/escape-from-new-york?source=bing",
-          "price": null
-        },
-        {
-          "service": "Prime Video",
-          "type": "free",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.2f67468a-0728-45d7-be4b-e71c23d303aa?tag=&autoplay=1",
           "price": null
         },
         {
@@ -5953,12 +5935,6 @@
     },
     "The Terminator_1984": {
       "sources": [
-        {
-          "service": "Prime Video",
-          "type": "free",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.66b60399-3e99-f61d-d148-ac0752317559?tag=&autoplay=1",
-          "price": null
-        },
         {
           "service": "MGM+ (Via Amazon Prime)",
           "type": "sub",
@@ -18517,12 +18493,6 @@
           "price": null
         },
         {
-          "service": "Prime Video",
-          "type": "sub",
-          "url": "https://www.amazon.com/gp/video/detail/B0B8T1RWN7?tag=&autoplay=1",
-          "price": null
-        },
-        {
           "service": "Paramount Plus",
           "type": "sub",
           "url": "https://www.paramountplus.com/movies/fatal-attraction/YohrGl8OkblRnl_Amwj5_RNjZot6IHsg?searchReferral=publisher&source=search-feeds",
@@ -23740,12 +23710,6 @@
           "price": null
         },
         {
-          "service": "Prime Video",
-          "type": "free",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.94a9f6fb-f387-6cfc-cca2-4e293fc3fe7f?tag=&autoplay=1",
-          "price": null
-        },
-        {
           "service": "fuboTV",
           "type": "sub",
           "url": "https://www.fubo.tv/welcome/program/MV007749660000?irmp=1206980&irad=599309",
@@ -26143,12 +26107,6 @@
           "service": "The Roku Channel",
           "type": "free",
           "url": "https://therokuchannel.roku.com/watch/a9c57f827edb5029b70fc751805d9ec9?source=google",
-          "price": null
-        },
-        {
-          "service": "Prime Video",
-          "type": "free",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.12b6dd3b-cc4c-47bc-8c19-4000f9dc1369?tag=&autoplay=1",
           "price": null
         },
         {
