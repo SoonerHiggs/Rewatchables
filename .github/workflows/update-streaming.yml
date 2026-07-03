@@ -1,0 +1,42 @@
+name: Weekly Streaming Data Refresh
+
+on:
+  schedule:
+    # Every Monday at 13:00 UTC (8am Central during CDT, 7am during CST)
+    - cron: '0 13 * * 1'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab to test
+
+permissions:
+  contents: write   # needed so the workflow can commit the updated JSON back
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run streaming data refresh
+        env:
+          WATCHMODE_API_KEY: ${{ secrets.WATCHMODE_API_KEY }}
+        run: python update_streaming.py --recent
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add streaming_data.json
+          if git diff --cached --quiet; then
+            echo "No changes to streaming_data.json — nothing to commit."
+          else
+            git commit -m "Automated weekly streaming data refresh"
+            git push
+          fi
