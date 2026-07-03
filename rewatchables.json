@@ -13333,7 +13333,11 @@
     "movie_year": 2001,
     "director": "Harold Becker",
     "episode_date": "2026-06-22",
-    "hosts": [],
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Sean Fennessey"
+    ],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 29m",
@@ -13359,7 +13363,11 @@
     "movie_year": 1993,
     "director": "Joseph Ruben",
     "episode_date": "2026-06-25",
-    "hosts": [],
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Sean Fennessey"
+    ],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 27m",
@@ -13384,7 +13392,11 @@
     "movie_year": 1990,
     "director": "John Schlesinger",
     "episode_date": "2026-06-29",
-    "hosts": [],
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Kyle Brandt"
+    ],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 42m",
