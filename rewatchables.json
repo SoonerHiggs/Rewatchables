@@ -13333,11 +13333,7 @@
     "movie_year": 2001,
     "director": "Harold Becker",
     "episode_date": "2026-06-22",
-    "hosts": [
-      "Bill Simmons",
-      "Chris Ryan",
-      "Sean Fennessey"
-    ],
+    "hosts": [],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 29m",
@@ -13363,11 +13359,7 @@
     "movie_year": 1993,
     "director": "Joseph Ruben",
     "episode_date": "2026-06-25",
-    "hosts": [
-      "Bill Simmons",
-      "Chris Ryan",
-      "Sean Fennessey"
-    ],
+    "hosts": [],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 27m",
@@ -13392,11 +13384,7 @@
     "movie_year": 1990,
     "director": "John Schlesinger",
     "episode_date": "2026-06-29",
-    "hosts": [
-      "Bill Simmons",
-      "Chris Ryan",
-      "Kyle Brandt"
-    ],
+    "hosts": [],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 42m",
@@ -13417,5 +13405,36 @@
       "Beverly D'Angelo"
     ],
     "id": 457
+  },
+  {
+    "movie_title": "Ali",
+    "movie_year": 2001,
+    "director": "Michael Mann",
+    "episode_date": "2026-07-06",
+    "hosts": [],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "2h 37m",
+    "imdb_rating": 6.7,
+    "rt_audience_score": "65%",
+    "genre": [
+      "Biography",
+      "Drama",
+      "Sport"
+    ],
+    "cast": [
+      "Will Smith",
+      "Jamie Foxx",
+      "Jon Voight",
+      "Mario Van Peebles",
+      "Ron Silver",
+      "Jeffrey Wright",
+      "Mykelti Williamson",
+      "Jada Pinkett Smith",
+      "Nona Gaye",
+      "Michael Michele",
+      "Joe Morton"
+    ],
+    "id": 458
   }
 ]
