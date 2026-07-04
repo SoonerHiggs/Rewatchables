@@ -112,6 +112,23 @@ def filter_and_dedupe_sources(sources):
         name = s.get('name', '').lower()
         if name not in SERVICES_TO_INCLUDE:
             continue
+
+        # Watchmode has repeatedly misreported certain Prime Video titles as
+        # "free" or "sub" when TMDB confirms they're actually rent/buy-only.
+        # Every confirmed case (via check_tmdb_fallback.py: The Warriors,
+        # Fatal Attraction, Spotlight, The Terminator, Over the Top, Mr. Mom)
+        # shares a specific fingerprint: the old-style
+        # "amazon.com/gp/video/detail/..." URL format, which also happens to
+        # be what triggers the sign-in-wall issue in validate_streaming.py.
+        # Legitimate Prime Video sub/free entries use the newer
+        # "watch.amazon.com/detail?gti=..." format and are left alone —
+        # e.g. Escape From New York, confirmed genuinely available via
+        # subscription despite matching service+type.
+        url = s.get('web_url', '') or ''
+        is_old_format_amazon_url = 'amazon.com/gp/video/detail' in url
+        if name == 'prime video' and s.get('type') in ('free', 'sub', 'subscription') and is_old_format_amazon_url:
+            continue
+
         key = f"{name}_{s.get('type')}"
         if key not in seen:
             seen.add(key)
