@@ -38,17 +38,51 @@ INPUT_FILE  = "rewatchables.json"
 OUTPUT_FILE = "streaming_data.json"
 DELAY       = 0.5   # seconds between API calls (to avoid rate limiting)
 
-# Services to include (case-insensitive match against Watchmode service names)
-SERVICES_TO_INCLUDE = {
-    # Subscription / Free streaming
-    "netflix", "max", "hulu", "prime video", "amazon prime video",
-    "peacock", "apple tv+", "disney+", "tubi", "pluto tv",
-    "paramount+", "showtime", "starz", "mubi", "kanopy",
-    "criterion channel", "mgm+",
-    # Rent / Buy platforms
-    "amazon video", "apple tv", "vudu", "fandango at home",
-    "google play movies", "youtube", "microsoft store",
-    "directv", "amc on demand", "redbox", "spectrum on demand"
+# Watchmode's service names drift over time (rebrands, formatting changes,
+# e.g. "Vudu" -> "Fandango at Home", or "Amazon" appearing instead of the
+# expected "Amazon Video"). Rather than one exact-match set that silently
+# breaks every time a name shifts, map known raw name variants to a single
+# canonical display name. Add new variants here if debug_sources.py turns
+# up something new.
+SERVICE_ALIASES = {
+    # canonical display name: [raw Watchmode name variants, lowercased]
+    "Netflix":            ["netflix"],
+    "Max":                ["max", "hbo max"],
+    "Hulu":               ["hulu"],
+    "Prime Video":        ["prime video", "amazon prime video"],
+    "Amazon":             ["amazon", "amazon video"],
+    "Peacock":            ["peacock", "peacock premium"],
+    "Apple TV+":          ["apple tv+", "appletv+"],
+    "Apple TV":           ["apple tv", "appletv"],
+    "Disney+":            ["disney+", "disneyplus"],
+    "Tubi":               ["tubi", "tubi tv"],
+    "Pluto TV":           ["pluto tv", "plutotv"],
+    "Paramount+":         ["paramount+", "paramount plus"],
+    "Showtime":           ["showtime"],
+    "STARZ":              ["starz"],
+    "MUBI":               ["mubi"],
+    "Kanopy":             ["kanopy"],
+    "Criterion Channel":  ["criterion channel"],
+    "MGM+":               ["mgm+", "mgm plus"],
+    "Fandango at Home":   ["fandango at home", "vudu"],
+    "Google Play":        ["google play", "google play movies"],
+    "YouTube":            ["youtube"],
+    "YouTube TV":         ["youtube tv"],
+    "Microsoft Store":    ["microsoft store"],
+    "DIRECTV":            ["directv"],
+    "AMC on Demand":      ["amc on demand"],
+    "Redbox":             ["redbox"],
+    "Spectrum On Demand": ["spectrum on demand"],
+    "Hoopla":             ["hoopla"],
+    "fuboTV":             ["fubotv", "fubo tv"],
+    # Deliberately NOT included: FlixFling (too niche, per Kevin's call)
+}
+
+# Reverse lookup: raw lowercased name -> canonical display name
+SERVICE_LOOKUP = {
+    variant: canonical
+    for canonical, variants in SERVICE_ALIASES.items()
+    for variant in variants
 }
 
 def get_unique_movies(data):
@@ -109,9 +143,18 @@ def filter_and_dedupe_sources(sources):
     seen = set()
     filtered = []
     for s in sources:
-        name = s.get('name', '').lower()
-        if name not in SERVICES_TO_INCLUDE:
+        raw_name = (s.get('name') or '').strip()
+        raw_lower = raw_name.lower()
+
+        # Exclude channel pass-through / bundle listings like
+        # "Paramount+ (Via Amazon Prime)" or "MGM+ (Via Amazon Prime)" —
+        # these are noise, not a distinct place to actually watch the movie.
+        if '(via' in raw_lower:
             continue
+
+        canonical = SERVICE_LOOKUP.get(raw_lower)
+        if not canonical:
+            continue  # not a service we track — skip rather than guess
 
         # Watchmode has repeatedly misreported certain Prime Video titles as
         # "free" or "sub" when TMDB confirms they're actually rent/buy-only.
@@ -126,14 +169,14 @@ def filter_and_dedupe_sources(sources):
         # subscription despite matching service+type.
         url = s.get('web_url', '') or ''
         is_old_format_amazon_url = 'amazon.com/gp/video/detail' in url
-        if name == 'prime video' and s.get('type') in ('free', 'sub', 'subscription') and is_old_format_amazon_url:
+        if canonical == 'Prime Video' and s.get('type') in ('free', 'sub', 'subscription') and is_old_format_amazon_url:
             continue
 
-        key = f"{name}_{s.get('type')}"
+        key = f"{canonical}_{s.get('type')}"
         if key not in seen:
             seen.add(key)
             filtered.append({
-                "service": s.get('name'),
+                "service": canonical,
                 "type": s.get('type'),
                 "url": s.get('web_url', ''),
                 "price": s.get('price')
