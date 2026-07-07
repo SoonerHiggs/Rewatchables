@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-05",
+  "last_updated": "2026-07-07",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -21844,12 +21844,6 @@
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/The-Good-Son/8233",
-          "price": 5
-        },
-        {
-          "service": "Apple TV",
-          "type": "buy",
-          "url": "https://tv.apple.com/us/movie/the-good-son/umc.cmc.1wsudwdlcfoghv66bcc8jg65l?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A280682329",
           "price": 14.99
         },
         {
@@ -21890,12 +21884,6 @@
           "service": "Netflix",
           "type": "sub",
           "url": "https://www.netflix.com/title/838117",
-          "price": null
-        },
-        {
-          "service": "fuboTV",
-          "type": "sub",
-          "url": "https://www.fubo.tv/welcome/program/MV000322170000?irmp=1206980&irad=599309",
           "price": null
         },
         {
