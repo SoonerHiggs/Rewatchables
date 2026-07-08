@@ -2,9 +2,9 @@ name: Weekly Streaming Data Refresh
 
 on:
   schedule:
-    # Every Tuesday at 13:00 UTC (8am Central during CDT, 7am during CST)
+    # Every Tuesday at 08:00 UTC (3am Central during CDT, 2am during CST)
     # Shifted from Monday so the episode (drops Monday night) is on the RSS feed in time
-    - cron: '0 13 * * 2'
+    - cron: '0 8 * * 2'
   workflow_dispatch: {}   # lets you trigger it manually from the Actions tab to test
 
 permissions:
