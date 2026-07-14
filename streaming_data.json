@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-07",
+  "last_updated": "2026-07-14",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -21759,12 +21759,6 @@
     "Domestic Disturbance_2001": {
       "sources": [
         {
-          "service": "Netflix",
-          "type": "sub",
-          "url": "https://www.netflix.com/title/60021888",
-          "price": null
-        },
-        {
           "service": "MGM+",
           "type": "sub",
           "url": "https://www.mgmplus.com/movie/domestic-disturbance-2001",
@@ -21774,6 +21768,12 @@
           "service": "YouTube TV",
           "type": "sub",
           "url": "https://tv.youtube.com/browse/UCTYLBvtom5a5KsvxCACmoAA",
+          "price": null
+        },
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV001142490000?irmp=1206980&irad=599309",
           "price": null
         },
         {
@@ -21875,6 +21875,12 @@
           "price": null
         },
         {
+          "service": "YouTube",
+          "type": "free",
+          "url": "https://www.youtube.com/watch?v=uz0Nrj3kdB8",
+          "price": null
+        },
+        {
           "service": "Prime Video",
           "type": "sub",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.c9f7d00a-7918-4797-a71f-61143d5785aa",
@@ -21936,7 +21942,7 @@
           "service": "Amazon",
           "type": "rent",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.34ad3669-b3a3-d566-64cf-92f2d74c7534",
-          "price": 3.59
+          "price": 3.99
         },
         {
           "service": "Fandango at Home",
@@ -21951,10 +21957,16 @@
           "price": 3.99
         },
         {
-          "service": "Fandango at Home",
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=tx7D3NI5Cuk&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
           "type": "buy",
-          "url": "https://athome.fandango.com/content/browse/details/Ali/25548",
-          "price": 13.99
+          "url": "https://play.google.com/store/movies/details?id=tx7D3NI5Cuk&PAffiliateID=1101l32vn",
+          "price": 12.99
         }
       ]
     }
