@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-19",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -21957,16 +21957,427 @@
           "price": 3.99
         },
         {
-          "service": "Google Play",
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Ali/25548",
+          "price": 13.99
+        }
+      ]
+    },
+    "White Men Can't Jump_2023": {
+      "sources": [
+        {
+          "service": "Hulu",
+          "type": "sub",
+          "url": "https://www.hulu.com/watch/062b6043-9fff-437c-8d7b-57c13ff7ef1a",
+          "price": null
+        }
+      ]
+    },
+    "Regretting You_2025": {
+      "sources": [
+        {
+          "service": "MGM+",
+          "type": "sub",
+          "url": "https://www.mgmplus.com/movie/regretting-you-2025",
+          "price": null
+        },
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV026369550000?irmp=1206980&irad=599309",
+          "price": null
+        },
+        {
+          "service": "Paramount+",
+          "type": "sub",
+          "url": "https://www.paramountplus.com/movies/colleen-hoovers-regretting-you/n09QpF8mS2OdW3Mxokh4ZtktLUF_FmrG?searchReferral=publisher&source=search-feeds",
+          "price": null
+        },
+        {
+          "service": "Prime Video",
+          "type": "sub",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.f592ee34-035b-4b91-88a2-dafa2050e625",
+          "price": null
+        },
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UCuXbC0ZXX8fUO_aE2EARMhA",
+          "price": null
+        },
+        {
+          "service": "Amazon",
           "type": "rent",
-          "url": "https://play.google.com/store/movies/details?id=tx7D3NI5Cuk&PAffiliateID=1101l32vn",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.f592ee34-035b-4b91-88a2-dafa2050e625",
+          "price": 5.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/regretting-you/umc.cmc.5ksobjxve9zoru1g0ijs0bxcb?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1843557022",
+          "price": 5.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Regretting-You/4552164",
+          "price": 5.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Regretting-You/4552164",
+          "price": 19.98
+        }
+      ]
+    },
+    "Cruel Jaws_1995": {
+      "sources": [
+        {
+          "service": "Tubi",
+          "type": "free",
+          "url": "https://tubitv.com/movies/553777",
+          "price": null
+        },
+        {
+          "service": "Hoopla",
+          "type": "free",
+          "url": "https://www.hoopladigital.com/title/17400538?utm_source=",
+          "price": null
+        },
+        {
+          "service": "Pluto TV",
+          "type": "free",
+          "url": "https://pluto.tv/on-demand/movies/cruel-jaws-1995-1-1?utm_medium=deeplink&utm_source=",
+          "price": null
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.0546c600-3bd7-4c7c-be82-6ba421ada9e0",
+          "price": 0.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Cruel-Jaws/1584614",
+          "price": 2.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.0546c600-3bd7-4c7c-be82-6ba421ada9e0",
+          "price": 2.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Cruel-Jaws/1584614",
+          "price": 7.99
+        }
+      ]
+    },
+    "My Best Friend_2016": {
+      "sources": [
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.b4b0800b-1279-7dbd-0be8-5175fb877982",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/my-best-friends-wedding/umc.cmc.5co5j1h6u6fq399bcsmhytpou?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1170627852",
+          "price": 3.99
+        },
+        {
+          "service": "YouTube",
+          "type": "rent",
+          "url": "https://www.youtube.com/results?search_query=My+Best+Friend%27s+Wedding%2Bmovie",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/My-Best-Friend-s-Wedding/915694",
           "price": 3.99
         },
         {
           "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=dN4bj5NdDGE&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
           "type": "buy",
-          "url": "https://play.google.com/store/movies/details?id=tx7D3NI5Cuk&PAffiliateID=1101l32vn",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.b4b0800b-1279-7dbd-0be8-5175fb877982",
           "price": 12.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/my-best-friends-wedding/umc.cmc.5co5j1h6u6fq399bcsmhytpou?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1170627852",
+          "price": 12.99
+        },
+        {
+          "service": "YouTube",
+          "type": "buy",
+          "url": "https://www.youtube.com/results?search_query=My+Best+Friend%27s+Wedding%2Bmovie",
+          "price": 12.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/My-Best-Friend-s-Wedding/915694",
+          "price": 13.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=dN4bj5NdDGE&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "Once Upon a Time... in Hollywood_2019": {
+      "sources": [
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV010921590000?irmp=1206980&irad=599309",
+          "price": null
+        },
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UCpAgPtLkUggtlCxrgN5qpYQ",
+          "price": null
+        },
+        {
+          "service": "Hulu",
+          "type": "sub",
+          "url": "https://www.hulu.com/watch/53ad86e8-d796-4a5f-b6ac-b3339482c22c",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Once-Upon-a-Time-In-Hollywood/1190484",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.86b60c06-85b4-b8a8-bbb1-cc1374c0ae0e",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/once-upon-a-timein-hollywood/umc.cmc.3z4cyiai3b0ui437ekpxou5yd?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1473165316",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=apHd04BtYaI&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Once-Upon-a-Time-In-Hollywood/1190484",
+          "price": 14.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=apHd04BtYaI&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "St. Elmo_1923": {
+      "sources": []
+    },
+    "Victory_2024": {
+      "sources": []
+    },
+    "Mission: Impossible - Fallout_2018": {
+      "sources": [
+        {
+          "service": "Paramount+",
+          "type": "sub",
+          "url": "https://www.paramountplus.com/movies/mission-impossible-fallout/3SH0sBMqE4PGU1LaHqqCQWFLucZ9ciM4?searchReferral=publisher&source=search-feeds",
+          "price": null
+        },
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UCu2eJTyrS04FLe_TrXVAyTg",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Mission-Impossible-Fallout/928404",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/mission-impossible---fallout/umc.cmc.3drwjm4wydrpzfnzloeytmh8j?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1406515547",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.32c813e8-168f-41ea-ace6-971cf407bec7",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Mission-Impossible-Fallout/928404",
+          "price": 16.98
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/mission-impossible---fallout/umc.cmc.3drwjm4wydrpzfnzloeytmh8j?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1406515547",
+          "price": 16.98
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.32c813e8-168f-41ea-ace6-971cf407bec7",
+          "price": 16.98
+        }
+      ]
+    },
+    "KD \u2013 The Devil_2026": {
+      "sources": []
+    },
+    "Dodgeball_2001": {
+      "sources": []
+    },
+    "The Grand Budapest Hotel_2014": {
+      "sources": [
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/The-Grand-Budapest-Hotel/513195",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/the-grand-budapest-hotel/umc.cmc.1yrchfyt6pyg3g827zdo6br38?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A828777452",
+          "price": 2.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.efbd217f-438b-486c-910f-3a8c122fdf95",
+          "price": 2.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=uC4n3_EK_kA&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/The-Grand-Budapest-Hotel/513195",
+          "price": 5
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=uC4n3_EK_kA&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "Wayne_2018": {
+      "sources": []
+    },
+    "It Follows_2015": {
+      "sources": [
+        {
+          "service": "Kanopy",
+          "type": "free",
+          "url": "https://www.kanopy.com/product/movie-15960140",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/It-Follows/625411",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.4c03893e-cd6f-461f-8729-c22b13e596d9",
+          "price": 5.66
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/it-follows/umc.cmc.2fbp8olg5q5g8mmdeliqjrs2t?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1217953954",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/It-Follows/625411",
+          "price": 14.99
+        }
+      ]
+    },
+    "She Said_2022": {
+      "sources": [
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UC3ixpyzg_y_Zg3VGB3V9KvA",
+          "price": null
+        },
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/81608803",
+          "price": null
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/she-said/umc.cmc.3o4bl560e43pvhi4qvcizewcl?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1656049113",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.877192d6-053e-4749-99fe-5c84fbe2193c",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/She-Said/2157920",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/She-Said/2157920",
+          "price": 14.99
         }
       ]
     }
