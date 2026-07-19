@@ -25,6 +25,11 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Auto-add any episode missing from rewatchables.json
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python add_missing_episodes.py
+
       - name: Fill in missing hosts from RSS feed
         run: python fill_hosts.py
 
