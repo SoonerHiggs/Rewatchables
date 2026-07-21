@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-19",
+  "last_updated": "2026-07-21",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -21899,22 +21899,10 @@
           "price": 3.99
         },
         {
-          "service": "Google Play",
-          "type": "rent",
-          "url": "https://play.google.com/store/movies/details?id=QvvNrWJFZc0&PAffiliateID=1101l32vn",
-          "price": 3.99
-        },
-        {
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/pacific-heights/umc.cmc.7ghr4yzu671n67hva6otl3z7l?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1597170812",
           "price": 8.99
-        },
-        {
-          "service": "Google Play",
-          "type": "buy",
-          "url": "https://play.google.com/store/movies/details?id=QvvNrWJFZc0&PAffiliateID=1101l32vn",
-          "price": 12.99
         }
       ]
     },
@@ -22377,6 +22365,92 @@
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/She-Said/2157920",
+          "price": 14.99
+        }
+      ]
+    },
+    "She's the One_1996": {
+      "sources": [
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/60002441",
+          "price": null
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/shes-the-one/umc.cmc.525bkrbxoc7i67srvo4aw36y0?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A270823104",
+          "price": 4.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/She-s-the-One/7755",
+          "price": 4.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.92bb3885-5a7e-1156-fc3b-2fd9416160ca",
+          "price": 4.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=p3_Dnl_Gzl0&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/She-s-the-One/7755",
+          "price": 9.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=p3_Dnl_Gzl0&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "Hitch_2005": {
+      "sources": [
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/70019506",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Hitch/49542",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/hitch/umc.cmc.2wbu119rq00igwfp7mypm7mv8?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A532597475",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7ca9f6d8-e045-5524-30c1-2b6129c01982",
+          "price": 3.99
+        },
+        {
+          "service": "Spectrum On Demand",
+          "type": "rent",
+          "url": "https://ondemand.spectrum.net/movies/35562/hitch/",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Hitch/49542",
           "price": 14.99
         }
       ]

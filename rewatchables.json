@@ -13518,5 +13518,39 @@
       "Edward Norton"
     ],
     "id": 460
+  },
+  {
+    "movie_title": "Hitch",
+    "movie_year": 2005,
+    "director": "Andy Tennant",
+    "episode_date": "2026-07-20",
+    "hosts": [
+      "Bill Simmons",
+      "Van Lathan",
+      "Mina Kimes"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 58m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "cast": [
+      "Will Smith",
+      "Eva Mendes",
+      "Kevin James",
+      "Amber Valletta",
+      "Julie Ann Emery",
+      "Adam Arkin",
+      "Robinne Lee",
+      "Nathan Lee Graham",
+      "Michael Rapaport",
+      "Jeffrey Donovan"
+    ],
+    "id": 461
   }
 ]
