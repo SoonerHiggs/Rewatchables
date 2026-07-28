@@ -13552,5 +13552,38 @@
       "Jeffrey Donovan"
     ],
     "id": 461
+  },
+  {
+    "movie_title": "Obsession",
+    "movie_year": 2026,
+    "director": "Curry Barker",
+    "episode_date": "2026-07-28",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Joanna Robinson"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 49m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Horror",
+      "Thriller"
+    ],
+    "cast": [
+      "Michael Johnston",
+      "Inde Navarrette",
+      "Cooper Tomlinson",
+      "Megan Lawless",
+      "Andy Richter",
+      "Haley Fitzgerald",
+      "Darin Toonder",
+      "Anthony Pavone",
+      "Justice",
+      "Anthony Casabianca"
+    ],
+    "id": 462
   }
 ]

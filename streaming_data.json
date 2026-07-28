@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-21",
+  "last_updated": "2026-07-28",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -21871,7 +21871,7 @@
         {
           "service": "Pluto TV",
           "type": "free",
-          "url": "https://pluto.tv/on-demand/movies/pacific-heights-1990-1-1-ptv1?utm_medium=deeplink&utm_source=",
+          "url": "https://pluto.tv/on-demand/movies/pacific-heights-1990-1-1-ptv1",
           "price": null
         },
         {
@@ -22380,7 +22380,7 @@
         {
           "service": "Apple TV",
           "type": "rent",
-          "url": "https://tv.apple.com/us/movie/shes-the-one/umc.cmc.525bkrbxoc7i67srvo4aw36y0?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A270823104",
+          "url": "https://tv.apple.com/us/movie/shes-the-one/umc.cmc.525bkrbxoc7i67srvo4aw36y0?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A270823104",
           "price": 4.99
         },
         {
@@ -22402,9 +22402,21 @@
           "price": 3.99
         },
         {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/shes-the-one/umc.cmc.525bkrbxoc7i67srvo4aw36y0?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A270823104",
+          "price": 9.99
+        },
+        {
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/She-s-the-One/7755",
+          "price": 9.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.92bb3885-5a7e-1156-fc3b-2fd9416160ca",
           "price": 9.99
         },
         {
@@ -22452,6 +22464,52 @@
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/Hitch/49542",
           "price": 14.99
+        }
+      ]
+    },
+    "Obsession_2026": {
+      "sources": [
+        {
+          "service": "Peacock",
+          "type": "sub",
+          "url": "https://www.peacocktv.com/watch/asset/movies/obsession/210b50e4-5ccd-3548-a1c5-0160585a4a67",
+          "price": null
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.744991dc-8b35-4ceb-b982-0bcdd8b133eb",
+          "price": 9.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Obsession/4941418",
+          "price": 9.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/obsession/umc.cmc.5n9tcj7azek0g9igds7ybcc0s?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1895945921",
+          "price": 9.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.744991dc-8b35-4ceb-b982-0bcdd8b133eb",
+          "price": 19.98
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Obsession/4941418",
+          "price": 19.98
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/obsession/umc.cmc.5n9tcj7azek0g9igds7ybcc0s?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1895945921",
+          "price": 19.98
         }
       ]
     }
