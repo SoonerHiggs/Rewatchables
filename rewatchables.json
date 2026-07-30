@@ -13466,8 +13466,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 36m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": 6.0,
+    "rt_audience_score": "41%",
     "genre": [
       "Romance",
       "Comedy"
@@ -13499,8 +13499,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 40m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": 8.1,
+    "rt_audience_score": "87%",
     "genre": [
       "Comedy",
       "Drama"
@@ -13532,8 +13532,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 58m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": 6.7,
+    "rt_audience_score": "62%",
     "genre": [
       "Comedy",
       "Drama",
@@ -13545,45 +13545,8 @@
       "Kevin James",
       "Amber Valletta",
       "Julie Ann Emery",
-      "Adam Arkin",
-      "Robinne Lee",
-      "Nathan Lee Graham",
-      "Michael Rapaport",
-      "Jeffrey Donovan"
+      "Adam Arkin"
     ],
     "id": 461
-  },
-  {
-    "movie_title": "Obsession",
-    "movie_year": 2026,
-    "director": "Curry Barker",
-    "episode_date": "2026-07-28",
-    "hosts": [
-      "Bill Simmons",
-      "Chris Ryan",
-      "Joanna Robinson"
-    ],
-    "is_rewatch": false,
-    "episode_label": "",
-    "runtime": "1h 49m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
-    "genre": [
-      "Horror",
-      "Thriller"
-    ],
-    "cast": [
-      "Michael Johnston",
-      "Inde Navarrette",
-      "Cooper Tomlinson",
-      "Megan Lawless",
-      "Andy Richter",
-      "Haley Fitzgerald",
-      "Darin Toonder",
-      "Anthony Pavone",
-      "Justice",
-      "Anthony Casabianca"
-    ],
-    "id": 462
   }
 ]
