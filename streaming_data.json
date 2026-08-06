@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-04",
+  "last_updated": "2026-08-06",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -618,34 +618,40 @@
     "Speed_1994": {
       "sources": [
         {
-          "service": "Tubi",
-          "type": "free",
-          "url": "https://tubitv.com/movies/664742",
-          "price": null
-        },
-        {
           "service": "YouTube TV",
           "type": "sub",
           "url": "https://tv.youtube.com/browse/UCTcV6IIjS2oxhq_PkoYv85Q",
           "price": null
         },
         {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/988423",
+          "price": null
+        },
+        {
           "service": "Apple TV",
           "type": "rent",
-          "url": "https://tv.apple.com/us/movie/speed/umc.cmc.fz3cnngvyvcdkwtero9ddpqr?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A271889540",
-          "price": 3.99
+          "url": "https://tv.apple.com/us/movie/speed/umc.cmc.fz3cnngvyvcdkwtero9ddpqr?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A271889540",
+          "price": 4.99
         },
         {
           "service": "Fandango at Home",
           "type": "rent",
           "url": "https://athome.fandango.com/content/browse/details/Speed/8442",
-          "price": 3.99
+          "price": 4.99
         },
         {
           "service": "Amazon",
           "type": "rent",
-          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.e6a9f705-9067-8786-a5b3-8b20d69590df",
-          "price": 3.99
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.44a9f6ce-6090-2790-174b-8ec84e7a5088",
+          "price": 4.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/speed/umc.cmc.fz3cnngvyvcdkwtero9ddpqr?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A271889540",
+          "price": 14.99
         },
         {
           "service": "Fandango at Home",
@@ -656,8 +662,8 @@
         {
           "service": "Amazon",
           "type": "buy",
-          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.e6a9f705-9067-8786-a5b3-8b20d69590df",
-          "price": 15.99
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.44a9f6ce-6090-2790-174b-8ec84e7a5088",
+          "price": 4.99
         }
       ]
     },
@@ -22481,6 +22487,238 @@
     },
     "Obsession_2026": {
       "sources": []
+    },
+    "Kicking and Screaming_1995": {
+      "sources": [
+        {
+          "service": "Kanopy",
+          "type": "free",
+          "url": "https://www.kanopy.com/product/movie-11335796",
+          "price": null
+        },
+        {
+          "service": "Tubi",
+          "type": "free",
+          "url": "https://tubitv.com/movies/508820",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Kicking-and-Screaming/63128",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7825fead-df46-4161-9ee1-d28215db1899",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=XLxs5PRWQJ4&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Kicking-and-Screaming/63128",
+          "price": 5.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7825fead-df46-4161-9ee1-d28215db1899",
+          "price": 7.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=XLxs5PRWQJ4&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "The Karate Kid Part II_1986": {
+      "sources": [
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/60011205",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/The-Karate-Kid-Part-II/21847",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/the-karate-kid-part-ii/umc.cmc.6mur5iu658xf4njiejw9rlcf0?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A263445899",
+          "price": 3.99
+        },
+        {
+          "service": "Spectrum On Demand",
+          "type": "rent",
+          "url": "https://ondemand.spectrum.net/movies/9346/the-karate-kid-part-ii/",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.c5a0cb07-5d9a-4bc3-b28e-b461c750c613",
+          "price": 2.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=pHUgawATlkw&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/The-Karate-Kid-Part-II/21847",
+          "price": 14.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=pHUgawATlkw&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "The Italian Job_2003": {
+      "sources": [
+        {
+          "service": "Hoopla",
+          "type": "free",
+          "url": "https://www.hoopladigital.com/title/18250425",
+          "price": null
+        },
+        {
+          "service": "Kanopy",
+          "type": "free",
+          "url": "https://www.kanopy.com/product/movie-16059338",
+          "price": null
+        },
+        {
+          "service": "Pluto TV",
+          "type": "free",
+          "url": "https://pluto.tv/on-demand/movies/the-italian-job-2003-las-2003-1-1",
+          "price": null
+        },
+        {
+          "service": "Paramount+",
+          "type": "sub",
+          "url": "https://www.paramountplus.com/movies/italian-job/rTHs5ZbF_Nxurl8KOk1OL3LJOXc2lAI2?searchReferral=publisher&source=search-feeds",
+          "price": null
+        },
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UCLykmqlCYe0BHhjbQd5c62w",
+          "price": null
+        },
+        {
+          "service": "MGM+",
+          "type": "sub",
+          "url": "https://www.mgmplus.com/movie/the-italian-job-2003",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/The-Italian-Job-2003-/35770",
+          "price": 5.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/the-italian-job/umc.cmc.3vcsqbo6nv7vibdochz5kt96i?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A211845306",
+          "price": 5.99
+        },
+        {
+          "service": "Spectrum On Demand",
+          "type": "rent",
+          "url": "https://ondemand.spectrum.net/movies/32134/the-italian-job/",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d9af936e-1390-4818-b8ab-db65302cfb00",
+          "price": 5.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=YBvnBh-1-mk&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/The-Italian-Job-2003-/35770",
+          "price": 6.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=YBvnBh-1-mk&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "About Last Night_1986": {
+      "sources": [
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/213530",
+          "price": null
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/about-last-night/umc.cmc.izv2pj1hoacd92zyuytkhdo7?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A279997656",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/About-Last-Night-/13327",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.6ca9f6f7-7a2b-5c6e-828c-a1a6c9f612ba",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/about-last-night/umc.cmc.izv2pj1hoacd92zyuytkhdo7?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A279997656",
+          "price": 12.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/About-Last-Night-/13327",
+          "price": 7.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.6ca9f6f7-7a2b-5c6e-828c-a1a6c9f612ba",
+          "price": 7.99
+        }
+      ]
     }
   }
 }

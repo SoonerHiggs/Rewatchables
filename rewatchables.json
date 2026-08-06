@@ -13667,7 +13667,12 @@
     "movie_year": 1994,
     "director": "Jan de Bont",
     "episode_date": "2026-08-17",
-    "hosts": [],
+    "hosts": [
+      "Bill Simmons",
+      "Jason Concepcion",
+      "Shea Serrano",
+      "Donnie Kwak"
+    ],
     "is_rewatch": true,
     "episode_label": "Re-Speed",
     "runtime": "1h 56m",
@@ -13686,5 +13691,39 @@
       "Alan Ruck"
     ],
     "id": 466
+  },
+  {
+    "movie_title": "Kicking and Screaming",
+    "movie_year": 1995,
+    "director": "Noah Baumbach",
+    "episode_date": "2020-10-06",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Andy Greenwald"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 36m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "cast": [
+      "Josh Hamilton",
+      "Olivia D'Abo",
+      "Chris Eigeman",
+      "Parker Posey",
+      "Jason Wiles",
+      "Cara Buono",
+      "Carlos Jacott",
+      "Elliott Gould",
+      "Eric Stoltz",
+      "Samuel Gould"
+    ],
+    "id": 467
   }
 ]
