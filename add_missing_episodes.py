@@ -1,5 +1,5 @@
 """
-Rewatchables Missing Episode Auto-Add Script  (v2 - fixed title parsing)
+Rewatchables Missing Episode Auto-Add Script  (v3 - fixed sequel false-positive)
 =====================================
 Safety net for weeks you don't get to manually add the episode entry
 before it airs. Fetches the official Rewatchables RSS feed and, for any
@@ -12,32 +12,40 @@ WHAT IT FILLS IN AUTOMATICALLY (from TMDB):
 WHAT IT LEAVES BLANK, ON PURPOSE:
   imdb_rating, rt_audience_score — not reliably available from a free API.
 
-TITLE PARSING (v2):
-  Episode titles look like: 'Movie Title' [optional subtitle] With Host1, Host2
-  The v1 script captured everything between the opening quote and the FIRST
-  apostrophe-like character it saw — which broke on any title containing an
-  apostrophe (Ferris Bueller's Day Off -> "Ferris Bueller", You've Got Mail
-  -> "You", The Devil's Advocate -> "The Devil"). This caused ~30 bad
-  entries in a single run.
+v3 CHANGE — removed the pre-TMDB substring safety check from v2:
+  v2 added a check that skipped any new title containing (or contained by)
+  an existing title's normalized form, meant to catch cases like
+  "Halloween 4" vs. an existing "Halloween 4: The Return of Michael Myers".
+  This worked for that case, but it also silently blocked EVERY sequel
+  whose title starts with an existing movie's name — "The Karate Kid
+  Part II" contains "The Karate Kid" (already in the file from 2020), so
+  it never got added when the episode aired. Since Rewatchables covers a
+  lot of franchise sequels, this was a bigger problem than the one it
+  fixed.
 
-  v2 instead: splits on the first standalone "With" (word boundary), then
-  within the text before it, takes everything between the FIRST quote
-  character and the LAST quote character — so internal apostrophes no
-  longer truncate the title. Trailing punctuation (commas, periods) left
-  over from titles like "'Jaws,'" is stripped before the TMDB search.
+  v3 removes that pre-check entirely and relies solely on comparing the
+  TMDB-RESOLVED canonical title against existing entries (exact
+  normalized match, not substring) — this still catches genuine
+  duplicates like "Halloween 4" -> "Halloween 4: The Return of Michael
+  Myers" (since that's an exact match once resolved), without falsely
+  blocking "The Karate Kid Part II" (which does NOT exactly match "The
+  Karate Kid" once resolved, since they're different TMDB titles).
 
-DUPLICATE DETECTION (v2):
-  v1 checked the raw RSS-parsed title against existing entries — so a
-  movie already in the file under a slightly different title format
-  (e.g. no ellipsis, different punctuation) could get added a second
-  time under TMDB's exact title text. v2 normalizes both the RSS title
-  AND the TMDB-matched canonical title (lowercase, punctuation stripped)
-  before comparing, and checks again after the TMDB match resolves —
-  not just before.
+  A case like "Victory" (2024, distinct Korean film) resolving to
+  "Escape to Victory" (1981, already in file, different movie) remains a
+  genuine edge case no automated check can safely resolve — TMDB's
+  popularity-based matching may occasionally still need manual review
+  for two different movies with very similar short titles. That's
+  inherent ambiguity, not a bug to engineer around.
 
-  If the RSS episode title doesn't cleanly match a TMDB search result,
-  or looks like a duplicate under normalization, it's flagged in the
-  output for manual review rather than silently guessed at or skipped.
+TITLE PARSING (v2, unchanged):
+  Splits on the first standalone "With", then takes everything between
+  the first and last quote character before it — handles apostrophes
+  inside titles (Ferris Bueller's Day Off, You've Got Mail) correctly.
+
+TMDB MATCHING (v2, unchanged):
+  Picks the highest-popularity search result rather than the first one,
+  to avoid obscure same-named films outranking the famous movie.
 
 SETUP:
   export TMDB_API_KEY="your-tmdb-read-access-token"
@@ -65,15 +73,8 @@ TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
 TMDB_BASE = "https://api.themoviedb.org/3"
 CAST_LIMIT = 10  # top-billed cast members to include
 
-# Any of these count as a "quote" character wrapping the movie title
 QUOTE_CHARS = "'\u2018\u2019\""
-
-# Splits the title into (before, after) at the first standalone "With"
 WITH_SPLIT = re.compile(r"\bWith\b", re.IGNORECASE)
-
-# Matches a trailing "(YYYY)" disambiguator some episode titles include,
-# e.g. "'Kicking and Screaming (1995)'" — useful as a year hint for TMDB,
-# but confuses TMDB's text search if left in the query.
 YEAR_HINT = re.compile(r"\s*\((\d{4})\)\s*$")
 
 
@@ -103,11 +104,11 @@ def parse_episode_title(title):
 
     quote_positions = [i for i, ch in enumerate(before) if ch in QUOTE_CHARS]
     if len(quote_positions) < 2:
-        return None, None, None  # can't find a clean quoted title — don't guess
+        return None, None, None
 
     start, end = quote_positions[0], quote_positions[-1]
     movie_title = before[start + 1:end].strip()
-    movie_title = movie_title.strip(" ,.\u2013\u2014")  # trailing commas/periods/dashes
+    movie_title = movie_title.strip(" ,.\u2013\u2014")
 
     year_hint = None
     year_match = YEAR_HINT.search(movie_title)
@@ -126,19 +127,7 @@ def parse_episode_title(title):
 
 
 def parse_pubdate(pubdate_str):
-    """
-    Converts the RSS pubDate to US/Eastern before extracting the date.
-    Megaphone timestamps are typically UTC; late-night episode drops can
-    land on the "next" calendar day in UTC even though they're still the
-    same day in US time — which caused real date drift against manually
-    entered episodes (e.g. an episode logged as Oct 28 parsing as Oct 29).
-
-    zoneinfo needs the IANA tzdata database, which Windows doesn't ship
-    by default — without it this would silently fail. Falls back to a
-    fixed UTC-5 offset (ignores DST, so may be off by an hour near
-    spring/fall transitions, but still gets the calendar date right in
-    the vast majority of cases) rather than returning nothing.
-    """
+    """Converts to US/Eastern; falls back to fixed UTC-5 if tzdata isn't available (common on Windows)."""
     dt = parsedate_to_datetime(pubdate_str)
     try:
         from zoneinfo import ZoneInfo
@@ -150,15 +139,7 @@ def parse_pubdate(pubdate_str):
 
 
 def tmdb_search(title, year_hint=None):
-    """
-    Returns the best-matching result, or None. TMDB's default result order
-    isn't reliably popularity-sorted, especially for short/generic titles —
-    e.g. searching "Dodgeball" or "Ocean's 11" can return obscure foreign
-    films or shorts ahead of the famous movie. To avoid that, we pull all
-    results and pick the one with the highest 'popularity' score, which is
-    a much stronger signal than raw result order for disambiguating
-    common titles.
-    """
+    """Returns the highest-popularity matching result, or None."""
     headers = {"Authorization": f"Bearer {TMDB_API_KEY}"}
     params = {"query": title}
     if year_hint:
@@ -167,7 +148,6 @@ def tmdb_search(title, year_hint=None):
     resp.raise_for_status()
     results = resp.json().get('results', [])
     if not results and year_hint:
-        # Retry without the year filter in case it was too restrictive
         params.pop("year")
         resp = requests.get(f"{TMDB_BASE}/search/movie", headers=headers, params=params, timeout=10)
         resp.raise_for_status()
@@ -213,9 +193,6 @@ def build_entry(movie_title, year_hint, hosts, episode_date, next_id):
         warning = (f"TMDB matched '{movie_title}' to '{match['title']}' "
                    f"({year}) — verify this is the right movie/year.")
     elif match.get('vote_count', 0) < 50:
-        # Title matches cleanly, but this is a low-confidence pick (obscure
-        # or foreign film with the same title as a more famous movie).
-        # Worth a manual glance even though the text matched.
         warning = (f"'{movie_title}' matched a low-profile TMDB entry "
                    f"({match.get('vote_count', 0)} votes) — double check this "
                    f"is the movie you meant, not an obscure same-named one.")
@@ -248,8 +225,6 @@ def main():
     with open(INPUT_FILE, encoding='utf-8') as f:
         data = json.load(f)
 
-    # Normalized (title, year) pairs already in the file — used to catch
-    # duplicates even when punctuation/formatting differs slightly.
     existing_keys = {
         (normalize_title(ep['movie_title']), ep.get('movie_year'))
         for ep in data
@@ -279,26 +254,7 @@ def main():
 
         norm = normalize_title(movie_title)
         if norm in existing_titles_only:
-            continue  # already have it (by title), manually or from a prior run
-
-        # Before even hitting TMDB: if this looks like a short/partial
-        # version of a title already in the file (e.g. "Halloween 4" vs.
-        # "Halloween 4: The Return of Michael Myers"), flag it rather than
-        # risk TMDB's search failing to find the full title and matching
-        # something unrelated instead. Only applied to reasonably long
-        # normalized strings (5+ chars) to avoid false positives on short
-        # common words.
-        if len(norm) >= 5:
-            possible_match = next(
-                (t for t in existing_titles_only if norm in t or t in norm),
-                None
-            )
-            if possible_match:
-                episode_date = parse_pubdate(pubdate_el.text) if pubdate_el is not None else ""
-                skipped_duplicates.append((movie_title, "?", episode_date))
-                print(f"New episode found: '{movie_title}' ({episode_date or 'date unknown'})")
-                print(f"  \u26a0 Skipped pre-TMDB — looks like it may already exist under a longer/different title. Verify manually.")
-                continue
+            continue  # already have it (exact match), manually or from a prior run
 
         episode_date = parse_pubdate(pubdate_el.text) if pubdate_el is not None else ""
 
@@ -310,9 +266,12 @@ def main():
             print(f"  \u26a0 {warning}")
             continue
 
-        # Re-check for duplicates using the TMDB-resolved canonical title,
-        # since it may differ from the raw RSS text (e.g. added ellipsis,
-        # different punctuation) even though it's the same movie.
+        # Duplicate check happens ONLY here, against the TMDB-resolved
+        # canonical title — exact normalized match, not substring. This
+        # correctly catches "Halloween 4" -> "Halloween 4: The Return of
+        # Michael Myers" (already in file) without falsely blocking
+        # sequels like "The Karate Kid Part II" (not an exact match to
+        # the existing "The Karate Kid" entry).
         resolved_key = (normalize_title(entry['movie_title']), entry['movie_year'])
         if resolved_key in existing_keys:
             skipped_duplicates.append((entry['movie_title'], entry['movie_year'], episode_date))

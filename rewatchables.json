@@ -13549,8 +13549,7 @@
     ],
     "id": 461
   },
-  
-{
+  {
     "movie_title": "Obsession",
     "movie_year": 2026,
     "director": "Curry Barker",
@@ -13563,8 +13562,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 49m",
-   "imdb_rating": 7.9,
-"rt_audience_score": "94%",
+    "imdb_rating": 7.9,
+    "rt_audience_score": "94%",
     "genre": [
       "Horror",
       "Thriller"
@@ -13582,5 +13581,110 @@
       "Anthony Casabianca"
     ],
     "id": 462
+  },
+  {
+    "movie_title": "The Karate Kid Part II",
+    "movie_year": 1986,
+    "director": "John G. Avildsen",
+    "episode_date": "2026-08-03",
+    "hosts": [
+      "Bill Simmons",
+      "Kyle Brandt"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 53m",
+    "imdb_rating": 6.2,
+    "rt_audience_score": "52%",
+    "genre": [
+      "Action",
+      "Drama",
+      "Family"
+    ],
+    "cast": [
+      "Ralph Macchio",
+      "Pat Morita",
+      "Nobu McCarthy",
+      "Danny Kamekona",
+      "Yuji Okumoto",
+      "Tamlyn Tomita"
+    ],
+    "id": 463
+  },
+  {
+    "movie_title": "The Italian Job",
+    "movie_year": 2003,
+    "director": "F. Gary Gray",
+    "episode_date": "2026-08-10",
+    "hosts": [],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 51m",
+    "imdb_rating": 7.0,
+    "rt_audience_score": "80%",
+    "genre": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "cast": [
+      "Mark Wahlberg",
+      "Charlize Theron",
+      "Edward Norton",
+      "Seth Green",
+      "Jason Statham",
+      "Mos Def",
+      "Donald Sutherland"
+    ],
+    "id": 464
+  },
+  {
+    "movie_title": "About Last Night",
+    "movie_year": 1986,
+    "director": "Edward Zwick",
+    "episode_date": "2026-08-14",
+    "hosts": [],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 53m",
+    "imdb_rating": 6.3,
+    "rt_audience_score": "60%",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "cast": [
+      "Rob Lowe",
+      "Demi Moore",
+      "James Belushi",
+      "Elizabeth Perkins"
+    ],
+    "id": 465
+  },
+  {
+    "movie_title": "Speed",
+    "movie_year": 1994,
+    "director": "Jan de Bont",
+    "episode_date": "2026-08-17",
+    "hosts": [],
+    "is_rewatch": true,
+    "episode_label": "Re-Speed",
+    "runtime": "1h 56m",
+    "imdb_rating": 7.3,
+    "rt_audience_score": "92%",
+    "genre": [
+      "Action",
+      "Thriller"
+    ],
+    "cast": [
+      "Keanu Reeves",
+      "Dennis Hopper",
+      "Sandra Bullock",
+      "Joe Morton",
+      "Jeff Daniels",
+      "Alan Ruck"
+    ],
+    "id": 466
   }
 ]
