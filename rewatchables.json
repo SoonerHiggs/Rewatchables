@@ -13616,7 +13616,11 @@
     "movie_year": 2003,
     "director": "F. Gary Gray",
     "episode_date": "2026-08-10",
-    "hosts": [],
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Van Lathan"
+    ],
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 51m",
