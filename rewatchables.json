@@ -13733,5 +13733,38 @@
       "Samuel Gould"
     ],
     "id": 467
+  },
+  {
+    "movie_title": "Apollo 13",
+    "movie_year": 1995,
+    "director": "Ron Howard",
+    "episode_date": "2026-08-25",
+    "hosts": [
+      "Bill Simmons",
+      "Amanda Dobbins",
+      "Rob Mahoney"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "2h 20m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Drama",
+      "History"
+    ],
+    "cast": [
+      "Tom Hanks",
+      "Bill Paxton",
+      "Kevin Bacon",
+      "Gary Sinise",
+      "Ed Harris",
+      "Kathleen Quinlan",
+      "Mary Kate Schellhardt",
+      "Emily Ann Lloyd",
+      "Miko Hughes",
+      "Max Elliott Slade"
+    ],
+    "id": 468
   }
 ]
