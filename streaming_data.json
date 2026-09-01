@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-25",
+  "last_updated": "2026-09-01",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -630,12 +630,6 @@
           "price": null
         },
         {
-          "service": "Disney+",
-          "type": "sub",
-          "url": "https://www.disneyplus.com/browse/entity-9702ea53-cd87-495e-a426-52867295e0cb",
-          "price": null
-        },
-        {
           "service": "Apple TV",
           "type": "rent",
           "url": "https://tv.apple.com/us/movie/speed/umc.cmc.fz3cnngvyvcdkwtero9ddpqr?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A271889540",
@@ -657,7 +651,7 @@
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/speed/umc.cmc.fz3cnngvyvcdkwtero9ddpqr?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A271889540",
-          "price": 4.99
+          "price": 14.99
         },
         {
           "service": "Fandango at Home",
@@ -22600,19 +22594,19 @@
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/The-Karate-Kid-Part-II/21847",
-          "price": 14.99
+          "price": 7.99
         },
         {
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/the-karate-kid-part-ii/umc.cmc.6mur5iu658xf4njiejw9rlcf0?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A263445899",
-          "price": 14.99
+          "price": 7.99
         },
         {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.c5a0cb07-5d9a-4bc3-b28e-b461c750c613",
-          "price": 14.99
+          "price": 7.99
         },
         {
           "service": "Google Play",
@@ -22682,13 +22676,13 @@
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/the-italian-job/umc.cmc.3vcsqbo6nv7vibdochz5kt96i?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A211845306",
-          "price": 4.99
+          "price": 14.99
         },
         {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d9af936e-1390-4818-b8ab-db65302cfb00",
-          "price": 9.99
+          "price": 14.24
         },
         {
           "service": "Google Play",
@@ -22789,6 +22783,12 @@
           "price": 3.99
         },
         {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=rCK3tBK6IRA&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/Apollo-13/5828",
@@ -22798,12 +22798,88 @@
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/apollo-13/umc.cmc.5vgm2wvd7nt2eklpd7lk1arpz?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A299468139",
-          "price": 4.99
+          "price": 12.99
         },
         {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.5ca9f787-7905-0121-c4cc-9d8593e589c9",
+          "price": 12.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=rCK3tBK6IRA&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "Aliens_1986": {
+      "sources": [
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV000206880000",
+          "price": null
+        },
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UCCJfKN2hHiVcWxHt4oYslig",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Aliens-Special-Edition-/180896",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/aliens/umc.cmc.65qmv8mospg448bevgyv8kjgf?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A270212246",
+          "price": 4.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.1845030e-30f7-47c1-88fc-d81bd62f5877",
+          "price": 3.99
+        },
+        {
+          "service": "Spectrum On Demand",
+          "type": "rent",
+          "url": "https://ondemand.spectrum.net/movies/9384/aliens/",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=p4p0Woejkqg&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Aliens-Special-Edition-/180896",
+          "price": 19.98
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/aliens/umc.cmc.65qmv8mospg448bevgyv8kjgf?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A270212246",
+          "price": 4.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.1845030e-30f7-47c1-88fc-d81bd62f5877",
+          "price": 9.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=p4p0Woejkqg&PAffiliateID=1101l32vn",
           "price": 12.99
         }
       ]

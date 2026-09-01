@@ -13766,5 +13766,39 @@
       "Max Elliott Slade"
     ],
     "id": 468
+  },
+  {
+    "movie_title": "Aliens",
+    "movie_year": 1986,
+    "director": "James Cameron",
+    "episode_date": "2026-08-31",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Sean Fennessey"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "2h 17m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Action",
+      "Thriller",
+      "Science Fiction"
+    ],
+    "cast": [
+      "Sigourney Weaver",
+      "Carrie Henn",
+      "Michael Biehn",
+      "Paul Reiser",
+      "Lance Henriksen",
+      "Bill Paxton",
+      "William Hope",
+      "Jenette Goldstein",
+      "Al Matthews",
+      "Mark Rolston"
+    ],
+    "id": 469
   }
 ]
