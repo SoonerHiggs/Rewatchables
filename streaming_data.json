@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-01",
+  "last_updated": "2026-09-08",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -627,6 +627,18 @@
           "service": "Netflix",
           "type": "sub",
           "url": "https://www.netflix.com/title/988423",
+          "price": null
+        },
+        {
+          "service": "Max",
+          "type": "sub",
+          "url": "https://play.hbomax.com/show/d9598019-0c78-422c-bec9-88f58b56ecd9",
+          "price": null
+        },
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV000395220000",
           "price": null
         },
         {
@@ -22619,21 +22631,15 @@
     "The Italian Job_2003": {
       "sources": [
         {
-          "service": "Pluto TV",
+          "service": "Tubi",
           "type": "free",
-          "url": "https://pluto.tv/on-demand/movies/the-italian-job-2003-las-2003-1-1",
+          "url": "https://tubitv.com/movies/314318",
           "price": null
         },
         {
-          "service": "MGM+",
+          "service": "STARZ",
           "type": "sub",
-          "url": "https://www.mgmplus.com/movie/the-italian-job-2003",
-          "price": null
-        },
-        {
-          "service": "fuboTV",
-          "type": "sub",
-          "url": "https://www.fubo.tv/welcome/program/MV001360320000",
+          "url": "https://www.starz.com/us/en/movies/52257",
           "price": null
         },
         {
@@ -22661,16 +22667,10 @@
           "price": 5.99
         },
         {
-          "service": "Google Play",
-          "type": "rent",
-          "url": "https://play.google.com/store/movies/details?id=YBvnBh-1-mk&PAffiliateID=1101l32vn",
-          "price": 3.99
-        },
-        {
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/The-Italian-Job-2003-/35770",
-          "price": 14.99
+          "price": 9.99
         },
         {
           "service": "Apple TV",
@@ -22682,12 +22682,6 @@
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d9af936e-1390-4818-b8ab-db65302cfb00",
-          "price": 14.24
-        },
-        {
-          "service": "Google Play",
-          "type": "buy",
-          "url": "https://play.google.com/store/movies/details?id=YBvnBh-1-mk&PAffiliateID=1101l32vn",
           "price": 12.99
         }
       ]
@@ -22704,6 +22698,12 @@
           "service": "Netflix",
           "type": "sub",
           "url": "https://www.netflix.com/title/213530",
+          "price": null
+        },
+        {
+          "service": "Prime Video",
+          "type": "sub",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.6ca9f6f7-7a2b-5c6e-828c-a1a6c9f612ba",
           "price": null
         },
         {
@@ -22762,6 +22762,12 @@
           "service": "Netflix",
           "type": "sub",
           "url": "https://www.netflix.com/title/262866",
+          "price": null
+        },
+        {
+          "service": "MGM+",
+          "type": "sub",
+          "url": "https://www.mgmplus.com/movie/apollo-13-1995",
           "price": null
         },
         {
@@ -22829,6 +22835,18 @@
           "price": null
         },
         {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/60029358",
+          "price": null
+        },
+        {
+          "service": "MGM+",
+          "type": "sub",
+          "url": "https://www.mgmplus.com/movie/24008",
+          "price": null
+        },
+        {
           "service": "Fandango at Home",
           "type": "rent",
           "url": "https://athome.fandango.com/content/browse/details/Aliens-Special-Edition-/180896",
@@ -22880,6 +22898,76 @@
           "service": "Google Play",
           "type": "buy",
           "url": "https://play.google.com/store/movies/details?id=p4p0Woejkqg&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "Talladega Nights: The Ballad of Ricky Bobby_2006": {
+      "sources": [
+        {
+          "service": "MGM+",
+          "type": "sub",
+          "url": "https://www.mgmplus.com/movie/talladega-nights-the-ballad-of-ricky-bobby-unrated",
+          "price": null
+        },
+        {
+          "service": "Peacock",
+          "type": "sub",
+          "url": "https://www.peacocktv.com/watch/asset/movies/talladega-nights-the-ballad-of-ricky-bobby/ee426bf4-4029-3989-afd8-bc808bbc7860",
+          "price": null
+        },
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV001784370000",
+          "price": null
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/talladega-nights-the-ballad-of-ricky-bobby/umc.cmc.4cv94ek82vqrruz5yhv52ss3f?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A603087527",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.eaa9f7c3-9b54-60f7-1be4-60468f21b184",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Talladega-Nights-The-Ballad-of-Ricky-Bobby-Unrated-/423604",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=8cWRHcl5GFI&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/talladega-nights-the-ballad-of-ricky-bobby/umc.cmc.4cv94ek82vqrruz5yhv52ss3f?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A603087527",
+          "price": 12.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.eaa9f7c3-9b54-60f7-1be4-60468f21b184",
+          "price": 7.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Talladega-Nights-The-Ballad-of-Ricky-Bobby-Unrated-/423604",
+          "price": 14.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=8cWRHcl5GFI&PAffiliateID=1101l32vn",
           "price": 12.99
         }
       ]

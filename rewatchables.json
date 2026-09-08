@@ -13800,5 +13800,37 @@
       "Mark Rolston"
     ],
     "id": 469
+  },
+  {
+    "movie_title": "Talladega Nights: The Ballad of Ricky Bobby",
+    "movie_year": 2006,
+    "director": "Adam McKay",
+    "episode_date": "2026-09-07",
+    "hosts": [
+      "Craig Horlbeck",
+      "Danny Heifetz",
+      "Danny Kelly"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 48m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Comedy"
+    ],
+    "cast": [
+      "Will Ferrell",
+      "John C. Reilly",
+      "Sacha Baron Cohen",
+      "Gary Cole",
+      "Leslie Bibb",
+      "Michael Clarke Duncan",
+      "Jane Lynch",
+      "Amy Adams",
+      "Greg Germann",
+      "Molly Shannon"
+    ],
+    "id": 470
   }
 ]
