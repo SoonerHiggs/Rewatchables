@@ -13832,5 +13832,39 @@
       "Molly Shannon"
     ],
     "id": 470
+  },
+  {
+    "movie_title": "Rambo: First Blood Part II",
+    "movie_year": 1985,
+    "director": "George P. Cosmatos",
+    "episode_date": "2026-09-14",
+    "hosts": [
+      "Bill Simmons",
+      "Kyle Brandt"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 36m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Action",
+      "Adventure",
+      "Thriller",
+      "War"
+    ],
+    "cast": [
+      "Sylvester Stallone",
+      "Richard Crenna",
+      "Charles Napier",
+      "Steven Berkoff",
+      "Julia Nickson",
+      "Martin Kove",
+      "George Cheung",
+      "Andy Wood",
+      "William Ghent",
+      "Vojislav Govedarica"
+    ],
+    "id": 471
   }
 ]

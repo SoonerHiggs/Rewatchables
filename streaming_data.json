@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-08",
+  "last_updated": "2026-09-15",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -663,7 +663,7 @@
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/speed/umc.cmc.fz3cnngvyvcdkwtero9ddpqr?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A271889540",
-          "price": 14.99
+          "price": 4.99
         },
         {
           "service": "Fandango at Home",
@@ -22886,7 +22886,7 @@
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/aliens/umc.cmc.65qmv8mospg448bevgyv8kjgf?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A270212246",
-          "price": 4.99
+          "price": 19.98
         },
         {
           "service": "Amazon",
@@ -22905,12 +22905,6 @@
     "Talladega Nights: The Ballad of Ricky Bobby_2006": {
       "sources": [
         {
-          "service": "MGM+",
-          "type": "sub",
-          "url": "https://www.mgmplus.com/movie/talladega-nights-the-ballad-of-ricky-bobby-unrated",
-          "price": null
-        },
-        {
           "service": "Peacock",
           "type": "sub",
           "url": "https://www.peacocktv.com/watch/asset/movies/talladega-nights-the-ballad-of-ricky-bobby/ee426bf4-4029-3989-afd8-bc808bbc7860",
@@ -22919,7 +22913,7 @@
         {
           "service": "fuboTV",
           "type": "sub",
-          "url": "https://www.fubo.tv/welcome/program/MV001784370000",
+          "url": "https://www.fubo.tv/welcome/program/MV002107800000",
           "price": null
         },
         {
@@ -22968,6 +22962,70 @@
           "service": "Google Play",
           "type": "buy",
           "url": "https://play.google.com/store/movies/details?id=8cWRHcl5GFI&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "Rambo: First Blood Part II_1985": {
+      "sources": [
+        {
+          "service": "Pluto TV",
+          "type": "free",
+          "url": "https://pluto.tv/on-demand/movies/rambo-first-blood-part-ii-1985-1-1",
+          "price": null
+        },
+        {
+          "service": "Tubi",
+          "type": "free",
+          "url": "https://tubitv.com/movies/100053348",
+          "price": null
+        },
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UCvXUoaN0STFUYJY8I7s-jRg",
+          "price": null
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7eb4772c-f9ea-c84f-8726-caebc4377742",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/rambo-first-blood-part-ii/umc.cmc.4aktaduc1yao3q2tl6omtcnrj?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A359069863",
+          "price": 4.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Rambo-First-Blood-Part-2/7241",
+          "price": 4.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=Vt4PyVlN5Ys&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7eb4772c-f9ea-c84f-8726-caebc4377742",
+          "price": 14.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/rambo-first-blood-part-ii/umc.cmc.4aktaduc1yao3q2tl6omtcnrj?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A359069863",
+          "price": 14.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=Vt4PyVlN5Ys&PAffiliateID=1101l32vn",
           "price": 12.99
         }
       ]
