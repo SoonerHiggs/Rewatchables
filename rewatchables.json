@@ -13866,5 +13866,39 @@
       "Vojislav Govedarica"
     ],
     "id": 471
+  },
+  {
+    "movie_title": "Law Abiding Citizen",
+    "movie_year": 2009,
+    "director": "F. Gary Gray",
+    "episode_date": "2026-09-21",
+    "hosts": [
+      "Bill Simmons",
+      "Van Lathan",
+      "Craig Horlbeck"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 49m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Drama",
+      "Crime",
+      "Thriller"
+    ],
+    "cast": [
+      "Jamie Foxx",
+      "Gerard Butler",
+      "Colm Meaney",
+      "Bruce McGill",
+      "Leslie Bibb",
+      "Michael Irby",
+      "Gregory Itzin",
+      "Regina Hall",
+      "Emerald-Angel Young",
+      "Brooke Stacy Mills"
+    ],
+    "id": 472
   }
 ]

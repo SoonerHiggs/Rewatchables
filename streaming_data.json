@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-15",
+  "last_updated": "2026-09-22",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -22941,12 +22941,6 @@
           "price": 3.99
         },
         {
-          "service": "Apple TV",
-          "type": "buy",
-          "url": "https://tv.apple.com/us/movie/talladega-nights-the-ballad-of-ricky-bobby/umc.cmc.4cv94ek82vqrruz5yhv52ss3f?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A603087527",
-          "price": 12.99
-        },
-        {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.eaa9f7c3-9b54-60f7-1be4-60468f21b184",
@@ -22993,6 +22987,12 @@
           "price": 3.99
         },
         {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=Vt4PyVlN5Ys&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
           "service": "Apple TV",
           "type": "rent",
           "url": "https://tv.apple.com/us/movie/rambo-first-blood-part-ii/umc.cmc.4aktaduc1yao3q2tl6omtcnrj?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A359069863",
@@ -23005,21 +23005,9 @@
           "price": 4.99
         },
         {
-          "service": "Google Play",
-          "type": "rent",
-          "url": "https://play.google.com/store/movies/details?id=Vt4PyVlN5Ys&PAffiliateID=1101l32vn",
-          "price": 3.99
-        },
-        {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7eb4772c-f9ea-c84f-8726-caebc4377742",
-          "price": 14.99
-        },
-        {
-          "service": "Apple TV",
-          "type": "buy",
-          "url": "https://tv.apple.com/us/movie/rambo-first-blood-part-ii/umc.cmc.4aktaduc1yao3q2tl6omtcnrj?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A359069863",
           "price": 14.99
         },
         {
@@ -23027,6 +23015,64 @@
           "type": "buy",
           "url": "https://play.google.com/store/movies/details?id=Vt4PyVlN5Ys&PAffiliateID=1101l32vn",
           "price": 12.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/rambo-first-blood-part-ii/umc.cmc.4aktaduc1yao3q2tl6omtcnrj?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A359069863",
+          "price": 14.99
+        }
+      ]
+    },
+    "Law Abiding Citizen_2009": {
+      "sources": [
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/70116679",
+          "price": null
+        },
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UCGt9Ki-C1oC-MZMJHO4dD0Q",
+          "price": null
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/law-abiding-citizen/umc.cmc.1nnw02knhtyp9g2mfoq56jf8j?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1229372117",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Law-Abiding-Citizen/204697",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.fa3e3923-9eff-4d79-b53c-c4749946f0c5",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/law-abiding-citizen/umc.cmc.1nnw02knhtyp9g2mfoq56jf8j?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1229372117",
+          "price": 14.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Law-Abiding-Citizen/204697",
+          "price": 14.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.fa3e3923-9eff-4d79-b53c-c4749946f0c5",
+          "price": 14.99
         }
       ]
     }
