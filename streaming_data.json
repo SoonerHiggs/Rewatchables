@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-09-29",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -22841,12 +22841,6 @@
           "price": null
         },
         {
-          "service": "MGM+",
-          "type": "sub",
-          "url": "https://www.mgmplus.com/movie/24008",
-          "price": null
-        },
-        {
           "service": "Fandango at Home",
           "type": "rent",
           "url": "https://athome.fandango.com/content/browse/details/Aliens-Special-Edition-/180896",
@@ -22871,12 +22865,6 @@
           "price": 3.99
         },
         {
-          "service": "Google Play",
-          "type": "rent",
-          "url": "https://play.google.com/store/movies/details?id=p4p0Woejkqg&PAffiliateID=1101l32vn",
-          "price": 3.99
-        },
-        {
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/Aliens-Special-Edition-/180896",
@@ -22886,19 +22874,13 @@
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/aliens/umc.cmc.65qmv8mospg448bevgyv8kjgf?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A270212246",
-          "price": 19.98
+          "price": 4.99
         },
         {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.1845030e-30f7-47c1-88fc-d81bd62f5877",
           "price": 9.99
-        },
-        {
-          "service": "Google Play",
-          "type": "buy",
-          "url": "https://play.google.com/store/movies/details?id=p4p0Woejkqg&PAffiliateID=1101l32vn",
-          "price": 12.99
         }
       ]
     },
@@ -22913,7 +22895,7 @@
         {
           "service": "fuboTV",
           "type": "sub",
-          "url": "https://www.fubo.tv/welcome/program/MV002107800000",
+          "url": "https://www.fubo.tv/welcome/program/MV001784370000",
           "price": null
         },
         {
@@ -22939,6 +22921,12 @@
           "type": "rent",
           "url": "https://play.google.com/store/movies/details?id=8cWRHcl5GFI&PAffiliateID=1101l32vn",
           "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/talladega-nights-the-ballad-of-ricky-bobby/umc.cmc.4cv94ek82vqrruz5yhv52ss3f?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A603087527",
+          "price": 12.99
         },
         {
           "service": "Amazon",
@@ -22987,12 +22975,6 @@
           "price": 3.99
         },
         {
-          "service": "Google Play",
-          "type": "rent",
-          "url": "https://play.google.com/store/movies/details?id=Vt4PyVlN5Ys&PAffiliateID=1101l32vn",
-          "price": 3.99
-        },
-        {
           "service": "Apple TV",
           "type": "rent",
           "url": "https://tv.apple.com/us/movie/rambo-first-blood-part-ii/umc.cmc.4aktaduc1yao3q2tl6omtcnrj?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A359069863",
@@ -23009,12 +22991,6 @@
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7eb4772c-f9ea-c84f-8726-caebc4377742",
           "price": 14.99
-        },
-        {
-          "service": "Google Play",
-          "type": "buy",
-          "url": "https://play.google.com/store/movies/details?id=Vt4PyVlN5Ys&PAffiliateID=1101l32vn",
-          "price": 12.99
         },
         {
           "service": "Apple TV",
@@ -23073,6 +23049,82 @@
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.fa3e3923-9eff-4d79-b53c-c4749946f0c5",
           "price": 14.99
+        }
+      ]
+    },
+    "13 Going on 30_2004": {
+      "sources": [
+        {
+          "service": "Hoopla",
+          "type": "free",
+          "url": "https://www.hoopladigital.com/title/12183254",
+          "price": null
+        },
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/60034573",
+          "price": null
+        },
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV001476020000",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/13-Going-on-30/41982",
+          "price": 3.99
+        },
+        {
+          "service": "Spectrum On Demand",
+          "type": "rent",
+          "url": "https://ondemand.spectrum.net/movies/34314/13-going-on-30/",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.1968d290-915e-4464-8ffa-12cb742f2e04",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/13-going-on-30/umc.cmc.3cvkbxz9dow2elgolruvw634d?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A264038287",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=fAYn2FzwGQI&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/13-Going-on-30/41982",
+          "price": 12.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.1968d290-915e-4464-8ffa-12cb742f2e04",
+          "price": 7.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/13-going-on-30/umc.cmc.3cvkbxz9dow2elgolruvw634d?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A264038287",
+          "price": 12.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=fAYn2FzwGQI&PAffiliateID=1101l32vn",
+          "price": 12.99
         }
       ]
     }

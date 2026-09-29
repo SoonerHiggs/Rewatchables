@@ -13900,5 +13900,38 @@
       "Brooke Stacy Mills"
     ],
     "id": 472
+  },
+  {
+    "movie_title": "13 Going on 30",
+    "movie_year": 2004,
+    "director": "Gary Winick",
+    "episode_date": "2026-09-28",
+    "hosts": [
+      "Bill Simmons",
+      "Juliet Litman"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 38m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Comedy",
+      "Fantasy",
+      "Romance"
+    ],
+    "cast": [
+      "Jennifer Garner",
+      "Mark Ruffalo",
+      "Judy Greer",
+      "Andy Serkis",
+      "Kathy Baker",
+      "Phil Reeves",
+      "Sam Ball",
+      "Marcia DeBonis",
+      "Christa B. Allen",
+      "Sean Marquette"
+    ],
+    "id": 473
   }
 ]
