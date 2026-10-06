@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-29",
+  "last_updated": "2026-10-06",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -22887,12 +22887,6 @@
     "Talladega Nights: The Ballad of Ricky Bobby_2006": {
       "sources": [
         {
-          "service": "Peacock",
-          "type": "sub",
-          "url": "https://www.peacocktv.com/watch/asset/movies/talladega-nights-the-ballad-of-ricky-bobby/ee426bf4-4029-3989-afd8-bc808bbc7860",
-          "price": null
-        },
-        {
           "service": "fuboTV",
           "type": "sub",
           "url": "https://www.fubo.tv/welcome/program/MV001784370000",
@@ -22987,6 +22981,12 @@
           "price": 4.99
         },
         {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=Vt4PyVlN5Ys&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7eb4772c-f9ea-c84f-8726-caebc4377742",
@@ -22997,6 +22997,12 @@
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/rambo-first-blood-part-ii/umc.cmc.4aktaduc1yao3q2tl6omtcnrj?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A359069863",
           "price": 14.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=Vt4PyVlN5Ys&PAffiliateID=1101l32vn",
+          "price": 12.99
         }
       ]
     },
@@ -23069,7 +23075,7 @@
         {
           "service": "fuboTV",
           "type": "sub",
-          "url": "https://www.fubo.tv/welcome/program/MV001476020000",
+          "url": "https://www.fubo.tv/welcome/program/MV001930740000",
           "price": null
         },
         {
@@ -23124,6 +23130,88 @@
           "service": "Google Play",
           "type": "buy",
           "url": "https://play.google.com/store/movies/details?id=fAYn2FzwGQI&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "The Texas Chain Saw Massacre_1974": {
+      "sources": [
+        {
+          "service": "Pluto TV",
+          "type": "free",
+          "url": "https://pluto.tv/on-demand/movies/the-texas-chain-saw-massacre-40th-anniversary-1974-1-1",
+          "price": null
+        },
+        {
+          "service": "Peacock",
+          "type": "free",
+          "url": "https://www.peacocktv.com/watch/asset/movies/the-texas-chain-saw-massacre/ed4b864a-be89-3cd4-b578-39fdf818ddf8",
+          "price": null
+        },
+        {
+          "service": "Tubi",
+          "type": "free",
+          "url": "https://tubitv.com/movies/499404",
+          "price": null
+        },
+        {
+          "service": "Peacock",
+          "type": "sub",
+          "url": "https://www.peacocktv.com/watch/asset/movies/the-texas-chain-saw-massacre/ed4b864a-be89-3cd4-b578-39fdf818ddf8",
+          "price": null
+        },
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/15815343",
+          "price": null
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/umc.cmc.2iv326v5jkgvz24aul7y1ifuk?itscg=30200&at=1010layx",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://www.vudu.com/content/movies/details/content/13416",
+          "price": 2.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.d18b779b-6559-44b2-bb53-4191985ec233",
+          "price": 2.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=2ujekuaOPv0&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/umc.cmc.2iv326v5jkgvz24aul7y1ifuk?itscg=30200&at=1010layx",
+          "price": 9.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://www.vudu.com/content/movies/details/content/13416",
+          "price": 9.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.d18b779b-6559-44b2-bb53-4191985ec233",
+          "price": 9.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=2ujekuaOPv0&PAffiliateID=1101l32vn",
           "price": 12.99
         }
       ]

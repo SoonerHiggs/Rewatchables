@@ -13933,5 +13933,36 @@
       "Sean Marquette"
     ],
     "id": 473
+  },
+  {
+    "movie_title": "The Texas Chain Saw Massacre",
+    "movie_year": 1974,
+    "director": "Tobe Hooper",
+    "episode_date": "2026-10-05",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 23m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Horror"
+    ],
+    "cast": [
+      "Marilyn Burns",
+      "Allen Danziger",
+      "Paul A. Partain",
+      "William Vail",
+      "Teri McMinn",
+      "Edwin Neal",
+      "Jim Siedow",
+      "Gunnar Hansen",
+      "John Dugan",
+      "Robert Courtin"
+    ],
+    "id": 474
   }
 ]
