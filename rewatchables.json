@@ -13964,5 +13964,37 @@
       "Robert Courtin"
     ],
     "id": 474
+  },
+  {
+    "movie_title": "Friday the 13th",
+    "movie_year": 1980,
+    "director": "Sean S. Cunningham",
+    "episode_date": "2026-10-12",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Van Lathan"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 35m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Horror"
+    ],
+    "cast": [
+      "Adrienne King",
+      "Kevin Bacon",
+      "Jeannine Taylor",
+      "Harry Crosby",
+      "Laurie Bartram",
+      "Mark Nelson",
+      "Betsy Palmer",
+      "Peter Brouwer",
+      "Robbi Morgan",
+      "Rex Everhart"
+    ],
+    "id": 475
   }
 ]

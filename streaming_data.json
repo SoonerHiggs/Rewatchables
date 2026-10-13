@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-06",
+  "last_updated": "2026-10-13",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -23073,12 +23073,6 @@
           "price": null
         },
         {
-          "service": "fuboTV",
-          "type": "sub",
-          "url": "https://www.fubo.tv/welcome/program/MV001930740000",
-          "price": null
-        },
-        {
           "service": "Fandango at Home",
           "type": "rent",
           "url": "https://athome.fandango.com/content/browse/details/13-Going-on-30/41982",
@@ -23143,12 +23137,6 @@
           "price": null
         },
         {
-          "service": "Peacock",
-          "type": "free",
-          "url": "https://www.peacocktv.com/watch/asset/movies/the-texas-chain-saw-massacre/ed4b864a-be89-3cd4-b578-39fdf818ddf8",
-          "price": null
-        },
-        {
           "service": "Tubi",
           "type": "free",
           "url": "https://tubitv.com/movies/499404",
@@ -23161,6 +23149,12 @@
           "price": null
         },
         {
+          "service": "Prime Video",
+          "type": "sub",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.6ff72c3b-6ed5-490a-96d2-e9a2135ada3a",
+          "price": null
+        },
+        {
           "service": "Netflix",
           "type": "sub",
           "url": "https://www.netflix.com/title/15815343",
@@ -23169,20 +23163,20 @@
         {
           "service": "Apple TV",
           "type": "rent",
-          "url": "https://tv.apple.com/us/movie/umc.cmc.2iv326v5jkgvz24aul7y1ifuk?itscg=30200&at=1010layx",
+          "url": "https://tv.apple.com/us/movie/the-texas-chain-saw-massacre/umc.cmc.2iv326v5jkgvz24aul7y1ifuk?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A907412440",
           "price": 3.99
         },
         {
           "service": "Fandango at Home",
           "type": "rent",
-          "url": "https://www.vudu.com/content/movies/details/content/13416",
+          "url": "https://athome.fandango.com/content/browse/details/The-Texas-Chain-Saw-Massacre-50th-Anniversary/13416",
           "price": 2.99
         },
         {
           "service": "Amazon",
           "type": "rent",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.d18b779b-6559-44b2-bb53-4191985ec233",
-          "price": 2.99
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d18b779b-6559-44b2-bb53-4191985ec233",
+          "price": 3.99
         },
         {
           "service": "Google Play",
@@ -23193,26 +23187,102 @@
         {
           "service": "Apple TV",
           "type": "buy",
-          "url": "https://tv.apple.com/us/movie/umc.cmc.2iv326v5jkgvz24aul7y1ifuk?itscg=30200&at=1010layx",
+          "url": "https://tv.apple.com/us/movie/the-texas-chain-saw-massacre/umc.cmc.2iv326v5jkgvz24aul7y1ifuk?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A907412440",
           "price": 9.99
         },
         {
           "service": "Fandango at Home",
           "type": "buy",
-          "url": "https://www.vudu.com/content/movies/details/content/13416",
+          "url": "https://athome.fandango.com/content/browse/details/The-Texas-Chain-Saw-Massacre-50th-Anniversary/13416",
           "price": 9.99
         },
         {
           "service": "Amazon",
           "type": "buy",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.d18b779b-6559-44b2-bb53-4191985ec233",
-          "price": 9.99
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d18b779b-6559-44b2-bb53-4191985ec233",
+          "price": 19.98
         },
         {
           "service": "Google Play",
           "type": "buy",
           "url": "https://play.google.com/store/movies/details?id=2ujekuaOPv0&PAffiliateID=1101l32vn",
           "price": 12.99
+        }
+      ]
+    },
+    "Friday the 13th_1980": {
+      "sources": [
+        {
+          "service": "Tubi",
+          "type": "free",
+          "url": "https://tubitv.com/movies/273564",
+          "price": null
+        },
+        {
+          "service": "YouTube",
+          "type": "free",
+          "url": "https://www.youtube.com/watch?v=mIHT87GAu5A",
+          "price": null
+        },
+        {
+          "service": "Pluto TV",
+          "type": "free",
+          "url": "https://pluto.tv/on-demand/movies/friday-the-13th-1980-1-1",
+          "price": null
+        },
+        {
+          "service": "Paramount+",
+          "type": "sub",
+          "url": "https://www.paramountplus.com/movies/friday-the-13th/nwnsawvcCJBDMKfdSVf9boKa7_qNbHr0?searchReferral=publisher&source=search-feeds",
+          "price": null
+        },
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/525111",
+          "price": null
+        },
+        {
+          "service": "Peacock",
+          "type": "sub",
+          "url": "https://www.peacocktv.com/watch/asset/movies/friday-the-13th/47b76616-f164-31e1-aee8-a96a805e9e95",
+          "price": null
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/friday-the-13th/umc.cmc.4cny06c1e312h2mfd2utrtve2?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A305332580",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/Friday-the-13th-Uncut-/145248",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d82492e4-7539-49e4-a7b1-504d7ed4dd72",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/friday-the-13th/umc.cmc.4cny06c1e312h2mfd2utrtve2?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A305332580",
+          "price": 6.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Friday-the-13th-Uncut-/145248",
+          "price": 6.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d82492e4-7539-49e4-a7b1-504d7ed4dd72",
+          "price": 6.99
         }
       ]
     }
