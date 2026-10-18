@@ -13713,8 +13713,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 36m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": "7.2",
+    "rt_audience_score": "75%",
     "genre": [
       "Comedy",
       "Drama",
@@ -13747,8 +13747,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "2h 20m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": "7.7",
+    "rt_audience_score": "87%",
     "genre": [
       "Drama",
       "History"
@@ -13780,8 +13780,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "2h 17m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": "8.4",
+    "rt_audience_score": "94%",
     "genre": [
       "Action",
       "Thriller",
@@ -13814,8 +13814,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 48m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": "6.6",
+    "rt_audience_score": "73%",
     "genre": [
       "Comedy"
     ],
@@ -13845,8 +13845,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 36m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": "6.5",
+    "rt_audience_score": "60%",
     "genre": [
       "Action",
       "Adventure",
@@ -13880,8 +13880,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 49m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": "7.4",
+    "rt_audience_score": "75%",
     "genre": [
       "Drama",
       "Crime",
@@ -13913,8 +13913,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 38m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": "6.5",
+    "rt_audience_score": "71%",
     "genre": [
       "Comedy",
       "Fantasy",
@@ -13946,8 +13946,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 23m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": "7.5",
+    "rt_audience_score": "82%",
     "genre": [
       "Horror"
     ],
@@ -13978,8 +13978,8 @@
     "is_rewatch": false,
     "episode_label": "",
     "runtime": "1h 35m",
-    "imdb_rating": null,
-    "rt_audience_score": null,
+    "imdb_rating": "6.4",
+    "rt_audience_score": "60%",
     "genre": [
       "Horror"
     ],
