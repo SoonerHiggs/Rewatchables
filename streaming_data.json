@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-13",
+  "last_updated": "2026-10-20",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -22316,9 +22316,33 @@
     "It Follows_2015": {
       "sources": [
         {
-          "service": "Kanopy",
+          "service": "Pluto TV",
           "type": "free",
-          "url": "https://www.kanopy.com/product/movie-15960140",
+          "url": "https://pluto.tv/on-demand/movies/it-follows-2015-1-1",
+          "price": null
+        },
+        {
+          "service": "YouTube TV",
+          "type": "sub",
+          "url": "https://tv.youtube.com/browse/UCWtNHROGJ7_l-ARH0Bt2hjA",
+          "price": null
+        },
+        {
+          "service": "Peacock",
+          "type": "sub",
+          "url": "https://www.peacocktv.com/watch/asset/movies/it-follows/402eb934-8fa1-39d2-b2ef-dad17d618167",
+          "price": null
+        },
+        {
+          "service": "Paramount+",
+          "type": "sub",
+          "url": "https://www.paramountplus.com/movies/it-follows/JvkwSAtvLn6NLjXnljZDwUGmtNgIn_Ib?searchReferral=publisher&source=search-feeds",
+          "price": null
+        },
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV005848310000",
           "price": null
         },
         {
@@ -22331,12 +22355,18 @@
           "service": "Amazon",
           "type": "rent",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.4c03893e-cd6f-461f-8729-c22b13e596d9",
-          "price": 5.66
+          "price": 3.99
         },
         {
           "service": "Apple TV",
           "type": "rent",
-          "url": "https://tv.apple.com/us/movie/it-follows/umc.cmc.2fbp8olg5q5g8mmdeliqjrs2t?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1217953954",
+          "url": "https://tv.apple.com/us/movie/it-follows/umc.cmc.2fbp8olg5q5g8mmdeliqjrs2t?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1217953954",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=mE6Bcbl-_r8&PAffiliateID=1101l32vn",
           "price": 3.99
         },
         {
@@ -22344,6 +22374,24 @@
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/It-Follows/625411",
           "price": 14.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.4c03893e-cd6f-461f-8729-c22b13e596d9",
+          "price": 14.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/it-follows/umc.cmc.2fbp8olg5q5g8mmdeliqjrs2t?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1217953954",
+          "price": 14.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=mE6Bcbl-_r8&PAffiliateID=1101l32vn",
+          "price": 12.99
         }
       ]
     },
@@ -23176,13 +23224,7 @@
           "service": "Amazon",
           "type": "rent",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d18b779b-6559-44b2-bb53-4191985ec233",
-          "price": 3.99
-        },
-        {
-          "service": "Google Play",
-          "type": "rent",
-          "url": "https://play.google.com/store/movies/details?id=2ujekuaOPv0&PAffiliateID=1101l32vn",
-          "price": 3.99
+          "price": 2.99
         },
         {
           "service": "Apple TV",
@@ -23200,13 +23242,7 @@
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d18b779b-6559-44b2-bb53-4191985ec233",
-          "price": 19.98
-        },
-        {
-          "service": "Google Play",
-          "type": "buy",
-          "url": "https://play.google.com/store/movies/details?id=2ujekuaOPv0&PAffiliateID=1101l32vn",
-          "price": 12.99
+          "price": 9.99
         }
       ]
     },
@@ -23222,12 +23258,6 @@
           "service": "YouTube",
           "type": "free",
           "url": "https://www.youtube.com/watch?v=mIHT87GAu5A",
-          "price": null
-        },
-        {
-          "service": "Pluto TV",
-          "type": "free",
-          "url": "https://pluto.tv/on-demand/movies/friday-the-13th-1980-1-1",
           "price": null
         },
         {
@@ -23251,7 +23281,7 @@
         {
           "service": "Apple TV",
           "type": "rent",
-          "url": "https://tv.apple.com/us/movie/friday-the-13th/umc.cmc.4cny06c1e312h2mfd2utrtve2?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A305332580",
+          "url": "https://tv.apple.com/us/movie/friday-the-13th/umc.cmc.4cny06c1e312h2mfd2utrtve2?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A312028305",
           "price": 3.99
         },
         {
@@ -23269,13 +23299,7 @@
         {
           "service": "Apple TV",
           "type": "buy",
-          "url": "https://tv.apple.com/us/movie/friday-the-13th/umc.cmc.4cny06c1e312h2mfd2utrtve2?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A305332580",
-          "price": 6.99
-        },
-        {
-          "service": "Fandango at Home",
-          "type": "buy",
-          "url": "https://athome.fandango.com/content/browse/details/Friday-the-13th-Uncut-/145248",
+          "url": "https://tv.apple.com/us/movie/friday-the-13th/umc.cmc.4cny06c1e312h2mfd2utrtve2?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A312028305",
           "price": 6.99
         },
         {

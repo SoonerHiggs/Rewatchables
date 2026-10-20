@@ -13996,5 +13996,38 @@
       "Rex Everhart"
     ],
     "id": 475
+  },
+  {
+    "movie_title": "It Follows",
+    "movie_year": 2015,
+    "director": "David Robert Mitchell",
+    "episode_date": "2026-10-19",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Joanna Robinson"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 41m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Horror",
+      "Mystery"
+    ],
+    "cast": [
+      "Maika Monroe",
+      "Keir Gilchrist",
+      "Daniel Zovatto",
+      "Jake Weary",
+      "Olivia Luccardi",
+      "Lili Sepe",
+      "Bailey Spry",
+      "Carollette Phillips",
+      "Loren Bass",
+      "Charles Gertner"
+    ],
+    "id": 476
   }
 ]
