@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-20",
+  "last_updated": "2026-10-27",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -22318,7 +22318,7 @@
         {
           "service": "Pluto TV",
           "type": "free",
-          "url": "https://pluto.tv/on-demand/movies/it-follows-2015-1-1",
+          "url": "https://pluto.tv/us/movies/5febef58ed4edc001b013c62/",
           "price": null
         },
         {
@@ -22379,13 +22379,13 @@
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.4c03893e-cd6f-461f-8729-c22b13e596d9",
-          "price": 14.99
+          "price": 4.99
         },
         {
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/it-follows/umc.cmc.2fbp8olg5q5g8mmdeliqjrs2t?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1217953954",
-          "price": 14.99
+          "price": 4.99
         },
         {
           "service": "Google Play",
@@ -23230,7 +23230,7 @@
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/the-texas-chain-saw-massacre/umc.cmc.2iv326v5jkgvz24aul7y1ifuk?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A907412440",
-          "price": 9.99
+          "price": 4.99
         },
         {
           "service": "Fandango at Home",
@@ -23258,6 +23258,12 @@
           "service": "YouTube",
           "type": "free",
           "url": "https://www.youtube.com/watch?v=mIHT87GAu5A",
+          "price": null
+        },
+        {
+          "service": "Pluto TV",
+          "type": "free",
+          "url": "https://pluto.tv/on-demand/movies/friday-the-13th-1980-1-1",
           "price": null
         },
         {
@@ -23303,10 +23309,80 @@
           "price": 6.99
         },
         {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/Friday-the-13th-Uncut-/145248",
+          "price": 6.99
+        },
+        {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d82492e4-7539-49e4-a7b1-504d7ed4dd72",
           "price": 6.99
+        }
+      ]
+    },
+    "A Nightmare on Elm Street_1984": {
+      "sources": [
+        {
+          "service": "Max",
+          "type": "sub",
+          "url": "https://play.hbomax.com/show/2d0cd140-c9cc-4c3b-8010-f930ef077379",
+          "price": null
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/A-Nightmare-on-Elm-Street/14418",
+          "price": 5.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/a-nightmare-on-elm-street/umc.cmc.2gxjjzta1kb4a1ysonxlo5twi?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A308625280",
+          "price": 5.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.1826fd01-cb5c-48b6-b913-f2c8a69eb247",
+          "price": 3.99
+        },
+        {
+          "service": "Spectrum On Demand",
+          "type": "rent",
+          "url": "https://ondemand.spectrum.net/movies/8572/a-nightmare-on-elm-street/",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=kBt_BpWbnbM&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/A-Nightmare-on-Elm-Street/14418",
+          "price": 9.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/a-nightmare-on-elm-street/umc.cmc.2gxjjzta1kb4a1ysonxlo5twi?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A308625280",
+          "price": 4.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.1826fd01-cb5c-48b6-b913-f2c8a69eb247",
+          "price": 6.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=kBt_BpWbnbM&PAffiliateID=1101l32vn",
+          "price": 12.99
         }
       ]
     }

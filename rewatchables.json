@@ -14029,5 +14029,37 @@
       "Charles Gertner"
     ],
     "id": 476
+  },
+  {
+    "movie_title": "A Nightmare on Elm Street",
+    "movie_year": 1984,
+    "director": "Wes Craven",
+    "episode_date": "2026-10-26",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Van Lathan"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 31m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Horror"
+    ],
+    "cast": [
+      "Heather Langenkamp",
+      "Robert Englund",
+      "Johnny Depp",
+      "Amanda Wyss",
+      "Jsu Garcia",
+      "John Saxon",
+      "Ronee Blakley",
+      "Charles Fleischer",
+      "Joseph Whipp",
+      "Lin Shaye"
+    ],
+    "id": 477
   }
 ]
