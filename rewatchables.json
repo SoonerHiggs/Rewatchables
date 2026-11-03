@@ -14061,5 +14061,37 @@
       "Lin Shaye"
     ],
     "id": 477
+  },
+  {
+    "movie_title": "All the Right Moves",
+    "movie_year": 1983,
+    "director": "Michael Chapman",
+    "episode_date": "2026-11-02",
+    "hosts": [
+      "Bill Simmons",
+      "Kyle Brandt"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 31m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Romance",
+      "Drama"
+    ],
+    "cast": [
+      "Tom Cruise",
+      "Craig T. Nelson",
+      "Lea Thompson",
+      "Charles Cioffi",
+      "Gary Graham",
+      "Paul Carafotes",
+      "Chris Penn",
+      "Sandy Faison",
+      "James A. Baffico",
+      "Mel Winkler"
+    ],
+    "id": 478
   }
 ]
