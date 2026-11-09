@@ -432,6 +432,7 @@
       if (activeService === 'free') return sources.some(s => s.type === 'free');
       const freeOrSub = sources.filter(s => s.type === 'free' || s.type === 'sub' || s.type === 'subscription');
       if (activeService === 'AppleTV+') return freeOrSub.some(s => s.service.toLowerCase().includes('appletv'));
+      if (activeService === 'Tubi TV') return freeOrSub.some(s => s.service.toLowerCase().includes('tubi'));
       return freeOrSub.some(s => s.service.toLowerCase() === activeService.toLowerCase());
     }
 
