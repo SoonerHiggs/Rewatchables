@@ -14093,5 +14093,38 @@
       "Mel Winkler"
     ],
     "id": 478
+  },
+  {
+    "movie_title": "Air Force One",
+    "movie_year": 1997,
+    "director": "Wolfgang Petersen",
+    "episode_date": "2026-11-09",
+    "hosts": [
+      "Bill Simmons",
+      "Chris Ryan",
+      "Sean Fennessey"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "2h 4m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Action",
+      "Thriller"
+    ],
+    "cast": [
+      "Harrison Ford",
+      "Gary Oldman",
+      "Glenn Close",
+      "Wendy Crewson",
+      "Liesel Matthews",
+      "Paul Guilfoyle",
+      "Xander Berkeley",
+      "William H. Macy",
+      "Dean Stockwell",
+      "Tom Everett"
+    ],
+    "id": 479
   }
 ]
