@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-10",
+  "last_updated": "2026-11-17",
   "movies": {
     "Heat_1995": {
       "sources": [
@@ -22328,15 +22328,15 @@
           "price": null
         },
         {
-          "service": "Paramount+",
-          "type": "sub",
-          "url": "https://www.paramountplus.com/movies/it-follows/JvkwSAtvLn6NLjXnljZDwUGmtNgIn_Ib?searchReferral=publisher&source=search-feeds",
-          "price": null
-        },
-        {
           "service": "Prime Video",
           "type": "sub",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.4c03893e-cd6f-461f-8729-c22b13e596d9",
+          "price": null
+        },
+        {
+          "service": "fuboTV",
+          "type": "sub",
+          "url": "https://www.fubo.tv/welcome/program/MV005848310000",
           "price": null
         },
         {
@@ -22367,19 +22367,19 @@
           "service": "Fandango at Home",
           "type": "buy",
           "url": "https://athome.fandango.com/content/browse/details/It-Follows/625411",
-          "price": 14.99
+          "price": 5
         },
         {
           "service": "Amazon",
           "type": "buy",
           "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.4c03893e-cd6f-461f-8729-c22b13e596d9",
-          "price": 14.99
+          "price": 4.99
         },
         {
           "service": "Apple TV",
           "type": "buy",
           "url": "https://tv.apple.com/us/movie/it-follows/umc.cmc.2fbp8olg5q5g8mmdeliqjrs2t?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1217953954",
-          "price": 14.99
+          "price": 4.99
         },
         {
           "service": "Google Play",
@@ -23361,26 +23361,26 @@
         {
           "service": "Apple TV",
           "type": "rent",
-          "url": "https://tv.apple.com/us/movie/umc.cmc.7bo3303c3954hjjarzlqxpxx1?itscg=30200&at=1010layx",
+          "url": "https://tv.apple.com/us/movie/all-the-right-moves/umc.cmc.7bo3303c3954hjjarzlqxpxx1?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1015157574",
           "price": 3.99
         },
         {
           "service": "Amazon",
           "type": "rent",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.60ba28db-629c-191c-3f7c-a09bcb4b9610",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.60ba28db-629c-191c-3f7c-a09bcb4b9610",
           "price": 3.99
         },
         {
           "service": "Apple TV",
           "type": "buy",
-          "url": "https://tv.apple.com/us/movie/umc.cmc.7bo3303c3954hjjarzlqxpxx1?itscg=30200&at=1010layx",
+          "url": "https://tv.apple.com/us/movie/all-the-right-moves/umc.cmc.7bo3303c3954hjjarzlqxpxx1?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A1015157574",
           "price": 9.99
         },
         {
           "service": "Amazon",
           "type": "buy",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.60ba28db-629c-191c-3f7c-a09bcb4b9610",
-          "price": 9.99
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.60ba28db-629c-191c-3f7c-a09bcb4b9610",
+          "price": 4.99
         }
       ]
     },
@@ -23389,7 +23389,7 @@
         {
           "service": "Netflix",
           "type": "sub",
-          "url": "https://www.netflix.com/watch/1171915",
+          "url": "https://www.netflix.com/title/1171915",
           "price": null
         },
         {
@@ -23401,19 +23401,19 @@
         {
           "service": "Apple TV",
           "type": "rent",
-          "url": "https://tv.apple.com/us/movie/umc.cmc.7j395np7q457boqvpd9vi0c8x?itscg=30200&at=1010layx",
+          "url": "https://tv.apple.com/us/movie/air-force-one/umc.cmc.7j395np7q457boqvpd9vi0c8x?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A264126728",
           "price": 3.99
         },
         {
           "service": "Fandango at Home",
           "type": "rent",
-          "url": "https://www.vudu.com/content/movies/details/content/12597",
+          "url": "https://athome.fandango.com/content/browse/details/Air-Force-One/12597",
           "price": 3.99
         },
         {
           "service": "Amazon",
           "type": "rent",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.e2a9f702-5a82-4cac-55c6-deaf2985f53d",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.e2a9f702-5a82-4cac-55c6-deaf2985f53d",
           "price": 3.99
         },
         {
@@ -23431,25 +23431,95 @@
         {
           "service": "Apple TV",
           "type": "buy",
-          "url": "https://tv.apple.com/us/movie/umc.cmc.7j395np7q457boqvpd9vi0c8x?itscg=30200&at=1010layx",
+          "url": "https://tv.apple.com/us/movie/air-force-one/umc.cmc.7j395np7q457boqvpd9vi0c8x?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A264126728",
           "price": 12.99
         },
         {
           "service": "Fandango at Home",
           "type": "buy",
-          "url": "https://www.vudu.com/content/movies/details/content/12597",
+          "url": "https://athome.fandango.com/content/browse/details/Air-Force-One/12597",
           "price": 13.99
         },
         {
           "service": "Amazon",
           "type": "buy",
-          "url": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.e2a9f702-5a82-4cac-55c6-deaf2985f53d",
-          "price": 12.99
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.e2a9f702-5a82-4cac-55c6-deaf2985f53d",
+          "price": 6.99
         },
         {
           "service": "Google Play",
           "type": "buy",
           "url": "https://play.google.com/store/movies/details?id=GFoDLmqS0nM&PAffiliateID=1101l32vn",
+          "price": 12.99
+        }
+      ]
+    },
+    "Nine to Five_1980": {
+      "sources": [
+        {
+          "service": "Prime Video",
+          "type": "sub",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.36b8b38b-a70b-ce62-860e-1c109e1a233c",
+          "price": null
+        },
+        {
+          "service": "Netflix",
+          "type": "sub",
+          "url": "https://www.netflix.com/title/60010717",
+          "price": null
+        },
+        {
+          "service": "Disney+",
+          "type": "sub",
+          "url": "https://www.disneyplus.com/browse/entity-0c880b10-d6eb-4049-947a-51ee3539137b",
+          "price": null
+        },
+        {
+          "service": "Apple TV",
+          "type": "rent",
+          "url": "https://tv.apple.com/us/movie/9-to-5/umc.cmc.6699oj53hpahhj86etlt03jah?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A547167825",
+          "price": 3.99
+        },
+        {
+          "service": "Amazon",
+          "type": "rent",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.36b8b38b-a70b-ce62-860e-1c109e1a233c",
+          "price": 3.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "rent",
+          "url": "https://athome.fandango.com/content/browse/details/9-to-5/7804",
+          "price": 3.99
+        },
+        {
+          "service": "Google Play",
+          "type": "rent",
+          "url": "https://play.google.com/store/movies/details?id=_mlI_lBikPI&PAffiliateID=1101l32vn",
+          "price": 3.99
+        },
+        {
+          "service": "Apple TV",
+          "type": "buy",
+          "url": "https://tv.apple.com/us/movie/9-to-5/umc.cmc.6699oj53hpahhj86etlt03jah?at=1000l3V2&ct=app_tv&itscg=30200&playableId=tvs.sbd.9001%3A547167825",
+          "price": 9.99
+        },
+        {
+          "service": "Amazon",
+          "type": "buy",
+          "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.36b8b38b-a70b-ce62-860e-1c109e1a233c",
+          "price": 4.99
+        },
+        {
+          "service": "Fandango at Home",
+          "type": "buy",
+          "url": "https://athome.fandango.com/content/browse/details/9-to-5/7804",
+          "price": 9.99
+        },
+        {
+          "service": "Google Play",
+          "type": "buy",
+          "url": "https://play.google.com/store/movies/details?id=_mlI_lBikPI&PAffiliateID=1101l32vn",
           "price": 12.99
         }
       ]

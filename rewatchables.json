@@ -14126,5 +14126,36 @@
       "Tom Everett"
     ],
     "id": 479
+  },
+  {
+    "movie_title": "Nine to Five",
+    "movie_year": 1980,
+    "director": "Colin Higgins",
+    "episode_date": "2026-11-16",
+    "hosts": [
+      "Bill Simmons",
+      "Amy Poehler"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 50m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Comedy"
+    ],
+    "cast": [
+      "Jane Fonda",
+      "Lily Tomlin",
+      "Dolly Parton",
+      "Dabney Coleman",
+      "Sterling Hayden",
+      "Elizabeth Wilson",
+      "Henry Jones",
+      "Lawrence Pressman",
+      "Marian Mercer",
+      "Ren Woods"
+    ],
+    "id": 480
   }
 ]
