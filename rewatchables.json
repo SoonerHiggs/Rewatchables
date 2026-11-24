@@ -14157,5 +14157,38 @@
       "Ren Woods"
     ],
     "id": 480
+  },
+  {
+    "movie_title": "The Karate Kid Part III",
+    "movie_year": 1989,
+    "director": "John G. Avildsen",
+    "episode_date": "2026-11-23",
+    "hosts": [
+      "Bill Simmons",
+      "Kyle Brandt"
+    ],
+    "is_rewatch": false,
+    "episode_label": "",
+    "runtime": "1h 52m",
+    "imdb_rating": null,
+    "rt_audience_score": null,
+    "genre": [
+      "Action",
+      "Family",
+      "Drama"
+    ],
+    "cast": [
+      "Ralph Macchio",
+      "Pat Morita",
+      "Robyn Lively",
+      "Thomas Ian Griffith",
+      "Martin Kove",
+      "Sean Kanan",
+      "Jonathan Avildsen",
+      "William Christopher Ford",
+      "Randee Heller",
+      "Pat E. Johnson"
+    ],
+    "id": 481
   }
 ]
